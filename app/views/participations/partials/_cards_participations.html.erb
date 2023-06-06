@@ -1,0 +1,21 @@
+  <div class="cards">
+    <% @participations.each do |participation| %>
+      <div class="card-participation mb-5">
+        <img src="https://diveraid.com/wp-content/uploads/2023/03/start-diving.jpg" alt="diving">
+        <%# <%= cl_image_tag participation.diving.photo.key, height: 300, width: 400, crop: :fill %>
+        <div class="card-infos">
+          <div>
+            <h2><%= link_to participation.diving.spot.name, participation_path(participation), method: :get %></h2>
+            <p><%= participation.diving.date %></p>
+            <p><%= participation.rating %></p>
+          </div>
+        </div>
+        <div class="container mb-2">
+          <div class="action-icons">
+            <%= link_to '<i class="fa-regular fa-pen-to-square" style="color: #000000;"></i>'.html_safe, edit_diving_participation_path(participation.diving, participation) %>
+            <%= link_to '<i class="fa-regular fa-trash-can" style="color: #000000;"></i>'.html_safe, participation_path(participation), data: { turbo_method: :delete, turbo_confirm: "Do you really want to delete this participation?" } %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
