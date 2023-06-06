@@ -12,9 +12,11 @@ class ParticipationsController < ApplicationController
   end
 
   def update
+    @participation.update(participation_params)
+
     respond_to do |format|
       if @participation.update(participation_params)
-        format.html { redirect_to participation_url(@participation), notice: "Your participation was successfully updated." }
+        format.html { redirect_to participation_path(@participation), notice: "Your participation was successfully updated." }
         format.json { render :show, status: ok, location: @participation }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -36,12 +38,6 @@ class ParticipationsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  private
-
-  def participation_params
-    params.require(:participation).permit(:depth, :gas, :rating, :diving_time)
   end
 
   def destroy

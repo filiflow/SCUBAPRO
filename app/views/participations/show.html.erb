@@ -1,2 +1,14 @@
-<h1>Participations#show</h1>
-<p>Find me in app/views/participations/show.html.erb</p>
+<div class="container">
+  <div class="text-container">
+    <img src="https://diveraid.com/wp-content/uploads/2023/03/start-diving.jpg" alt="diving">
+    <%# <%= cl_image_tag @participation.diving.spot.photo.key, height: 300, width: 400, crop: :fill %>
+    <h2 id="title"><%= @participation.diving.spot.name %></h2>
+
+    <p><%= @participation.diving.date %></p>
+    <p>Weather : <%= @participation.diving.weather %></p>
+    <p>Water temperature : <%= @participation.diving.temperature %>°C</p>
+    <p>Visibility : <%= @participation.diving.visibility %>m</p>
+    <p>School : <%= @participation.diving.school.name %></p>
+    <p>Dive master : <%= @participation.diving.school.dive_master %></p>
+  </div>
+</div>

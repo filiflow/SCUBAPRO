@@ -1,2 +1,10 @@
-<h1>Participations#edit</h1>
-<p>Find me in app/views/participations/edit.html.erb</p>
+<h2>Edit your participation : <%= @participation.diving.spot.name %></h2>
+
+<%= render 'participations/partials/form', participation: @participation %>
+
+<br>
+
+<div>
+  <%= link_to "Show this participation", @participation %> |
+  <%= link_to "Back to my participations", participations_path %>
+</div>
