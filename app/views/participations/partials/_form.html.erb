@@ -1,0 +1,20 @@
+
+<div data-controller="stars">
+  <%= simple_form_for(@participation) do |f| %>
+
+    <%= f.input :depth, label: "Depth:", include_blank: "Depth in meters" %>
+
+    <%= f.input :gas, label: "Gas used:", collection: ["air", "nitrox", "trimix", "helios", "oxygen", "argon"], include_blank: "Select the gas used" %>
+
+    <%= f.input :diving_time, label: "My diving time:", include_blank: "NOTE ETOILEE" %>
+
+    <% 5.times do |i| %>
+      <i class="fa-regular fa-star" data-stars-target="rating"  data-action="click->stars#fill" data-value=<%= i + 1 %>></i>
+    <% end %>
+    <%= f.input :rating, as: :hidden, input_html: { data: {stars_target: "ratingInput"} }%>
+
+    <%= f.submit value: "Confirm", class: "btn btn-primary"%>
+
+  <% end %>
+
+</div>
