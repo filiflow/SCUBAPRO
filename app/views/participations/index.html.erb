@@ -1,2 +1,17 @@
-<h1>Participations#index</h1>
-<p>Find me in app/views/participations/index.html.erb</p>
+<h1>My divings</h1>
+
+<div class="container">
+  <div class="cards">
+    <% @participations.each do |participation| %>
+        <img src="https://diveraid.com/wp-content/uploads/2023/03/start-diving.jpg" alt="diving">
+        <div class="card-infos">
+          <div>
+            <h2><%= link_to participation.diving.spot.name, participation_path(participation), method: :get %></h2>
+            <p><%= participation.diving.date %></p>
+            <p><%= participation.rating %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
