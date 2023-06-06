@@ -5,4 +5,6 @@ class Diving < ApplicationRecord
 
   has_many :participations, dependent: :destroy
   has_many :users, through: :participations
+
+  validates :weather, presence: true
 end

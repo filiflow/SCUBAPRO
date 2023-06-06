@@ -1,0 +1,29 @@
+<%= simple_form_for(@diving) do |f| %>
+  <div class="input-case calendar-position">
+    <%= f.input :date, html5: true, label: "Date" %>
+  </div>
+
+  <div class="input-case">
+    <%= f.input :weather, label: "Weather", collection: ["Sunny", "Cloudy", "Overcast", "Stormy"], prompt: "How was the weather?" %>
+  </div>
+
+  <div class="input-case">
+    <%= f.input :temperature, collection: 0..25, prompt: "Enter the water's temperature", selected: 15 %>
+  </div>
+
+  <div class="input-case">
+    <%= f.input :visibility, label: "Visibility", collection: 0..15, prompt: "How visibile was it?", selected: 5 %>
+  </div>
+
+  <div class="input-case">
+    <%= f.association :spot, label: "Spot", include_blank: "Which spot?" %>
+  </div>
+
+  <div class="input-case">
+    <%= f.association :school, label: "School", include_blank: "Which school?" %>
+  </div>
+
+   <div class="button-container">
+      <%= f.submit value: "Create your dive", class: "btn btn-primary"%>
+  </div>
+<% end %>
