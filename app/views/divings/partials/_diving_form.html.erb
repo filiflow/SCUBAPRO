@@ -1,26 +1,26 @@
 <%= simple_form_for(@diving) do |f| %>
   <div class="input-case calendar-position">
-    <%= f.input :date, html5: true, label: "Date" %>
+    <%= f.input :date, html5: true, label: false %>
   </div>
 
   <div class="input-case">
-    <%= f.input :weather, label: "Weather", collection: ["Sunny", "Cloudy", "Overcast", "Stormy"], prompt: "How was the weather?" %>
+    <%= f.input :weather, label: false, collection: ["Sunny", "Cloudy", "Overcast", "Stormy"], prompt: "How was the weather?" %>
   </div>
 
   <div class="input-case">
-    <%= f.input :temperature, collection: 0..25, prompt: "Enter the water's temperature", selected: 15 %>
+    <%= f.input :temperature, label: false, collection: 0..25, prompt: "Enter the water's temperature", selected: 15 %>
   </div>
 
   <div class="input-case">
-    <%= f.input :visibility, label: "Visibility", collection: 0..15, prompt: "How visibile was it?", selected: 5 %>
+    <%= f.input :visibility, label: false, collection: 0..15, prompt: "How visibile was it?", selected: 5 %>
   </div>
 
   <div class="input-case">
-    <%= f.association :spot, label: "Spot", include_blank: "Which spot?" %>
+    <%= f.association :spot, label: false, prompt: "Which spot?" %>
   </div>
 
   <div class="input-case">
-    <%= f.association :school, label: "School", include_blank: "Which school?" %>
+    <%= f.association :school, label: false, prompt: "Which school?" %>
   </div>
 
    <div class="button-container">
