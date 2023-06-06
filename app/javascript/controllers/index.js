@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import StarsController from "./stars_controller"
 application.register("stars", StarsController)
+
+import MapController from "./map_controller"
+application.register("map", MapController)
