@@ -13,8 +13,8 @@ class DivingsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
   # def update
   #   respond_to do |format|
@@ -29,7 +29,12 @@ class DivingsController < ApplicationController
   # end
 
   # def delete
-  #   Diving.destroy
+  #   @diving.destroy
+
+  #   respond_to do |format|
+  #     format.html { redirect_to diving_url, notice: "Your diving was succesfully deleted." }
+  #     format.json { head :no_content }
+  #   end
   # end
 
   private
