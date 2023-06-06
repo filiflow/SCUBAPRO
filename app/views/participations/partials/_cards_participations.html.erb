@@ -1,0 +1,15 @@
+  <div class="cards">
+    <% @participations.each do |participation| %>
+      <div class="card-participation">
+        <img src="https://diveraid.com/wp-content/uploads/2023/03/start-diving.jpg" alt="diving">
+        <%# <%= cl_image_tag participation.diving.photo.key, height: 300, width: 400, crop: :fill %>
+        <div class="card-infos">
+          <div>
+            <h2><%= link_to participation.diving.spot.name, participation_path(participation), method: :get %></h2>
+            <p><%= participation.diving.date %></p>
+            <p><%= participation.rating %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>

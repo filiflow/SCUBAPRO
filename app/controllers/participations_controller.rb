@@ -37,4 +37,14 @@ class ParticipationsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def set_participation
+    @participation = Participation.find(params[:id])
+  end
+
+  def participation_params
+    params.require(:participation).permit(:user_id, :diving_id, :depth, :gas, :rating, :diving_time)
+  end
 end
