@@ -1,2 +1,64 @@
-<h1>Participations#show</h1>
-<p>Find me in app/views/participations/show.html.erb</p>
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/5/c/a/5cac543f48_50151060_ocean-coraux.jpg');">
+
+  <div class="show-container">
+
+    <div class="row">
+      <div class="col-12">
+        <img src="https://diveraid.com/wp-content/uploads/2023/03/start-diving.jpg" alt="diving">
+        <%# <%= cl_image_tag @participation.diving.spot.photo.key, height: 300, width: 400, crop: :fill %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="text-container">
+          <h2 id="title"><%= @participation.diving.spot.name %></h2>
+          <p id="rating">
+            <% (@participation.rating).times do %>
+              <i class="fa-solid fa-star"></i>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <p><%= @participation.diving.date %></p>
+        <p>Weather : <%= @participation.diving.weather %></p>
+        <p>Water temperature : <%= @participation.diving.temperature %>°C</p>
+        <p>Visibility : <%= @participation.diving.visibility %>m</p>
+      </div>
+      <div class="col-6">
+        <p>School : <%= @participation.diving.school.name %></p>
+        <p>Dive master : <%= @participation.diving.school.dive_master %></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <p>Wildlife observed : </p>
+      </div>
+      <div class="col-6">
+        <p>Depth : <%= @participation.depth %>m</p>
+        <p>Gas used : <%= @participation.gas %></p>
+        <p>Diving time : <%= @participation.diving_time %>min</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p>Comments : </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="action-icons">
+          <%= link_to '<i class="fa-regular fa-pen-to-square" style="color: #FFFFFF;"></i>'.html_safe, edit_diving_participation_path(@participation.diving, @participation) %>
+          <%= link_to '<i class="fa-regular fa-trash-can" style="color: #FFFFFF;"></i>'.html_safe, participation_path(@participation), data: { turbo_method: :delete, turbo_confirm: "Do you really want to delete this participation?" } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

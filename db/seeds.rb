@@ -1,10 +1,10 @@
 User.destroy_all
 puts "Create users :)"
 puts "Scubapp family will be soon created 💌"
-User.create!(email: "florian@gmail.com", password:"azerty", nickname: "filiflow")
-User.create!(email: "anyssa@gmail.com", password:"azerty", nickname: "any")
-User.create!(email: "marianne@gmail.com", password:"azerty", nickname: "pinson")
-User.create!(email: "flogoon@gmail.com", password:"azerty", nickname: "flogoon")
+User.create!(email: "florian@gmail.com", password: "azerty", nickname: "filiflow")
+User.create!(email: "anyssa@gmail.com", password: "azerty", nickname: "any")
+User.create!(email: "marianne@gmail.com", password: "azerty", nickname: "pinson")
+User.create!(email: "flogoon@gmail.com", password: "azerty", nickname: "flogoon")
 puts "Finish!"
 
 Spot.destroy_all

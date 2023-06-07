@@ -10,6 +10,6 @@ Rails.application.routes.draw do
     resources :divings, only: %i[new create]
   end
 
-  resources :participations, only: %i[index show]
+  resources :participations, only: %i[index show destroy]
   resources :divings, only: :destroy
 end
