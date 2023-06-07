@@ -1,4 +1,4 @@
-  <div class="cards mt-4">
+  <div class="cards">
     <% @participations.each do |participation| %>
       <div class="card-participation mb-5">
         <img src="https://diveraid.com/wp-content/uploads/2023/03/start-diving.jpg" alt="diving">
@@ -6,14 +6,22 @@
         <div class="card-infos">
           <div>
             <h2><%= link_to participation.diving.spot.name, participation_path(participation), method: :get %></h2>
-            <p><%= participation.diving.date %></p>
-            <p><%= participation.rating %></p>
+            <p><%= (participation.diving.date).strftime("%d/%m/%Y") %></p>
           </div>
         </div>
-        <div class="container mb-2">
-          <div class="action-icons">
-            <%= link_to '<i class="fa-regular fa-pen-to-square" style="color: #000000;"></i>'.html_safe, edit_diving_participation_path(participation.diving, participation) %>
-            <%= link_to '<i class="fa-regular fa-trash-can" style="color: #000000;"></i>'.html_safe, participation_path(participation), data: { turbo_method: :delete, turbo_confirm: "Do you really want to delete this participation?" } %>
+        <div class="row">
+          <div class="col-6">
+            <p id="stars">
+              <% (participation.rating).times do %>
+                <i class="fa-solid fa-star" style="color: #ffd43b;"></i>
+              <% end %>
+            </p>
+          </div>
+          <div class="col-6">
+            <div class="action-icons">
+              <%= link_to '<i class="fa-regular fa-pen-to-square" style="color: #000000;"></i>'.html_safe, edit_diving_participation_path(participation.diving, participation) %>
+              <%= link_to '<i class="fa-regular fa-trash-can" style="color: #000000;"></i>'.html_safe, participation_path(participation), data: { turbo_method: :delete, turbo_confirm: "Do you really want to delete this participation?" } %>
+            </div>
           </div>
         </div>
       </div>
