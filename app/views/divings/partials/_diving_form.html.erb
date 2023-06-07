@@ -1,29 +1,47 @@
-<%= simple_form_for(@diving) do |f| %>
-  <div class="input-case calendar-position">
-    <%= f.input :date, html5: true, label: false %>
-  </div>
+<div class="form-container">
+  <%= simple_form_for(@diving) do |f| %>
+    <div class="input-case calendar-position">
+      <%= f.input :date, html5: true, label: "I dived the" %>
+    </div>
 
-  <div class="input-case">
-    <%= f.input :weather, label: false, collection: ["Sunny", "Cloudy", "Overcast", "Stormy"], prompt: "How was the weather?" %>
-  </div>
+    <div class="input-case">
+      <%= f.input :weather,
+                  as: :radio_buttons,
+                  label: false,
+                  collection: [[raw('<i class="fa-solid fa-sun fa-2xl"></i>'),"Sunny"],
+                               [raw('<i class="fa-solid fa-wind fa-2xl"></i>'),"Windy"],
+                               [raw('<i class="fa-solid fa-cloud fa-2xl"></i>'),"Cloudy"],
+                               [raw('<i class="fa-solid fa-cloud-bolt fa-2xl"></i>'),"Storm"]
+                              ],
+                  wrapper_class: "d-flex",
+                  input_html: { class: "sr-only"},
+                  item_wrapper_class: "titi",
+                  item_label_class: "tata"
+      %>
+    </div>
 
-  <div class="input-case">
-    <%= f.input :temperature, label: false, collection: 0..25, prompt: "Enter the water's temperature", selected: 15 %>
-  </div>
+    <div class="input-case">
+      <%= f.input :temperature, as: :range, label: "The water temperature was", collection: 0..25, prompt: "Enter the water's temperature", selected: 15 %>
+    </div>
 
-  <div class="input-case">
-    <%= f.input :visibility, label: false, collection: 0..15, prompt: "How visibile was it?", selected: 5 %>
-  </div>
+    <div class="input-case">
+      <%= f.input :visibility, as: :range, label: "My visibility was", collection: 0..15, prompt: "How visibile was it?", selected: 5 %>
+    </div>
 
-  <div class="input-case">
-    <%= f.association :spot, label: false, prompt: "Which spot?" %>
-  </div>
+    <div class="input-case">
+      <%= f.input :spot,
+                  as: :radio_buttons,
+                  legend_tag: false,
+                  collection: Spot.all.map { |spot| [render('divings/partials/spot_label', spot: spot), spot.id] },
+                  wrapper_class: "d-flex",
+                  input_html: { class: "sr-only"},
+                  item_wrapper_class: "titi",
+                  item_label_class: "tata"
+      %>
+    </div>
 
-  <div class="input-case">
-    <%= f.association :school, label: false, prompt: "Which school?" %>
-  </div>
-
-   <div class="button-container">
-      <%= f.submit value: "Create your dive", class: "btn btn-primary"%>
-  </div>
-<% end %>
+    <div class="button-container">
+        <%= f.submit value: "Create your dive", class: "btn btn-primary"%>
+    </div>
+  <% end %>
+</div>
