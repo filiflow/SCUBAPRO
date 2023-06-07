@@ -26,6 +26,7 @@
   display: flex;
   justify-content: center;
   margin: 15px auto;
+  padding-bottom: 25px;
 }
 
 #earth {
@@ -61,7 +62,17 @@
   }
 }
 
-// code bubble effect
+// html bubble
+
+// <div id='wrapper' class="wrapper">
+// <div class="bubble small"></div>
+// <div class="bubble s-medium"></div>
+// <div class="bubble medium"></div>
+// <div class="bubble large"></div>
+// <div class="bubble small-l"></div>
+// </div>
+
+// code css bubble effect
 
 // .wrapper{
 //   width: 100%;
