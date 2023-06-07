@@ -1,8 +1,4 @@
-<div class="container">
-
-  <h1>Pages#home</h1>
-
-  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<div class="homepage-container">
 
   <div id='wrapper' class="wrapper">
     <div class="bubble small"></div>
@@ -10,16 +6,15 @@
     <div class="bubble medium"></div>
     <div class="bubble large"></div>
     <div class="bubble small-l"></div>
-
+  </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
     <%=  @diving.spot.name %>
   </div>
-
-  <%= link_to spots_path do %>
-    <div id="box"> </div>
-  <% end %>
-
-</div>
+  <div class="earth-container">
+    <%= link_to spots_path do %>
+      <div id="earth"></div>
+    <% end %>
+  </div>
 
 </div>
