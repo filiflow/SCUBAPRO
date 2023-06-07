@@ -2,18 +2,28 @@
 <div data-controller="stars">
   <%= simple_form_for([@participation.diving, @participation]) do |f| %>
 
-    <%= f.input :depth, label: "Depth:", include_blank: "Depth in meters" %>
+    <div class="input-case">
+      <%= f.input :diving_time, as: :range, label: "I spent", collection: 0..120, prompt: "Enter the diving time", selected: 60 %>
+    </div>
 
-    <%= f.input :gas, label: "Gas used:", collection: ["air", "nitrox", "trimix", "helios", "oxygen", "argon"], include_blank: "Select the gas used" %>
+    <div>
+      <%= f.input :depth, as: :range, label: "in",  collection: 0..50, prompt: "Enter the diving depth", selected: 10%>
+    </div>
 
-    <%= f.input :diving_time, label: "My diving time:", include_blank: "NOTE ETOILEE" %>
+    <div class="input-case">
+      <%= f.input :gas, label: "breathing", collection: ["air", "nitrox", "trimix", "helios", "oxygen", "argon"], include_blank: "Select the gas used" %>
+    </div>
 
-    <% 5.times do |i| %>
-      <i class="fa-regular fa-star" data-stars-target="rating"  data-action="click->stars#fill" data-value=<%= i + 1 %>></i>
-    <% end %>
-    <%= f.input :rating, as: :hidden, input_html: { data: {stars_target: "ratingInput"} }%>
+    <div>
+      <% 5.times do |i| %>
+        <i class="fa-regular fa-star" data-stars-target="rating"  data-action="click->stars#fill" data-value=<%= i + 1 %>></i>
+      <% end %>
+      <%= f.input :rating, as: :hidden, input_html: { data: {stars_target: "ratingInput"} }%>
+    </div>
 
+    <div>
     <%= f.submit value: "Confirm", class: "btn btn-primary"%>
+    </div>
 
   <% end %>
 
