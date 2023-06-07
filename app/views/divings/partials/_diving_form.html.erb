@@ -1,13 +1,15 @@
 <div class="form-container">
   <%= simple_form_for(@diving) do |f| %>
     <div class="input-case calendar-position">
-      <%= f.input :date, html5: true, label: "I dived the" %>
+      <%= "I dived on the..." %>
+      <%= f.input :date, label: false, html5: true %>
     </div>
 
     <div class="input-case">
+      <%= "The weather was..." %>
       <%= f.input :weather,
                   as: :radio_buttons,
-                  label: false,
+                  legend_tag: false,
                   collection: [[raw('<i class="fa-solid fa-sun fa-2xl"></i>'),"Sunny"],
                                [raw('<i class="fa-solid fa-wind fa-2xl"></i>'),"Windy"],
                                [raw('<i class="fa-solid fa-cloud fa-2xl"></i>'),"Cloudy"],
@@ -21,14 +23,14 @@
     </div>
 
     <div class="input-case">
-      <%= f.input :temperature, as: :range, label: "The water temperature was", collection: 0..25, prompt: "Enter the water's temperature", selected: 15 %>
+      <%= f.input :temperature, as: :range, legend_tag: false, collection: 0..25, prompt: "Enter the water's temperature", selected: 15 %>
     </div>
 
     <div class="input-case">
-      <%= f.input :visibility, as: :range, label: "My visibility was", collection: 0..15, prompt: "How visibile was it?", selected: 5 %>
+      <%= f.input :visibility, as: :range, legend_tag: false, collection: 0..15, prompt: "How visibile was it?", selected: 5 %>
     </div>
 
-    <div class="input-case">
+    <div class="input-spot">
       <%= f.input :spot,
                   as: :radio_buttons,
                   legend_tag: false,
@@ -41,7 +43,7 @@
     </div>
 
     <div class="button-container">
-        <%= f.submit value: "Create your dive", class: "btn btn-primary"%>
+        <%= f.submit value: "Create your dive", class:"btn btn-light"%>
     </div>
   <% end %>
 </div>
