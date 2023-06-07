@@ -51,6 +51,13 @@
   100% { background-position:0 0 }
 }
 
+.map-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  padding: 10px 35px;
+}
 
 // #earth {
 //   width: 300px;
