@@ -30,10 +30,11 @@
     </button>
   </div>
 
-  <div class="earth-container">
-    <%= link_to spots_path do %>
-      <div id="box"></div>
-    <% end %>
+  <div class="container">
+    <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
-
 </div>
