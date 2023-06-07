@@ -9,15 +9,15 @@ puts "Finish!"
 
 Spot.destroy_all
 puts "Create Spots"
-Spot.create!(name: "Grain d'été", lat: 40.00, lgt: 93.44)
-Spot.create!(name: "Poivre et Sel", lat: 50.00, lgt: 63.44)
-Spot.create!(name: "Coral Paradise", lat: 12.34, lgt: 56.78)
-Spot.create!(name: "Sunken Shipwreck", lat: -45.67, lgt: 89.01)
-Spot.create!(name: "Turtle Cove", lat: 23.45, lgt: -67.89)
-Spot.create!(name: "Manta Ray Bay", lat: -12.34, lgt: 34.56)
-Spot.create!(name: "Whale Shark Point", lat: 0.12, lgt: -12.34)
-Spot.create!(name: "Seahorse Haven", lat: 45.67, lgt: -78.90)
-Spot.create!(name: "Deep Blue Abyss", lat: -23.45, lgt: 56.78)
+Spot.create!(name: "Grain d'été", latitude: 40.00, longitude: 93.44)
+Spot.create!(name: "Poivre et Sel", latitude: 50.00, longitude: 63.44)
+Spot.create!(name: "Coral Paradise", latitude: 12.34, longitude: 56.78)
+Spot.create!(name: "Sunken Shipwreck", latitude: -45.67, longitude: 89.01)
+Spot.create!(name: "Turtle Cove", latitude: 23.45, longitude: -67.89)
+Spot.create!(name: "Manta Ray Bay", latitude: -12.34, longitude: 34.56)
+Spot.create!(name: "Whale Shark Point", latitude: 0.12, longitude: -12.34)
+Spot.create!(name: "Seahorse Haven", latitude: 45.67, longitude: -78.90)
+Spot.create!(name: "Deep Blue Abyss", latitude: -23.45, longitude: 56.78)
 puts "Spots have been created!"
 
 School.destroy_all
