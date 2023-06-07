@@ -1,27 +1,36 @@
+.background {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
 .show-container {
-  width: 500px;
+  width: 80%;
   border: 1px solid grey;
   border-radius: 10px;
   padding: 24px 8px;
   margin: auto;
-  background-color: rgba(50, 49, 48, 0.59);
-  margin-top: 30px;
-  margin-bottom: 30px;
+  background-color: rgba(151, 150, 149, 0.59);
   color: white;
 
   img {
-    height: 300px;
-    width: 400px;
+    height: 90%;
+    width: 80%;
     display: block;
     margin: 0 auto;
+    margin-bottom: 10px;
   }
 }
 
 .text-container {
   margin: auto;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 #title {
+  text-align: center;
+}
+
+#rating {
   text-align: center;
 }
