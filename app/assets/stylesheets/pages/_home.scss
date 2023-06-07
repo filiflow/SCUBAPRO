@@ -1,6 +1,6 @@
 .homepage-container{
   background: rgb(2,0,36);
-  background: linear-gradient(0deg, blue, green 40%, red);
+  background: linear-gradient(360deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(60, 183, 207) 100%);
 }
 
 .card-category {
@@ -16,6 +16,7 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 0px 10px 15px 10px;
 }
 
 .earth-container{
