@@ -44,7 +44,7 @@ class ParticipationsController < ApplicationController
     @participation.destroy
 
     respond_to do |format|
-      format.html { redirect_to participation_url, notice: "Your participation was successfully deleted." }
+      format.html { redirect_to participations_path, notice: "Your participation was successfully deleted." }
       format.json { head :no_content }
     end
   end

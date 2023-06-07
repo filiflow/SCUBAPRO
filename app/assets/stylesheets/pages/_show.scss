@@ -1,0 +1,27 @@
+.show-container {
+  width: 500px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 24px 8px;
+  margin: auto;
+  background-color: rgba(50, 49, 48, 0.59);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: white;
+
+  img {
+    height: 300px;
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.text-container {
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+#title {
+  text-align: center;
+}

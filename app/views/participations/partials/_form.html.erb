@@ -1,6 +1,6 @@
 
 <div data-controller="stars">
-  <%= simple_form_for(@participation) do |f| %>
+  <%= simple_form_for([@participation.diving, @participation]) do |f| %>
 
     <%= f.input :depth, label: "Depth:", include_blank: "Depth in meters" %>
 

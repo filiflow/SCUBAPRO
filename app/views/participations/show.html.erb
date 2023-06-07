@@ -1,14 +1,28 @@
 <div class="container">
-  <div class="text-container">
+
+  <div class="show-container">
     <img src="https://diveraid.com/wp-content/uploads/2023/03/start-diving.jpg" alt="diving">
     <%# <%= cl_image_tag @participation.diving.spot.photo.key, height: 300, width: 400, crop: :fill %>
-    <h2 id="title"><%= @participation.diving.spot.name %></h2>
 
-    <p><%= @participation.diving.date %></p>
-    <p>Weather : <%= @participation.diving.weather %></p>
-    <p>Water temperature : <%= @participation.diving.temperature %>°C</p>
-    <p>Visibility : <%= @participation.diving.visibility %>m</p>
-    <p>School : <%= @participation.diving.school.name %></p>
-    <p>Dive master : <%= @participation.diving.school.dive_master %></p>
+    <div class="text-container">
+      <h2 id="title"><%= @participation.diving.spot.name %></h2>
+
+      <p><%= @participation.diving.date %></p>
+      <p>Weather : <%= @participation.diving.weather %></p>
+      <p>Water temperature : <%= @participation.diving.temperature %>°C</p>
+      <p>Visibility : <%= @participation.diving.visibility %>m</p>
+      <p>School : <%= @participation.diving.school.name %></p>
+      <p>Dive master : <%= @participation.diving.school.dive_master %></p>
+      <p>Depth : <%= @participation.depth %></p>
+      <p>Gas used : <%= @participation.gas %></p>
+      <p><%= @participation.rating %></p>
+      <p>Diving time : <%= @participation.diving_time %></p>
+
+      <div class="action-icons">
+        <%= link_to '<i class="fa-regular fa-pen-to-square" style="color: #000000;"></i>'.html_safe, edit_diving_participation_path(@participation.diving, @participation) %>
+        <%= link_to '<i class="fa-regular fa-trash-can" style="color: #000000;"></i>'.html_safe, participation_path(@participation), data: { turbo_method: :delete, turbo_confirm: "Do you really want to delete this participation?" } %>
+      </div>
+
+    </div>
   </div>
 </div>
