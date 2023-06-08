@@ -9,6 +9,6 @@ class PagesController < ApplicationController
         lng: spot.longitude
       }
     end
-    @title ="SCUBAPP"
+    @title = "SCUBAPP"
   end
 end
