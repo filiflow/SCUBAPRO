@@ -1,12 +1,47 @@
 <div class="form-container">
   <%= simple_form_for(@diving) do |f| %>
-    <div class="input-case calendar-position mb-2">
-      <div class="input-title mb-2"><%= "I dived on the..." %></div>
-      <%= f.input :date, label: false, html5: true %>
+
+    <div class="select-your-spot">
+        <div class="input-spot">
+          <div class="input-title mb-2">
+          Select your spot
+          </div>
+          <%= f.association :spot,
+                      as: :radio_buttons,
+                      legend_tag: false,
+                      collection: Spot.all.map { |spot| [render('divings/partials/spot_label', spot: spot), spot.id] },
+                      wrapper_class:       "d-flex horizontal-scroll",
+                      input_html: { class: "sr-only"},
+                      item_wrapper_class:  "titi",
+                      item_label_class:    "tata"
+          %>
+        </div>
+    </div>
+
+    <div class="select-your-school">
+        <div class="input-school">
+          <div class="input-title mb-2"><%= "Select your school" %></div>
+            <%= f.association :school,
+                        as: :radio_buttons,
+                        legend_tag: false,
+                        collection: School.all.map { |school| [render('divings/partials/school_label', school: school), school.id] },
+                        wrapper_class:       "d-flex horizontal-scroll",
+                        input_html: { class: "sr-only"},
+                        item_wrapper_class:  "titi",
+                        item_label_class:    "tata"
+            %>
+        </div>
+    </div>
+
+    <div class="calendar">
+        <div class="input-case calendar-position">
+          <div class="input-title mb-2"> I DIVED ON THE :  <span data-graduated-range-target="value" class="mx-2"> </div>
+          <%= f.input :date, label: false, html5: true %>
+        </div>
     </div>
 
     <div class="input-case">
-      <div class="input-title mb-2"><%= "The weather was..." %></div>
+      <div class="input-title"><%= "THE WEATHER WAS :" %></div>
       <div class="weather-icons">
         <%= f.input :weather,
                     as: :radio_buttons,
@@ -24,40 +59,76 @@
       </div>
     </div>
 
-    <div class="input-case">
-      <%= f.input :temperature, as: :range, legend_tag: false, collection: 0..25, prompt: "Enter the water's temperature" %>
-    </div>
+    <div class="input-case" data-controller="graduated-range">
+      <div class="form-label range optional">THE TEMPERATURE WAS :  <span data-graduated-range-target="value" class="mx-2">  24 </span>  DEGREES </div>
+       <div class="mb-3 range optional participation_temperature">
+        <input class="numeric range optional w100"
+               list="tickmarks"
+               type="range"
+               step="1"
+               name="participation[temperature]"
+               id="participation_temperature"
+               data-action="graduated-range#changeValue"
+               min="5"
+               max="35">
+        <datalist id="tickmarks">
+          <option value="5"></option>
+          <option value="10"></option>
+          <option value="15"></option>
+          <option value="20"></option>
+          <option value="25"></option>
+          <option value="30"></option>
+          <option value="35"></option>
+          <option value="40"></option>
+        </datalist>
 
-    <div class="input-case">
-      <%= f.input :visibility, as: :range, legend_tag: false, collection: 0..15, prompt: "How visibile was it?" %>
-    </div>
+        <div class="range_graduation">
+          <div>5</div>
+          <div>10</div>
+          <div>15</div>
+          <div>20</div>
+          <div>25</div>
+          <div>30</div>
+          <div>35</div>
+          <div>40</div>
+        </div>
 
-    <div class="input-spot">
-      <div class="input-title mb-2">
-       Select your spot
       </div>
-      <%= f.association :spot,
-                  as: :radio_buttons,
-                  legend_tag: false,
-                  collection: Spot.all.map { |spot| [render('divings/partials/spot_label', spot: spot), spot.id] },
-                  wrapper_class:       "d-flex horizontal-scroll",
-                  input_html: { class: "sr-only"},
-                  item_wrapper_class:  "titi",
-                  item_label_class:    "tata"
-      %>
     </div>
 
-    <div class="input-school">
-    <div class="input-title mb-2"><%= "Select your school" %></div>
-      <%= f.association :school,
-                  as: :radio_buttons,
-                  legend_tag: false,
-                  collection: School.all.map { |school| [render('divings/partials/school_label', school: school), school.id] },
-                  wrapper_class:       "d-flex horizontal-scroll",
-                  input_html: { class: "sr-only"},
-                  item_wrapper_class:  "titi",
-                  item_label_class:    "tata"
-      %>
+    <div class="input-case" data-controller="graduated-range">
+      <div class="form-label range optional">The visibility was : <span data-graduated-range-target="value" class="mx-2"> 15 </span> meters </div>
+      <div class="mb-3 range optional participation_visibility">
+        <input class="numeric range optional w100"
+               list="tickmarks"
+               type="range"
+               step="1"
+               name="participation[visibility]"
+               id="participation_visibility"
+               data-action="graduated-range#changeValue"
+               min="0"
+               max="30">
+        <datalist id="tickmarks">
+          <option value="0"></option>
+          <option value="5"></option>
+          <option value="10"></option>
+          <option value="15"></option>
+          <option value="20"></option>
+          <option value="25"></option>
+          <option value="30"></option>
+        </datalist>
+
+        <div class="range_graduation">
+          <div>0</div>
+          <div>5</div>
+          <div>10</div>
+          <div>15</div>
+          <div>20</div>
+          <div>25</div>
+          <div>30</div>
+        </div>
+
+      </div>
     </div>
 
     <div class="button-container">
