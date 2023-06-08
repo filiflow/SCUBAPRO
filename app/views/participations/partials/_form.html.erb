@@ -1,9 +1,37 @@
 
-<div data-controller="stars">
+<div class="form-container" data-controller="stars" >
+
   <%= simple_form_for([@participation.diving, @participation]) do |f| %>
 
     <div class="input-case">
-      <%= f.input :diving_time, as: :range, label: "I spent", collection: 0..120, prompt: "Enter the diving time", selected: 60 %>
+      <%#= f.input :diving_time, as: :range, input_html: { list:"tickmarks" }, label: "I spent", collection: 0..120 %>
+      <div class="form-label range optional">I spent</div>
+      <div class="mb-3 range optional participation_diving_time">
+      <%# <label class="form-label range optional" for="participation_diving_time">I spent</label>%>
+        <input class="numeric range optional w100" list="tickmarks" type="range" step="1" name="participation[diving_time]" id="participation_diving_time">
+        <datalist id="tickmarks">
+        <option value="0"></option>
+        <option value="10"></option>
+        <option value="20"></option>
+        <option value="30"></option>
+        <option value="40"></option>
+        <option value="50"></option>
+        <option value="60"></option>
+        <option value="70"></option>
+        <option value="80"></option>
+        <option value="90"></option>
+        <option value="100"></option>
+        </datalist>
+        <div class="range_graduation">
+          <div>0</div>
+          <div>30</div>
+          <div>60</div>
+          <div>120</div>
+        </div>
+      </div>
+
+</div>
+
     </div>
 
     <div>
@@ -28,3 +56,18 @@
   <% end %>
 
 </div>
+
+<%# <input type="range" list="tickmarks">
+<datalist id="tickmarks">
+<option value="0"></option>
+<option value="10"></option>
+<option value="20"></option>
+<option value="30"></option>
+<option value="40"></option>
+<option value="50"></option>
+<option value="60"></option>
+<option value="70"></option>
+<option value="80"></option>
+<option value="90"></option>
+<option value="120"></option>
+</datalist> %>
