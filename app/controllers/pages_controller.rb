@@ -6,7 +6,9 @@ class PagesController < ApplicationController
     @markers = @spots.geocoded.map do |spot|
       {
         lat: spot.latitude,
-        lng: spot.longitude
+        lng: spot.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { spot: spot }),
+        marker_html: render_to_string(partial: "marker")
       }
     end
     @title = "SCUBAPP"
