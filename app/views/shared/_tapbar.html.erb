@@ -45,7 +45,7 @@
   </div>
 
   <%# map %>
-  <div class="bar-item <%= 'active' if current_page?(new_diving_path) %> pre-active" >
+  <div class="bar-item <%= 'active' if current_page?(spots_path) %> pre-active" >
     <div class="bar-fluid"></div>
     <div class="drop"></div>
     <%= link_to '<i class="fa-solid fa-map"></i>'.html_safe, spots_path, class: "link" %>
@@ -55,7 +55,7 @@
   <div class="bar-item <%= 'active' if current_page?(root_path) %> pre-active" >
     <div class="bar-fluid"></div>
     <div class="drop"></div>
-    <%= link_to '<i class="fa-regular fa-user" style="color: #000000;"></i>'.html_safe, root_path, class: "link" %>
+    <%= link_to '<i class="fa-regular fa-user"></i>'.html_safe, root_path, class: "link" %>
   </div>
 
 </div>
