@@ -1,17 +1,62 @@
-<div class="scubapp-nav">
-  <div class="home-link">
-    <a href="/"><i class="fa-solid fa-house"></i></a>
+<%# <div class="scubapp-nav"> %>
+  <%# <div class="home-link">
+    <%= link_to '<i class="fa-solid fa-house"></i>'.html_safe, root_path %>
+  <%# </div> %>
+
+  <%# <div class="index"> %>
+    <%# <%= link_to '<span class="material-symbols-outlined">scuba_diving</span>'.html_safe, participations_path %>
+  <%# </div> %>
+
+  <%# <div class="new-diving">
+    <%= link_to '<i class="fa-sharp fa-solid fa-plus"></i>'.html_safe, new_diving_path %>
+  <%# </div> %>
+
+  <%# <div class="map-search">
+    <%= link_to '<i class="fa-solid fa-map"></i>'.html_safe, spots_path %>
+  <%# </div> %>
+
+  <%# <div class="profile-photo">
+    <%= link_to '<i class="fa-regular fa-user" style="color: #000000;"></i>'.html_safe, root_path %>
+  <%# </div> %>
+<%# </div> %>
+
+<%# <div class="container"> %>
+<div class="bar" data-controller="tapbar">
+
+  <%# homepage %>
+  <div class="bar-item <%= 'active' if current_page?(root_path) %> pre-active" >
+    <div class="bar-fluid"></div>
+    <div class="drop"></div>
+    <%= link_to '<i class="fa-solid fa-house"></i>'.html_safe, root_path, class: "link" %>
   </div>
-  <div class="search-icon">
-  <a href="/"><i class="fa-solid fa-magnifying-glass"></i></a>
+
+  <%# index %>
+  <div class="bar-item <%= 'active' if current_page?(participations_path) %> pre-active" >
+    <div class="bar-fluid"></div>
+    <div class="drop"></div>
+    <%= link_to '<span class="material-symbols-outlined">scuba_diving</span>'.html_safe, participations_path, class: "link" %>
   </div>
-  <div class="new-diving">
-    <a href="/divings/new"><i class="fa-sharp fa-solid fa-plus"></i></a>
+
+  <%# new diving %>
+  <div class="bar-item <%= 'active' if current_page?(new_diving_path) %> pre-active" >
+    <div class="bar-fluid"></div>
+    <div class="drop"></div>
+    <%= link_to '<i class="fa-sharp fa-solid fa-plus"></i>'.html_safe, new_diving_path, class: "link" %>
   </div>
-  <div class="map-search">
-    <a href="/spots"><i class="fa-solid fa-map"></i></a>
+
+  <%# map %>
+  <div class="bar-item <%= 'active' if current_page?(new_diving_path) %> pre-active" >
+    <div class="bar-fluid"></div>
+    <div class="drop"></div>
+    <%= link_to '<i class="fa-solid fa-map"></i>'.html_safe, spots_path, class: "link" %>
   </div>
-  <div class="profile-photo">
-    <%= link_to "MM", participations_path%>
+
+  <%# profile %>
+  <div class="bar-item <%= 'active' if current_page?(root_path) %> pre-active" >
+    <div class="bar-fluid"></div>
+    <div class="drop"></div>
+    <%= link_to '<i class="fa-regular fa-user" style="color: #000000;"></i>'.html_safe, root_path, class: "link" %>
   </div>
+
 </div>
+<%# </div> %>

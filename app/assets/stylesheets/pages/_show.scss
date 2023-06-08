@@ -2,6 +2,9 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+  min-height: 100vh;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .show-container {
@@ -10,7 +13,7 @@
   border-radius: 10px;
   padding: 24px 8px;
   margin: auto;
-  background-color: rgba(151, 150, 149, 0.59);
+  background-color: rgba(2, 2, 2, 0.293);
   color: white;
 
   img {
