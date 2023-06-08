@@ -10,7 +10,6 @@ class DivingsController < ApplicationController
     if @diving.save
       redirect_to diving_path(@diving)
     else
-      raise
       render :new, status: :unprocessable_entity
     end
   end
