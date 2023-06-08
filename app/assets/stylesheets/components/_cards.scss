@@ -5,7 +5,8 @@
 
 .card-participation {
   overflow: hidden;
-  background: rgba(197, 194, 194, 0.701);
+  // background: rgba(197, 194, 194, 0.701);
+  background-color: rgba(2, 2, 2, 0.293);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
@@ -22,7 +23,7 @@
 
 .card-participation {
   h2 {
-  color: black;
+  color: white;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
@@ -35,6 +36,7 @@
   opacity: .7;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  color: white;
   }
 }
 
@@ -49,7 +51,7 @@
 }
 
 a {
-  color: #000000;
+  color: white;
   text-decoration: none;
 }
 

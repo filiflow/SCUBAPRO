@@ -15,3 +15,6 @@ application.register("map", MapController)
 
 import StarsController from "./stars_controller"
 application.register("stars", StarsController)
+
+import TapbarController from "./tapbar_controller"
+application.register("tapbar", TapbarController)
