@@ -8,9 +8,8 @@ class DivingsController < ApplicationController
     @diving = Diving.new(diving_params)
     @diving.user_id = current_user.id
     if @diving.save
-      redirect_to diving_path(@diving)
+      redirect_to new_diving_participation_path(@diving)
     else
-      raise
       render :new, status: :unprocessable_entity
     end
   end
