@@ -1,12 +1,12 @@
 <div class="form-container">
   <%= simple_form_for(@diving) do |f| %>
-    <div class="input-case calendar-position">
-      <%= "I dived on the..." %>
+    <div class="input-case calendar-position mb-2">
+      <div class="input-title mb-2"><%= "I dived on the..." %></div>
       <%= f.input :date, label: false, html5: true %>
     </div>
 
     <div class="input-case">
-      <%= "The weather was..." %>
+      <div class="input-title mb-2"><%= "The weather was..." %></div>
       <%= f.input :weather,
                   as: :radio_buttons,
                   legend_tag: false,
@@ -23,15 +23,16 @@
     </div>
 
     <div class="input-case">
-      <%= f.input :temperature, as: :range, legend_tag: false, collection: 0..25, prompt: "Enter the water's temperature", selected: 15 %>
+      <%= f.input :temperature, as: :range, legend_tag: false, collection: 0..25, prompt: "Enter the water's temperature" %>
     </div>
 
     <div class="input-case">
-      <%= f.input :visibility, as: :range, legend_tag: false, collection: 0..15, prompt: "How visibile was it?", selected: 5 %>
+      <%= f.input :visibility, as: :range, legend_tag: false, collection: 0..15, prompt: "How visibile was it?" %>
     </div>
 
     <div class="input-spot">
-      <%= f.input :spot,
+    <div class="input-title mb-2"><%= "Select your spot" %></div>
+      <%= f.association :spot,
                   as: :radio_buttons,
                   legend_tag: false,
                   collection: Spot.all.map { |spot| [render('divings/partials/spot_label', spot: spot), spot.id] },
@@ -42,8 +43,21 @@
       %>
     </div>
 
+    <div class="input-school">
+    <div class="input-title mb-2"><%= "Select your school" %></div>
+      <%= f.association :school,
+                  as: :radio_buttons,
+                  legend_tag: false,
+                  collection: School.all.map { |school| [render('divings/partials/school_label', school: school), school.id] },
+                  wrapper_class: "d-flex",
+                  input_html: { class: "sr-only"},
+                  item_wrapper_class: "titi",
+                  item_label_class: "tata"
+      %>
+    </div>
+
     <div class="button-container">
-        <%= f.submit value: "Create your dive", class:"btn btn-light"%>
+        <%= f.submit value: "Create your dive", class:"btn btn-outline-light"%>
     </div>
   <% end %>
 </div>
