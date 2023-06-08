@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :divings, dependent: :destroy
   has_many :participations, dependent: :destroy
+
+  has_one_attached :photo
 end

@@ -4,6 +4,7 @@
     <div class="carousel-item active">
       <div class="card-category">
         <%= @divings[0].spot.name %>
+         <%= cl_image_tag @divings[0].spot.photo, height: 300, width: 400, crop: :fill %>
       </div>
     </div>
     <div class="carousel-item">
