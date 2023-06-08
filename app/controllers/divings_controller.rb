@@ -1,6 +1,7 @@
 class DivingsController < ApplicationController
   def new
     @diving = Diving.new
+    @title = " + ADD A NEW DIVE"
   end
 
   def create
