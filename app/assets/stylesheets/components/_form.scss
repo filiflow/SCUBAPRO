@@ -1,19 +1,23 @@
 .form-container{
   z-index: 1;
-  background-color: rgba(2, 2, 2, 0.293);
+  background-color: rgba(2, 2, 2, 0.511);
   background-size: cover;
   background-position: center;
   border-radius: 8px;
   padding: 10px;
   color: white;
   margin-bottom: 5px;
-  // padding-bottom: 35px;
 }
+
+.fa-2xl {
+  font-size: 2.8em !important;
+}
+
 
 .spot{
   border-radius: 50px;
-  width: 45px;
-  height: 45px;
+  width: 80px;
+  height: 80px;
 }
 
 .name{
@@ -44,12 +48,38 @@
 
 .btn{
   border-radius: 40px;
+  width: 130px;
 }
 
 .button-container{
   text-align: center;
 }
 
+.input-case{
+  margin-bottom: 40px;
+}
+
+.input-title{
+  display: flex;
+  justify-content: center;
+}
+
+.form-label{
+  display: flex;
+  justify-content: center;
+}
+
+.calendar{
+  margin-top: 30px;
+}
+
+.select-your-spot{
+  margin-top: 20px;
+}
+
+.select-your-school{
+  margin-top: 20px;
+}
 
 /* PARTIE ANYSSA : SUITE DU FORM BARRE GRADUEE */
 
@@ -65,7 +95,5 @@
 
 .weather-icons{
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-bottom: 6px;
+  justify-content: center;
 }
