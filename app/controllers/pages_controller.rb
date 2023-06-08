@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[ home index ]
 
   def home
-    @divings = Diving.last(3)
     @spots = Spot.all
     @markers = @spots.geocoded.map do |spot|
       {
@@ -10,6 +9,6 @@ class PagesController < ApplicationController
         lng: spot.longitude
       }
     end
-    @title ="SCUBAPP"
+    @title = "SCUBAPP"
   end
 end

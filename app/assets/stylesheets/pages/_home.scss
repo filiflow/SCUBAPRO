@@ -1,23 +1,37 @@
-.homepage-container{
-  background: rgb(2,0,36);
-  background: linear-gradient(360deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(60, 183, 207) 100%);
+.background-home {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  min-height: 100vh;
+  padding-top: 30px;
 }
 
-.card-category {
-  background-size: cover;
-  background-position: center;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 0px 10px 15px 10px;
+#homeCarousel {
+  .carousel-item img {
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+  }
 }
+// .card-category {
+//   // background-size: cover;
+//   // background-position: center;
+//   margin: 15px 10px;
+//   color: white;
+//   font-size: 24px;
+//   font-weight: bold;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 180px;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   border-radius: 5px;
+//   .content-carousel{
+
+//   }
+// }
 
 .earth-container{
   width: 100%;
@@ -51,6 +65,13 @@
   100% { background-position:0 0 }
 }
 
+.map-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  padding: 10px 35px;
+}
 
 // #earth {
 //   width: 300px;

@@ -4,11 +4,17 @@
 
 import { application } from "./application"
 
+import GraduatedRangeController from "./graduated_range_controller"
+application.register("graduated-range", GraduatedRangeController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import MapController from "./map_controller"
+application.register("map", MapController)
 
 import StarsController from "./stars_controller"
 application.register("stars", StarsController)
 
-import MapController from "./map_controller"
-application.register("map", MapController)
+import TapbarController from "./tapbar_controller"
+application.register("tapbar", TapbarController)

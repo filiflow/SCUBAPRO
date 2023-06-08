@@ -12,14 +12,14 @@
                     as: :radio_buttons,
                     legend_tag: false,
                     collection: [[raw('<i class="fa-solid fa-sun fa-2xl"></i>'),"Sunny"],
-                                [raw('<i class="fa-solid fa-wind fa-2xl"></i>'),"Windy"],
-                                [raw('<i class="fa-solid fa-cloud fa-2xl"></i>'),"Cloudy"],
-                                [raw('<i class="fa-solid fa-cloud-bolt fa-2xl"></i>'),"Storm"]
+                                 [raw('<i class="fa-solid fa-wind fa-2xl"></i>'),"Windy"],
+                                 [raw('<i class="fa-solid fa-cloud fa-2xl"></i>'),"Cloudy"],
+                                 [raw('<i class="fa-solid fa-cloud-bolt fa-2xl"></i>'),"Storm"]
                                 ],
-                    wrapper_class: "d-flex mt-3",
+                    wrapper_class:       "d-flex mt-3",
                     input_html: { class: "sr-only"},
-                    item_wrapper_class: "titi",
-                    item_label_class: "tata"
+                    item_wrapper_class:  "titi",
+                    item_label_class:    "tata"
         %>
       </div>
     </div>
@@ -40,10 +40,10 @@
                   as: :radio_buttons,
                   legend_tag: false,
                   collection: Spot.all.map { |spot| [render('divings/partials/spot_label', spot: spot), spot.id] },
-                  wrapper_class: "d-flex horizontal-scroll",
+                  wrapper_class:       "d-flex horizontal-scroll",
                   input_html: { class: "sr-only"},
-                  item_wrapper_class: "titi",
-                  item_label_class: "tata"
+                  item_wrapper_class:  "titi",
+                  item_label_class:    "tata"
       %>
     </div>
 
@@ -53,15 +53,15 @@
                   as: :radio_buttons,
                   legend_tag: false,
                   collection: School.all.map { |school| [render('divings/partials/school_label', school: school), school.id] },
-                  wrapper_class: "d-flex horizontal-scroll",
+                  wrapper_class:       "d-flex horizontal-scroll",
                   input_html: { class: "sr-only"},
-                  item_wrapper_class: "titi",
-                  item_label_class: "tata"
+                  item_wrapper_class:  "titi",
+                  item_label_class:    "tata"
       %>
     </div>
 
     <div class="button-container">
-        <%= f.submit value: "Create your dive", class:"btn btn-outline-light"%>
+        <%= f.submit value: "Next", class:"btn btn-outline-light"%>
     </div>
   <% end %>
 </div>
