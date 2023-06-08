@@ -22,7 +22,7 @@
 }
 
 .titi {
-  margin-right: 20px;
+  margin-right: 32px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -36,11 +36,10 @@
   transition: 0.1s
 }
 
-.d-flex{
-  overflow-x: scroll;
+.horizontal-scroll {
   margin-bottom: 5px;
-  display: flex !important;
-  justify-content: space-around;
+  overflow-x: scroll;
+  position: relative;
 }
 
 .btn{
@@ -49,4 +48,24 @@
 
 .button-container{
   text-align: center;
+}
+
+
+/* PARTIE ANYSSA : SUITE DU FORM BARRE GRADUEE */
+
+
+.range_graduation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.w100{
+  width: 100%;
+}
+
+.weather-icons{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 6px;
 }

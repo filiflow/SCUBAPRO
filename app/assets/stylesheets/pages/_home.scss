@@ -1,6 +1,9 @@
-.homepage-container{
-  background: rgb(2,0,36);
-  background: linear-gradient(360deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(60, 183, 207) 100%);
+.background-home {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  min-height: 100vh;
+  padding-top: 30px;
 }
 
 #homeCarousel {
