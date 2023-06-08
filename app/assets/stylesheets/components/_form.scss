@@ -1,10 +1,12 @@
 .form-container{
   z-index: 1;
-  background-color: rgba(164, 159, 159, 0.729);
+  background-color: rgba(2, 2, 2, 0.293);
   background-size: cover;
   background-position: center;
   border-radius: 8px;
   padding: 10px;
+  color: white;
+  margin-bottom: 5px;
   // padding-bottom: 35px;
 }
 
@@ -26,7 +28,7 @@
 }
 
 .titi input[type="radio"]+label {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .titi input[type="radio"]:checked+label {
@@ -36,4 +38,15 @@
 
 .d-flex{
   overflow-x: scroll;
+  margin-bottom: 5px;
+  display: flex !important;
+  justify-content: space-around;
+}
+
+.btn{
+  border-radius: 40px;
+}
+
+.button-container{
+  text-align: center;
 }
