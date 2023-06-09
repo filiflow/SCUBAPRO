@@ -51,9 +51,6 @@
 }
 
 
-/* PARTIE ANYSSA : SUITE DU FORM BARRE GRADUEE */
-
-
 .range_graduation {
   display: flex;
   justify-content: space-between;
@@ -68,4 +65,9 @@
   align-items: center;
   justify-content: space-around;
   margin-bottom: 6px;
+}
+
+.stars-rating {
+  display: flex;
+  justify-content: center;
 }

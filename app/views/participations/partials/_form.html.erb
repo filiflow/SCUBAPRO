@@ -51,7 +51,7 @@
       <%= f.input :gas, label: "breathing", collection: ["air", "nitrox", "trimix", "helios", "oxygen", "argon"], include_blank: "Select the gas used" %>
     </div>
 
-    <div>
+    <div class="stars-rating">
       <% 5.times do |i| %>
         <i class="fa-regular fa-star" data-stars-target="rating"  data-action="click->stars#fill" data-value=<%= i + 1 %>></i>
       <% end %>
