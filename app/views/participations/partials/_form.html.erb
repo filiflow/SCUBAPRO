@@ -1,7 +1,7 @@
 
 <div class="form-container" data-controller="stars" >
 
-  <%= simple_form_for([@participation.diving, @participation]) do |f| %>
+  <%= simple_form_for([@diving, @participation]) do |f| %>
 
     <div class="input-case" data-controller="graduated-range">
       <%#= f.input :diving_time, as: :range, input_html: { list:"tickmarks" }, label: "I spent", collection: 0..120 %>
