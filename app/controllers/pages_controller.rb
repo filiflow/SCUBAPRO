@@ -7,8 +7,8 @@ class PagesController < ApplicationController
       {
         lat: spot.latitude,
         lng: spot.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { spot: spot }),
-        marker_html: render_to_string(partial: "marker")
+        info_window_html: render_to_string(partial: "pages/partials/info_window", locals: { spot: spot })
+        # marker_html: render_to_string(partial: "marker")
       }
     end
     @title = "SCUBAPP"
