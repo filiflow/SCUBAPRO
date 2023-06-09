@@ -4,9 +4,9 @@ class Participation < ApplicationRecord
   has_many_attached :photos
   # has_many :presences, dependent: :destroy
 
-  validates :depth, presence: true
-  validates :gas, presence: true
-  validates :rating, presence: true
-  validates :diving_time, presence: true
-  validates :comment, presence: true
+  # validates :depth, presence: true
+  # validates :gas, presence: true
+  # validates :rating, presence: true
+  # validates :diving_time, presence: true
+  # validates :comment, presence: true
 end
