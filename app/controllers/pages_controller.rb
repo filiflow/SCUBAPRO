@@ -11,6 +11,6 @@ class PagesController < ApplicationController
         # marker_html: render_to_string(partial: "marker")
       }
     end
-    @title = "SCUBAPP"
+    @title = helpers.raw("#{helpers.image_tag('skubapplogo.png', width: 30)} SCUBAPP")
   end
 end

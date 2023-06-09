@@ -86,6 +86,26 @@
   padding: 10px 35px;
 }
 
+
+
+
+a.mapboxgl-ctrl-logo,
+.mapboxgl-ctrl-attrib.mapboxgl-compact .mapboxgl-ctrl-attrib-button,
+.mapboxgl-ctrl-attrib.mapboxgl-compact{
+  display: none;
+}
+
+
+.mapboxgl-ctrl-geocoder--input{
+  background-color: #03151f;
+}
+
+
+
+
+
+
+
 // #earth {
 //   width: 300px;
 //   height: 300px;
