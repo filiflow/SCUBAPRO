@@ -28,6 +28,7 @@ class ParticipationsController < ApplicationController
 
   def new
     @participation = Participation.new
+    @title = "+ ADD A NEW DIVE"
   end
 
   def create
