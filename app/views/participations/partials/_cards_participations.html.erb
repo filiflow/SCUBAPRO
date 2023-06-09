@@ -15,8 +15,10 @@
           <div class="row">
             <div class="col-6">
               <p id="stars">
-                <% (participation.rating).times do %>
-                  <i class="fa-solid fa-star" style="color: #ffd43b;"></i>
+                <% if participation.rating %>
+                  <% (participation.rating).times do %>
+                    <i class="fa-solid fa-star" style="color: #ffd43b;"></i>
+                  <% end %>
                 <% end %>
               </p>
             </div>

@@ -90,11 +90,12 @@
       <%= f.input :gas, label: "SELECT YOUR AIR", collection: ["air", "nitrox", "trimix", "helios", "oxygen", "argon"], include_blank: "Select the gas used" %>
     </div>
 
-
-    <div class="form-floating mb-4">
-      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-      <label for="floatingTextarea2">What about your feelings?</label>
+    <div class="form-floating mb-4 text optional participation_comment">
+      <textarea class="form-control text optional" rows="5" name="participation[comment]" id="participation_comment"></textarea>
+      <label class="form-label text optional" for="participation_comment">What about your feelings</label>
     </div>
+
+    <%#= f.input :comment, wrapper_class: "form-floating mb-4", label: "What about your feelings", input_html: {rows: "5"} %>
 
     <div class="input-case mb-4">
       <%= f.input :photo, as: :file, label: false %>

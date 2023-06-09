@@ -9,4 +9,7 @@ class Diving < ApplicationRecord
   validates :weather, presence: true
   validates :school, presence: true
   validates :spot, presence: true
+  validates :temperature, presence: true
+  validates :date, presence: true
+  validates :visibility, presence: true
 end
