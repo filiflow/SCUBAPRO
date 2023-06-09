@@ -10,6 +10,11 @@
   .form-floating {
     color: initial;
   }
+
+  .form-floating > .form-control{
+    height: min-content;
+  }
+
 }
 
 .fa-2xl {

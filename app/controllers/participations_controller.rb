@@ -60,6 +60,6 @@ class ParticipationsController < ApplicationController
   end
 
   def participation_params
-    params.require(:participation).permit(:user_id, :diving_id, :depth, :gas, :rating, :diving_time)
+    params.require(:participation).permit(:user_id, :diving_id, :depth, :gas, :rating, :diving_time, :comment)
   end
 end

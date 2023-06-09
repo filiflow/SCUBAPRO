@@ -4,8 +4,8 @@
 
     <div class="row">
       <div class="col-12">
-        <img src="https://diveraid.com/wp-content/uploads/2023/03/start-diving.jpg" alt="diving">
-        <%# <%= cl_image_tag @participation.diving.spot.photo.key, height: 300, width: 400, crop: :fill %>
+        <%# <img src="https://diveraid.com/wp-content/uploads/2023/03/start-diving.jpg" alt="diving"> %>
+        <%= cl_image_tag @participation.diving.spot.photo.key, height: 300, width: 400, crop: :fill %>
       </div>
     </div>
 
@@ -14,8 +14,10 @@
         <div class="text-container">
           <h2 id="title"><%= @participation.diving.spot.name %></h2>
           <p id="rating">
-            <% (@participation.rating).times do %>
-              <i class="fa-solid fa-star" style="color: #ffd43b;"></i>
+            <% if @participation.rating %>
+              <% (@participation.rating).times do %>
+                <i class="fa-solid fa-star" style="color: #ffd43b;"></i>
+              <% end %>
             <% end %>
           </p>
         </div>
@@ -48,8 +50,18 @@
 
     <div class="row">
       <div class="col-12">
-        <p>Comments : </p>
+        <p>Comments : <%= @participation.comment %></p>
       </div>
+    </div>
+
+    <div class="carousel-inner">
+      <% @participation.photos.each do |photo| %>
+        <div class="carousel-item <%= 'active' if index.zero? %>">
+          <div class="carousel-caption d-md-block">
+            <%= cl_image_tag @participation.photo.key %>
+          </div>
+        </div>
+      <% end %>
     </div>
 
     <div class="row">
