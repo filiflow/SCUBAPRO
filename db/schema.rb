@@ -73,7 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_095128) do
     t.integer "diving_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "comment"
+    t.text "comment"
     t.index ["diving_id"], name: "index_participations_on_diving_id"
     t.index ["user_id"], name: "index_participations_on_user_id"
   end
