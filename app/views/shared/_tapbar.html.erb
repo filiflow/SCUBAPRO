@@ -1,24 +1,3 @@
-<%# <div class="scubapp-nav"> %>
-  <%# <div class="home-link">
-    <%= link_to '<i class="fa-solid fa-house"></i>'.html_safe, root_path %>
-  <%# </div> %>
-
-  <%# <div class="index"> %>
-    <%# <%= link_to '<span class="material-symbols-outlined">scuba_diving</span>'.html_safe, participations_path %>
-  <%# </div> %>
-
-  <%# <div class="new-diving">
-    <%= link_to '<i class="fa-sharp fa-solid fa-plus"></i>'.html_safe, new_diving_path %>
-  <%# </div> %>
-
-  <%# <div class="map-search">
-    <%= link_to '<i class="fa-solid fa-map"></i>'.html_safe, spots_path %>
-  <%# </div> %>
-
-  <%# <div class="profile-photo">
-    <%= link_to '<i class="fa-regular fa-user" style="color: #000000;"></i>'.html_safe, root_path %>
-  <%# </div> %>
-<%# </div> %>
 
 <%# <div class="container"> %>
 <div class="bar" data-controller="tapbar">
@@ -51,12 +30,11 @@
     <%= link_to '<i class="fa-solid fa-map"></i>'.html_safe, spots_path, class: "link" %>
   </div>
 
-  <%# profile %>
+  <%# animals %>
   <div class="bar-item <%= 'active' if current_page?(root_path) %> pre-active" >
     <div class="bar-fluid"></div>
     <div class="drop"></div>
-    <%= link_to '<i class="fa-regular fa-user"></i>'.html_safe, root_path, class: "link" %>
+    <%= link_to '<i class="fa-solid fa-fish"></i>'.html_safe, root_path, class: "link" %>
   </div>
 
 </div>
-<%# </div> %>

@@ -10,6 +10,8 @@
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .card-participation {
@@ -23,7 +25,6 @@
 .card-participation {
   h2 {
   color: $marine;
-  font-size: 16px;
   font-weight: bold;
   margin: 0;
   }
@@ -31,21 +32,16 @@
 
 .card-participation {
   p {
-  font-size: 12px;
   opacity: .7;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
   color: $marine;
   }
 }
 
 .card-participation {
   .card-infos {
-  padding: 16px 16px 10px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   position: relative;
+  padding: 6px 3px;
   }
 }
 
@@ -55,11 +51,16 @@ a {
 }
 
 .row {
-  padding: 0 16px 16px;
+  padding: 0 8px 8px;
 }
 
-.action-icons {
-  position: absolute;
-  right: 16px;
-  top: 10px;
+#date, #temp {
+  text-align: right;
 }
+
+
+// .action-icons {
+//   position: absolute;
+//   right: 16px;
+//   top: 10px;
+// }

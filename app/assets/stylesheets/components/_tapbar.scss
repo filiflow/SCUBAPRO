@@ -16,10 +16,6 @@
   bottom: 0;
   align-items: center;
   background-color: $background-blue;
-  // border-radius: 10px 10px 20px 20px;
-  // box-shadow: 3px 3px 0px 0px rgb(235, 59, 90);
-  // padding: 15px;
-  // padding-bottom: 25px;
 }
 
 .bar .bar-item {
@@ -29,24 +25,19 @@
   cursor: pointer;
 }
 
-// .bar .bar-item i {
 .bar .bar-item .link {
   z-index: 1;
   position: relative;
-  // color: #a4b0be;
-  // color: black;
   transition: all .3s ease-in-out;
   font-size: 20px;
 }
 
-// .bar .bar-item.pre-active i {
 .bar .bar-item.pre-active .link {
   color: $icon-blue;
 }
 
-// .bar .bar-item.active i {
 .bar .bar-item.active .link {
-  color: $icon-blue;
+  color: $turquoise;
   animation: colour 1s ease-in-out;
 }
 
