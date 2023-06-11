@@ -1,7 +1,13 @@
 <div class="background-index">
 
-  <div class="container">
-    <%= render 'participations/partials/cards_participations' %>
+  <div data-controller="searchbar">
+    <%= render 'shared/search_form' %>
+
+    <%= turbo_frame_tag :participations, target: "_top" do %>
+      <div class="container">
+        <%= render 'participations/partials/cards_participations' %>
+      </div>
+    <% end %>
   </div>
 
 </div>
