@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[ home index ]
 
+  def launch
+  end
+
   def home
     @spots = Spot.all
     @markers = @spots.geocoded.map do |spot|
