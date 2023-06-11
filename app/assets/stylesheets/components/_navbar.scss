@@ -1,15 +1,13 @@
 .scubapp-ban{
     display: flex;
-    // position: sticky;
     top: 0;
-    background-color: $background-blue;
-    padding: 8px;
-    padding-top: 10px;
+    background-color: transparent;
   }
 
   .title{
     color: $dark-blue;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
+    font-size: 30px;
   }

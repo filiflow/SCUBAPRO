@@ -19,12 +19,12 @@
 }
 
 #homeCarousel {
-  padding: 20px;
+  padding: 10px;
   .carousel-item img {
     height: 180px;
     object-fit: cover;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 7px;
   }
 }
 
@@ -32,19 +32,22 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: center;
 }
 
 .statistic {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 100px;
   margin: 10px;
   padding: 20px;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
+  background-color: $background-blue;
+  // border: 1px solid #ccc;
   text-align: center;
-  border-radius: 15px;
-  background-color: $background-purple;
-  color: white;
+  border-radius: 12px;
+  color: #E7F2FF;
+  font-size: 30px;
+ line-height: 41px;
+
 }
 
 .mapbox-ctrl-bottom-left {

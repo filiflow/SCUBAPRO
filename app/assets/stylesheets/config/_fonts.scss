@@ -5,9 +5,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
+
 // Define fonts for body and headers
-$body-font: 'Balsamiq Sans', cursive;
-$headers-font: 'Balsamiq Sans', cursive;
+$body-font: 'Barlow Semi Condensed', sans-serif;
+$headers-font: 'Barlow Semi Condensed', sans-serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

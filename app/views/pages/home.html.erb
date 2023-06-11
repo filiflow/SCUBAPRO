@@ -1,28 +1,36 @@
 <div class="background-new">
 
   <div class="homepage-container">
+    <h4>Your last dives</h4>
     <%= render 'pages/partials/carousel' %>
     <%# <%= render 'pages/partials/map' %>
   </div>
 
 <div class="stats_home">
   <div class="statistic">
-    <h4>Total diving time</h4>
-    <p><%= @total_diving_time %> minutes</p>
+    <h1 class="number"><%= @total_diving_time %>min</h1>
+    <h5>underwater</h5>
   </div>
 
   <div class="statistic">
-    <h4>Maximum depth</h4>
-    <p><%= @max_depth %> meters</p>
+    <h1 class="number"><%= @max_depth %>M</h1>
+    <h5>Max Depth</h5>
   </div>
 
   <div class="statistic">
-    <h4>Total dives</h4>
-    <p><%= @total_dives %></p>
+    <h1 class="number"><%= @total_dives %></h1>
+    <h5>Dives</h5>
   </div>
 
+<%# Attention à modifier %>
   <div class="statistic">
-    <h4>Total spots visited</h4>
-    <p><%= @total_spots %></p>
+    <h1 class="number"><%= @total_dives %></h1>
+    <h5>Species seen</h5>
+  </div>
+<%# Attention à modifier %>
+
+  <div class="statistic">
+    <h1 class="number"><%= @total_spots %></h1>
+    <h5>Spots visited</h5>
   </div>
 </div>

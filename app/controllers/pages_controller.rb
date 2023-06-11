@@ -11,7 +11,7 @@ class PagesController < ApplicationController
         # marker_html: render_to_string(partial: "marker")
       }
     end
-    @title = helpers.raw("#{helpers.image_tag('skubapplogo.png', width: 30)} SCUBAPP")
+    @title = helpers.raw("#{helpers.image_tag('notrelogo.png', width: 30)} SCUBAPP")
     @total_diving_time = Participation.sum(:diving_time)
     @max_depth = Participation.maximum(:depth)
     @total_dives = Diving.count
