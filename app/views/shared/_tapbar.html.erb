@@ -3,10 +3,10 @@
 <div class="bar" data-controller="tapbar">
 
   <%# homepage %>
-  <div class="bar-item <%= 'active' if current_page?(root_path) %> pre-active" >
+  <div class="bar-item <%= 'active' if current_page?(pages_path) %> pre-active" >
     <div class="bar-fluid"></div>
     <div class="drop"></div>
-    <%= link_to '<i class="fa-solid fa-house"></i>'.html_safe, root_path, class: "link" %>
+    <%= link_to '<i class="fa-solid fa-house"></i>'.html_safe, pages_path, class: "link" %>
   </div>
 
   <%# index %>
@@ -31,10 +31,10 @@
   </div>
 
   <%# animals %>
-  <div class="bar-item <%= 'active' if current_page?(root_path) %> pre-active" >
+  <div class="bar-item <%= 'active' if current_page?(pages_path) %> pre-active" >
     <div class="bar-fluid"></div>
     <div class="drop"></div>
-    <%= link_to '<i class="fa-solid fa-fish"></i>'.html_safe, root_path, class: "link" %>
+    <%= link_to '<i class="fa-solid fa-fish"></i>'.html_safe, pages_path, class: "link" %>
   </div>
 
 </div>

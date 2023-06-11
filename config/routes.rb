@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  # root to: "pages#home"
+  root to: "pages#launch"
+
+  get 'pages', to: 'pages#home'
 
   resources :divings, only: %i[new create edit update] do
     resources :participations, only: %i[new create edit update]

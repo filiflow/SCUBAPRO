@@ -1,28 +1,12 @@
-.background {
-  background-repeat: no-repeat;
+.background-show {
+  background-color: $background-blue;
   background-position: center;
   background-size: 100% 100%;
   min-height: 100vh;
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 
-.show-container {
-  width: 80%;
-  border: 1px solid grey;
-  border-radius: 10px;
-  padding: 24px 8px;
-  margin: auto;
-  background-color: rgba(2, 2, 2, 0.511);
-  color: white;
-
-  img {
-    height: 90%;
-    width: 80%;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 10px;
-  }
+.spot-photo {
+  border-radius: 5px;
 }
 
 .text-container {
@@ -31,9 +15,14 @@
 }
 
 #title {
-  text-align: center;
+  text-align: left;
+  color: $dark-blue;
 }
 
 #rating {
   text-align: center;
+}
+
+#date {
+  text-align: left;
 }

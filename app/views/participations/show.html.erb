@@ -1,22 +1,36 @@
-<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1527100673774-cce25eafaf7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80');">
+<div class="background-show">
 
-  <div class="show-container">
+  <div class="container">
 
     <div class="row">
       <div class="col-12">
-        <%# <img src="https://diveraid.com/wp-content/uploads/2023/03/start-diving.jpg" alt="diving"> %>
-        <%= cl_image_tag @participation.diving.spot.photo.key, height: 300, width: 400, crop: :fill %>
+        <div class="text-container">
+          <h2 id="title"><%= (@participation.diving.spot.name).upcase %></h2>
+        </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-12">
         <div class="text-container">
-          <h2 id="title"><%= @participation.diving.spot.name %></h2>
+          <h2 id="date"><%= (@participation.diving.date) %></h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <%= cl_image_tag @participation.diving.spot.photo.key, height: 250, width: 350, crop: :fill, class: 'spot-photo' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="text-container">
           <p id="rating">
             <% if @participation.rating %>
               <% (@participation.rating).times do %>
-                <i class="fa-solid fa-star" style="color: #ffd43b;"></i>
+                <i class="fa-solid fa-star" style="color: #10A59C;"></i>
               <% end %>
             <% end %>
           </p>
