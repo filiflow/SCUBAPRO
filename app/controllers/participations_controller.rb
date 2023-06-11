@@ -3,7 +3,7 @@ class ParticipationsController < ApplicationController
 
   def index
     @participations = Participation.all
-    @title = "MY SCUBA DIVES"
+    @title = "Your dives"
   end
 
   def show

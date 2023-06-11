@@ -15,7 +15,7 @@
   position: sticky;
   bottom: 0;
   align-items: center;
-  background-color: $light-blue;
+  background-color: $background-blue;
   // border-radius: 10px 10px 20px 20px;
   // box-shadow: 3px 3px 0px 0px rgb(235, 59, 90);
   // padding: 15px;
@@ -41,12 +41,12 @@
 
 // .bar .bar-item.pre-active i {
 .bar .bar-item.pre-active .link {
-  color: rgb(80, 45, 161);
+  color: $icon-blue;
 }
 
 // .bar .bar-item.active i {
 .bar .bar-item.active .link {
-  color: rgb(80, 45, 161);
+  color: $icon-blue;
   animation: colour 1s ease-in-out;
 }
 
@@ -54,7 +54,7 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  background-color: lightblue;
+  background-color: $turquoise;
   width: 100%;
   height: 0px;
   animation: fluid 1s ease-in-out;
@@ -65,7 +65,7 @@
   position: absolute;
   top: 0px;
   left: -50%;
-  background-color: lightblue;
+  background-color: $turquoise;
   width: 110%;
   height: 400%;
   border-radius: 50%;
@@ -76,7 +76,7 @@
   position: absolute;
   top: 0px;
   right: -50%;
-  background-color: lightblue;
+  background-color: $turquoise;
   width: 110%;
   height: 400%;
   border-radius: 50%;
@@ -86,7 +86,7 @@
   position: absolute;
   top: -2.5px;
   left: 30.5px;
-  background-color: lightblue;
+  background-color: $turquoise;
   width: 2.5px;
   height: 2.5px;
   border-radius: 50%;
@@ -100,7 +100,7 @@
     transform: scale(1);
   }
   60% {
-    color: lightblue;
+    color: $turquoise;
     transform: scale(1);
   }
   70% { transform: scale(1.1); }
