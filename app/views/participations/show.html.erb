@@ -1,21 +1,13 @@
-<div class="background-show">
+<div class="background">
 
   <div class="container">
 
-    <div class="row">
-      <div class="col-12">
-        <div class="text-container">
-          <h2 id="title"><%= (@participation.diving.spot.name).upcase %></h2>
-        </div>
-      </div>
+    <div class="text-container">
+      <h2 class="titles mt-3"><%= @participation.diving.spot.name %></h2>
     </div>
 
-    <div class="row">
-      <div class="col-12">
-        <div class="text-container">
-          <h2 id="date"><%= (@participation.diving.date) %></h2>
-        </div>
-      </div>
+    <div class="text-container">
+      <h4 class="titles"><%= (@participation.diving.date).strftime("%d/%m/%Y") %></h2>
     </div>
 
     <div class="row">

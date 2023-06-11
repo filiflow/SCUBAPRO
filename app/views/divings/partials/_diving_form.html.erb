@@ -1,4 +1,7 @@
 <div class="form-container">
+
+  <h2 class="titles mt-3 mb-4">Add a dive</h2>
+
   <%= simple_form_for(@diving) do |f| %>
 
     <div class="select-your-spot">
@@ -9,7 +12,7 @@
           <%= f.association :spot,
                       as: :radio_buttons,
                       legend_tag: false,
-                      collection: Spot.all.map { |spot| [render('divings/partials/spot_label', spot: spot), spot.id] },
+                      collection: Spot.all.map { |spot| [render('divings/partials/spot_label', spot: spot, class: 'name'), spot.id] },
                       wrapper_class:       "d-flex horizontal-scroll",
                       input_html: { class: "sr-only"},
                       item_wrapper_class:  "titi",
@@ -137,7 +140,8 @@
     </div>
 
     <div class="button-container">
-        <%= f.submit value: "Next", class:"btn btn-outline-dark"%>
+        <%= f.submit value: "Next", class:"btn"%>
     </div>
   <% end %>
+
 </div>

@@ -1,18 +1,18 @@
-.form-container{
-  z-index: 1;
-  background-color: rgba(250, 249, 249, 0.511);
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
+.form-container {
+  // z-index: 1;
+  // background-color: rgba(250, 249, 249, 0.511);
+  // background-size: cover;
+  // background-position: center;
+  // border-radius: 8px;
   padding: 10px;
-  color: rgb(0, 0, 0);
-  box-shadow: 20px;
-  margin-bottom: 5px;
+  // color: rgb(0, 0, 0);
+  // box-shadow: 20px;
+  // margin-bottom: 5px;
   .form-floating {
     color: initial;
   }
 
-  .form-floating > .form-control{
+  .form-floating > .form-control {
     height: min-content;
   }
 
@@ -23,13 +23,13 @@
 }
 
 
-.spot{
+.spot {
   border-radius: 50px;
   width: 100px;
   height: 100px;
 }
 
-.name{
+.name {
   font-size: 10px;
   text-align: center;
 }
@@ -42,14 +42,14 @@
 
 .titi input[type="radio"]+label {
   opacity: 0.8;
+  color: $icon-blue;
 }
 
 .titi input[type="radio"]:checked+label {
   opacity: 1;
   transition: 0.1s;
+  color: $turquoise;
 }
-
-
 
 .horizontal-scroll {
   margin-bottom: 5px;
@@ -57,51 +57,55 @@
   position: relative;
 }
 
-// .btn{
-//   border-radius: 40px;
-//   width: 130px;
-// }
-
-.button-container{
+.button-container {
   text-align: center;
 }
 
-.input-case{
+.input-case {
   margin-bottom: 40px;
 }
 
-.input-title{
+.input-title {
   display: flex;
   justify-content: center;
+  color: $marine;
+  font-weight: bold;
 }
 
-.form-label{
+.name {
+  color: $marine;
+  font-size: 15px;
+}
+
+.form-label {
   display: flex;
   justify-content: center;
+  color: $marine;
 }
 
-.calendar{
+.calendar {
   margin-top: 30px;
 }
 
-.select-your-spot{
+.select-your-spot {
   margin-top: 20px;
 }
 
-.select-your-school{
+.select-your-school {
   margin-top: 20px;
 }
 
 .range_graduation {
   display: flex;
   justify-content: space-between;
+  color: $marine;
 }
 
-.w100{
+.w100 {
   width: 100%;
 }
 
-.weather-icons{
+.weather-icons {
   display: flex;
   justify-content: center;
 }

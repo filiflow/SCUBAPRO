@@ -1,5 +1,17 @@
-  <div class="earth-container">
-    <%= link_to spots_path do %>
-      <div id="box"></div>
-    <% end %>
+<div class="background">
+
+  <div class="container">
+
+    <h2 class="titles mt-3 mb-5">Next spot ?</h2>
+
+    <h4 class="titles">Featured destinations</h4>
+
+    <%= render 'pages/partials/carousel' %>
+
+    <%= render 'spots/partials/map' %>
+
   </div>
+
+</div>
+
+<%= render 'shared/tapbar' %>
