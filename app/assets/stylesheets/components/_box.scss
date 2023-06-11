@@ -1,0 +1,14 @@
+.box {
+  background-color: $launch-blue;
+  border-radius: 10px;
+  color: $white-text;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 6px;
+  background: linear-gradient(
+    to top,
+    rgba(5, 48, 159, 1),
+    rgba(5, 48, 159, 0.8)
+  );
+}
