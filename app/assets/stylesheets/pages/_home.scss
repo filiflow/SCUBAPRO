@@ -6,25 +6,45 @@
   padding-top: 30px;
 }
 
-.homepage-container {
-  background-color: rgba(255, 255, 255, 0.652);
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  padding: 10px;
-}
+// .homepage-container {
+//   background-color: rgba(255, 255, 255, 0.882);
+//   background-size: cover;
+//   background-position: center;
+//   border-radius: 8px;
+//   padding: 10px;
+// }
 
 .homepage-titles {
-  color: white;
+  color: $dark-blue;
 }
 
 #homeCarousel {
+  padding: 20px;
   .carousel-item img {
     height: 180px;
     object-fit: cover;
     width: 100%;
     border-radius: 10px;
   }
+}
+
+.stats_home{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.statistic {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  text-align: center;
+  border-radius: 15px;
+  background-color: $background-purple;
+  color: white;
 }
 
 .mapbox-ctrl-bottom-left {
