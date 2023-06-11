@@ -1,36 +1,47 @@
-<div class="background-new">
+<%# <%= render "shared/navbar" %>
+
+<div class="background-home">
 
   <div class="homepage-container">
-    <h4>Your last dives</h4>
-    <%= render 'pages/partials/carousel' %>
-    <%# <%= render 'pages/partials/map' %>
+
+    <h2 class="homepage-titles">Hi <%= (current_user.nickname).capitalize %>,</h2>
+
+    <h4 class="homepage-titles">Your last dive</h4>
+    <%# <%= render 'pages/partials/carousel' %>
+
   </div>
 
-<div class="stats_home">
-  <div class="statistic">
-    <h1 class="number"><%= @total_diving_time %>min</h1>
-    <h5>underwater</h5>
+  <div class="stats_home">
+
+    <div class="statistic">
+      <h1 class="number"><%= @total_diving_time %>min</h1>
+      <h5>underwater</h5>
+    </div>
+
+    <div class="statistic">
+      <h1 class="number"><%= @max_depth %>M</h1>
+      <h5>Max Depth</h5>
+    </div>
+
+    <div class="statistic">
+      <h1 class="number"><%= @total_dives %></h1>
+      <h5>Dives</h5>
+    </div>
+
+    <%# Attention à modifier %>
+    <div class="statistic">
+      <h1 class="number"><%= @total_dives %></h1>
+      <h5>Species seen</h5>
+    </div>
+
+    <%# Attention à modifier %>
+    <div class="statistic">
+      <h1 class="number"><%= @total_spots %></h1>
+      <h5>Spots visited</h5>
+    </div>
+
   </div>
 
-  <div class="statistic">
-    <h1 class="number"><%= @max_depth %>M</h1>
-    <h5>Max Depth</h5>
-  </div>
-
-  <div class="statistic">
-    <h1 class="number"><%= @total_dives %></h1>
-    <h5>Dives</h5>
-  </div>
-
-<%# Attention à modifier %>
-  <div class="statistic">
-    <h1 class="number"><%= @total_dives %></h1>
-    <h5>Species seen</h5>
-  </div>
-<%# Attention à modifier %>
-
-  <div class="statistic">
-    <h1 class="number"><%= @total_spots %></h1>
-    <h5>Spots visited</h5>
-  </div>
 </div>
+
+<%= render "shared/tapbar" %>

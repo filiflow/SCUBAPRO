@@ -1,21 +1,16 @@
 .background-home {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-  min-height: 100vh;
-  padding-top: 30px;
+  background-color: $background-blue;
+  height: 100vh;
+  background: linear-gradient(
+    to top,
+    rgba(209, 230, 255, 1),
+    rgba(255, 255, 255, 1)
+  );
 }
-
-// .homepage-container {
-//   background-color: rgba(255, 255, 255, 0.882);
-//   background-size: cover;
-//   background-position: center;
-//   border-radius: 8px;
-//   padding: 10px;
-// }
 
 .homepage-titles {
   color: $dark-blue;
+  font-weight: bold;
 }
 
 #homeCarousel {
@@ -28,7 +23,7 @@
   }
 }
 
-.stats_home{
+.stats_home {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -40,7 +35,7 @@
   height: 100px;
   margin: 10px;
   padding: 20px;
-  background-color: $background-blue;
+  background-color: $marine;
   // border: 1px solid #ccc;
   text-align: center;
   border-radius: 12px;
