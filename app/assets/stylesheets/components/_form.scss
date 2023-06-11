@@ -1,11 +1,12 @@
 .form-container{
   z-index: 1;
-  background-color: rgba(2, 2, 2, 0.511);
+  background-color: rgba(250, 249, 249, 0.511);
   background-size: cover;
   background-position: center;
   border-radius: 8px;
   padding: 10px;
-  color: white;
+  color: rgb(0, 0, 0);
+  box-shadow: 20px;
   margin-bottom: 5px;
   .form-floating {
     color: initial;
@@ -24,8 +25,8 @@
 
 .spot{
   border-radius: 50px;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
 }
 
 .name{
@@ -40,13 +41,15 @@
 }
 
 .titi input[type="radio"]+label {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .titi input[type="radio"]:checked+label {
   opacity: 1;
-  transition: 0.1s
+  transition: 0.1s;
 }
+
+
 
 .horizontal-scroll {
   margin-bottom: 5px;
@@ -54,10 +57,10 @@
   position: relative;
 }
 
-.btn{
-  border-radius: 40px;
-  width: 130px;
-}
+// .btn{
+//   border-radius: 40px;
+//   width: 130px;
+// }
 
 .button-container{
   text-align: center;
@@ -106,5 +109,5 @@
 .stars-rating {
   display: flex;
   justify-content: center;
-  font-size: 20px;
+  font-size: 30px;
 }
