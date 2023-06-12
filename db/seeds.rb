@@ -2,22 +2,22 @@ User.destroy_all
 puts "Create users :)"
 puts "Scubapp family will be soon created 💌"
 user = User.new(email: "florian@gmail.com", password: "azerty", nickname: "filiflow")
-file = URI.open("https://files.slack.com/files-tmb/T02NE0241-F05BK52AZ2P-b333463d8c/img_5484_720.jpg")
+file = URI.open("app/assets/images/user/filiflow.jpg")
 user.photo.attach(io: file, filename: "user photo", content_type: "image/png")
 user.save!
 
 user = User.new(email: "anyssa@gmail.com", password: "azerty", nickname: "any")
-file = URI.open("https://ca.slack-edge.com/T02NE0241-U053KM37P4K-81e4fd8d58a5-72")
+file = URI.open("app/assets/images/user/anyssa.png")
 user.photo.attach(io: file, filename: "user photo", content_type: "image/png")
 user.save!
 
 user = User.new(email: "marianne@gmail.com", password: "azerty", nickname: "pinson")
-file = URI.open("https://files.slack.com/files-pri/T02NE0241-F05BK8NG7QS/img_20230608_102327.jpg")
+file = URI.open("app/assets/images/user/pinson.jpg")
 user.photo.attach(io: file, filename: "user photo", content_type: "image/png")
 user.save!
 
 user = User.new(email: "flogoon@gmail.com", password: "azerty", nickname: "flogoon")
-file = URI.open("https://ca.slack-edge.com/T02NE0241-U053KS1QX43-04a999003bb0-512")
+file = URI.open("app/assets/images/user/flogoon.jpg")
 user.photo.attach(io: file, filename: "user photo", content_type: "image/png")
 user.save!
 

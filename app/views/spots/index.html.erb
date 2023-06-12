@@ -2,7 +2,10 @@
 
   <div class="container">
 
-    <h2 class="titles mt-3 mb-5">Next spot ?</h2>
+  <div class="div-banner">
+    <h2 class="titles">Next spot ?</h2>
+    <%= cl_image_tag current_user.photo.key, id:"avatar", height: 60, width: 60, crop: :fill%>
+  </div>
 
     <h4 class="titles">Featured destinations</h4>
 
