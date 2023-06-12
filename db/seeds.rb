@@ -1,6 +1,6 @@
 User.destroy_all
 puts "Creating users :)"
-puts "Scubapp family will be soon created 💌 ..."
+puts "Scubapp family will soon be created 💌 ..."
 user = User.new(email: "florian@gmail.com", password: "azerty", nickname: "filiflow")
 file = URI.open("app/assets/images/user/filiflow.jpg")
 user.photo.attach(io: file, filename: "user photo", content_type: "image/png")
@@ -23,9 +23,8 @@ user.save!
 
 puts "Users have been created!"
 
-
 Spot.destroy_all
-puts "Create Spots"
+puts "Creating Spots..."
 
 spot = Spot.new(name: "Summer Grain", latitude: 43.663549843042425, longitude: -1.4224476790477758, description: "The perfect spot to enjoy hot summer days. Its fine sandy beaches and crystal-clear waters make it a true summer paradise.")
 file = URI.open("https://images.unsplash.com/photo-1682686581776-b6ebee7c150e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80")
@@ -72,6 +71,7 @@ file = URI.open("https://images.unsplash.com/photo-1682687981630-cefe9cd73072?ix
 spot.photo.attach(io: file, filename: "spot photo", content_type: "image/png")
 spot.save!
 
+puts "Spots have been created!"
 
 School.destroy_all
 puts "Creating Schools..."
@@ -128,25 +128,27 @@ school.save!
 puts "Schools have been created!"
 
 Diving.destroy_all
-puts "Creating Divings"
+puts "Creating Divings..."
 Diving.create!(date: Date.new, weather: "Cloudy", temperature: 10, visibility: 4, user: User.all.sample, spot: Spot.all.sample, school: School.all.sample)
 Diving.create!(date: Date.new, weather: "Sunny", temperature: 30, visibility: 5, user: User.all.sample, spot: Spot.all.sample, school: School.all.sample)
 Diving.create!(date: Date.new, weather: "Stormy", temperature: 28, visibility: 1, user: User.all.sample, spot: Spot.all.sample, school: School.all.sample)
 Diving.create!(date: Date.new, weather: "Sunny", temperature: 27, visibility: 6, user: User.all.sample, spot: Spot.all.sample, school: School.all.sample)
 Diving.create!(date: Date.new, weather: "Windy", temperature: 16, visibility: 7, user: User.all.sample, spot: Spot.all.sample, school: School.all.sample)
+
 puts "Divings have been created!"
 
 Participation.destroy_all
-puts "Creating Participations"
+puts "Creating Participations..."
 Participation.create!(user: User.all.sample, diving: Diving.all.sample, depth: 12, gas: "Nitrox", rating: 5, diving_time: 35, comment: "Amazing dive! The deep descent was breathtaking, and the Nitrox mix allowed for longer bottom time. The marine life was vibrant, and I spotted some beautiful corals.")
 Participation.create!(user: User.all.sample, diving: Diving.all.sample, depth: 6, gas: "Trimix", rating: 4, diving_time: 28, comment: "Incredible dive experience! The use of Trimix gas enabled us to explore greater depths. I encountered a stunning variety of fish and even spotted a majestic sea turtle.")
 Participation.create!(user: User.all.sample, diving: Diving.all.sample, depth: 3, gas: "Helios", rating: 5, diving_time: 45, comment: "Unforgettable dive! The Helios gas mixture provided excellent buoyancy control and a longer dive time. I was surrounded by a kaleidoscope of colorful fish, and the visibility was exceptional.")
 Participation.create!(user: User.all.sample, diving: Diving.all.sample, depth: 4, gas: "Air", rating: 3, diving_time: 25, comment: "Enjoyable dive with moderate effort. Although the dive was relatively shallow, I still had a chance to explore a fascinating shipwreck and encountered a curious octopus.")
 Participation.create!(user: User.all.sample, diving: Diving.all.sample, depth: 10, gas: "Argon", rating: 2, diving_time: 15, comment: "Challenging dive due to the depth. The Argon gas mixture required careful monitoring of decompression limits. Despite the effort, I was rewarded with a sighting of a rare seahorse.")
+
 puts "Participations have been created!"
 
 Animal.destroy_all
-puts "Creating Animals"
+puts "Creating Animals..."
 
 animal = Animal.new(name: "Variable Neon Slug",
                     category: "Nudibranch",
