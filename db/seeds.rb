@@ -23,54 +23,55 @@ user.save!
 
 puts "Finish!"
 
+
 Spot.destroy_all
 puts "Create Spots"
-spot = Spot.new(name: "Grain d'été", latitude: 43.663549843042425 , longitude: -1.4224476790477758)
+
+spot = Spot.new(name: "Summer Grain", latitude: 43.663549843042425, longitude: -1.4224476790477758, description: "The perfect spot to enjoy hot summer days. Its fine sandy beaches and crystal-clear waters make it a true summer paradise.")
 file = URI.open("https://images.unsplash.com/photo-1682686581776-b6ebee7c150e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80")
 spot.photo.attach(io: file, filename: "spot photo", content_type: "image/png")
 spot.save!
 
-spot = Spot.new(name: "Poivre et Sel", latitude: 43.29287278225046, longitude: 5.3637772073417676)
+spot = Spot.new(name: "Salt and Pepper", latitude: 43.29287278225046, longitude: 5.3637772073417676, description: "A charming spot that offers a delightful blend of flavors. With its picturesque views and culinary delights, it's the perfect place to indulge your senses.")
 file = URI.open("https://images.unsplash.com/photo-1517627043994-b991abb62fc8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=417&q=80")
 spot.photo.attach(io: file, filename: "spot photo", content_type: "image/png")
 spot.save!
 
-spot = Spot.new(name: "Coral Paradise", latitude: 25.779963309453372, longitude: -80.18534333181508)
+spot = Spot.new(name: "Coral Paradise", latitude: 25.779963309453372, longitude: -80.18534333181508, description: "Immerse yourself in the breathtaking beauty of a coral paradise. Explore vibrant marine life and stunning coral formations in this underwater wonderland.")
 file = URI.open("https://images.unsplash.com/photo-1564381564020-17161124fff1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80")
 spot.photo.attach(io: file, filename: "spot photo", content_type: "image/png")
 spot.save!
 
-spot = Spot.new(name: "Sunken Shipwreck", latitude: -23.01030806612166, longitude: -43.30437369946872)
+spot = Spot.new(name: "Sunken Shipwreck", latitude: -23.01030806612166, longitude: -43.30437369946872, description: "Explore the mysterious depths where a sunken shipwreck lies. Dive into history and witness the haunting beauty of this underwater time capsule.")
 file = URI.open("https://images.unsplash.com/photo-1595323397978-65433d24fc23?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80")
 spot.photo.attach(io: file, filename: "spot photo", content_type: "image/png")
 spot.save!
 
-spot = Spot.new(name: "Turtle Cove", latitude: -33.87092171946808, longitude: 151.26227239554467)
+spot = Spot.new(name: "Turtle Cove", latitude: -33.87092171946808,longitude: 151.26227239554467, description: "Discover the enchanting world of Turtle Cove. Encounter graceful sea turtles and soak in the beauty of the surrounding coastal landscapes.")
 file = URI.open("https://images.unsplash.com/photo-1628630500614-1c8924c99c3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80")
 spot.photo.attach(io: file, filename: "spot photo", content_type: "image/png")
 spot.save!
 
-spot = Spot.new(name: "Manta Ray Bay", latitude: -15.458420415233364, longitude: 145.25123922551762)
+spot = Spot.new(name: "Manta Ray Bay", latitude: -15.458420415233364, longitude: 145.25123922551762, description: "Immerse yourself in the wonder of Manta Ray Bay. Witness the graceful dance of majestic manta rays in their natural habitat.")
 file = URI.open("https://images.unsplash.com/photo-1682686581663-179efad3cd2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80")
 spot.photo.attach(io: file, filename: "spot photo", content_type: "image/png")
 spot.save!
 
-spot = Spot.new(name: "Whale Shark Point", latitude: -15.458420415233364, longitude: 145.25123922551762)
+spot = Spot.new(name: "Whale Shark Point", latitude: -15.458420415233364, longitude: 145.25123922551762, description: "Embark on an unforgettable encounter with whale sharks. Dive into the depths and witness the gentle giants of the ocean up close.")
 file = URI.open("https://images.unsplash.com/photo-1561983779-7d7e065befa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=389&q=80")
 spot.photo.attach(io: file, filename: "spot photo", content_type: "image/png")
 spot.save!
 
-spot = Spot.new(name: "Seahorse Haven", latitude: -32.82024974814636, longitude: 19.70669741026949)
+spot = Spot.new(name: "Seahorse Haven", latitude: -32.82024974814636, longitude: 19.70669741026949, description: "Enter the magical world of Seahorse Haven. Dive into crystal-clear waters and witness these elusive creatures in their natural habitat.")
 file = URI.open("https://images.unsplash.com/photo-1586508577428-120d6b072945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80")
 spot.photo.attach(io: file, filename: "spot photo", content_type: "image/png")
 spot.save!
 
-spot = Spot.new(name: "Deep Blue Abyss", latitude: 1.4711728988568646, longitude: 103.8332955470266)
+spot = Spot.new(name: "Deep Blue Abyss", latitude: 1.4711728988568646, longitude: 103.8332955470266, description: "Plunge into the depths of the Deep Blue Abyss. Explore the mesmerizing underwater world and witness the awe-inspiring beauty of marine life.")
 file = URI.open("https://images.unsplash.com/photo-1682687981630-cefe9cd73072?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80")
 spot.photo.attach(io: file, filename: "spot photo", content_type: "image/png")
 spot.save!
 
-puts "Spots have been created!"
 
 School.destroy_all
 puts "Create Schools"
