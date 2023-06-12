@@ -1,0 +1,28 @@
+.background-launch {
+  background-color: $launch-blue;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(
+    to top,
+    rgba(5, 48, 159, 1),
+    rgba(91, 119, 190, 1)
+    );
+    display: flex;
+    align-items: center;
+}
+
+.launch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 70%;
+  }
+}
+
+.logo-name {
+  color: $white-text;
+  font-size: 40px;
+  font-weight: bold;
+}

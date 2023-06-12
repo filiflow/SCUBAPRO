@@ -1,12 +1,18 @@
-<div class="background-new" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url('https://images.pexels.com/photos/3560168/pexels-photo-3560168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+<div class="background">
 
-  <h2 class="homepage-titles">Edit your diving informations : <%= @participation.diving.spot.name %></h2>
+  <div class="container">
 
-  <%= render 'participations/partials/form', participation: @participation %>
+    <h2 class="titles">Edit your diving informations : <%= @participation.diving.spot.name %></h2>
 
-  <br>
+    <%= render 'participations/partials/form', participation: @participation %>
 
-  <div>
-    <%= link_to "Show this participation", @participation %> |
-    <%= link_to "Back to my participations", participations_path %>
+    <br>
+
+    <div>
+      <%= link_to "Show this participation", @participation %> |
+      <%= link_to "Back to my participations", participations_path %>
+    </div>
+
   </div>
+
+</div>

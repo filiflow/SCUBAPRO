@@ -1,42 +1,57 @@
-<div class="background-new">
+<div class="background">
 
-  <div class="homepage-container">
-    <h4>Your last dives</h4>
+  <div class="container">
+
+    <h2 class="titles mt-3 mb-5">Hi <%= (current_user.nickname).capitalize %>,</h2>
+
+    <h4 class="titles">Your last dive</h4>
+
     <%= render 'pages/partials/carousel' %>
-    <%# <%= render 'pages/partials/map' %>
+
+    <h4 class="titles mt-4">Your stats</h4>
+
+
+    <div class="stats_home">
+
+      <div class="statistic">
+        <div class="stat-time">
+          <% if @total_diving_time > 60 %>
+            <% hours = @total_diving_time / 60 %>
+            <% minutes = @total_diving_time % 60 %>
+            <p><strong><%= "#{hours}h#{sprintf('%02d', minutes)}" %></strong></p>
+          <% else %>
+            <p><%= @total_diving_time %> minutes</p>
+          <% end %>
+          <h3>Underwater</h3>
+        </div>
+      </div>
+
+      <div class="statistic">
+        <h1 class="number"><%= @max_depth %>M</h1>
+        <h5>Max Depth</h5>
+      </div>
+
+      <div class="statistic">
+        <h1 class="number"><%= @total_dives %></h1>
+        <h5>Dives</h5>
+      </div>
+
+      <%# Attention à modifier %>
+      <div class="statistic">
+        <h1 class="number"><%= @total_dives %></h1>
+        <h5>Species seen</h5>
+      </div>
+
+      <%# Attention à modifier %>
+      <div class="statistic">
+        <h1 class="number"><%= @total_spots %></h1>
+        <h5>Spots visited</h5>
+      </div>
+
+    </div>
+
   </div>
 
-<div class="stats_home">
-  <div class="statistic">
-    <h3>Total diving time</h3>
-    <% if @total_diving_time > 60 %>
-      <% hours = @total_diving_time / 60 %>
-      <% minutes = @total_diving_time % 60 %>
-      <p><%= "#{hours}h#{sprintf('%02d', minutes)}" %></p>
-    <% else %>
-      <p><%= @total_diving_time %> minutes</p>
-    <% end %>
-  </div>
-
-  <div class="statistic">
-    <h1 class="number"><%= @max_depth %>M</h1>
-    <h5>Max Depth</h5>
-  </div>
-
-  <div class="statistic">
-    <h1 class="number"><%= @total_dives %></h1>
-    <h5>Dives</h5>
-  </div>
-
-<%# Attention à modifier %>
-  <div class="statistic">
-    <h1 class="number"><%= @total_dives %></h1>
-    <h5>Species seen</h5>
-  </div>
-<%# Attention à modifier %>
-
-  <div class="statistic">
-    <h1 class="number"><%= @total_spots %></h1>
-    <h5>Spots visited</h5>
-  </div>
 </div>
+
+<%= render "shared/tapbar" %>

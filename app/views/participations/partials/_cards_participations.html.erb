@@ -13,17 +13,17 @@
 
               <%# Title %>
               <div class="col-6">
-                <h2><%= link_to (participation.diving.spot.name).upcase, participation_path(participation), method: :get %></h2>
+                <h2 class="titles"><%= link_to (participation.diving.spot.name).upcase, participation_path(participation), method: :get %></h2>
               </div>
 
               <%# Time %>
-              <div class="col-2">
+              <div class="col-3">
                 <p id="time"><i class="fa-solid fa-stopwatch" style="color: #5B77BE"></i><%= participation.diving_time %>'</p>
               </div>
 
               <%# Date %>
-              <div class="col-4">
-                <p id="date"><%= (participation.diving.date).strftime("%d/%m/%Y") %></p>
+              <div class="col-3">
+                <p id="date"><%= (participation.diving.date).strftime("%d/%m/%y") %></p>
               </div>
             </div>
 

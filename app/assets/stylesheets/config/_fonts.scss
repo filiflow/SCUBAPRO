@@ -7,9 +7,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 // Define fonts for body and headers
-$body-font: 'Barlow Semi Condensed', sans-serif;
-$headers-font: 'Barlow Semi Condensed', sans-serif;
+$body-font: 'Nunito', sans-serif;
+$headers-font: 'Nunito', sans-serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
