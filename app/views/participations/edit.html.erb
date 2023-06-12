@@ -2,9 +2,10 @@
 
   <div class="container">
 
-    <h2 class="titles">Edit your diving informations : <%= @participation.diving.spot.name %></h2>
+    <h2 class="titles">Edit your diving informations:</h2>
+    <h3 class="spot_name_edit"><%= @participation.diving.spot.name %></h3>
 
-    <%= render 'participations/partials/form', participation: @participation %>
+    <%= render 'participations/partials/form_edit_participations', participation: @participation %>
 
     <br>
 
