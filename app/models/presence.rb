@@ -1,4 +1,3 @@
 class Presence < ApplicationRecord
-  belongs_to :spot
-  belongs_to :animal
+  belongs_to :presentable, polymorphic: true
 end
