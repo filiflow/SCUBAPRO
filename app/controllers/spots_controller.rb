@@ -21,12 +21,12 @@ class SpotsController < ApplicationController
 
       }
     end
+    @markers = @markers + @other_markers
+  end
 
   def show
     @spot = Spot.find(params[:id])
     @divings = Diving.where(spot_id: params[:id])
-
-    @markers += @other_markers
 
   end
 end
