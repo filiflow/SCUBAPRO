@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :participations, only: %i[new create edit update]
   end
 
-  resources :spots, only: :index do
+  resources :spots, only: %i[index show] do
     resources :divings, only: %i[new create]
   end
 

@@ -5,7 +5,8 @@ class SpotsController < ApplicationController
       {
         lat: spot.latitude,
         lng: spot.longitude,
-        marker_html: render_to_string(partial: "spots/partials/my_markers")
+        marker_html: render_to_string(partial: "spots/partials/my_markers"),
+        info_window_html: render_to_string(partial: "spots/partials/info_window", locals: { spot: spot })
       }
     end
 
@@ -15,10 +16,16 @@ class SpotsController < ApplicationController
       {
         lat: spot.latitude,
         lng: spot.longitude,
-        marker_html: render_to_string(partial: "spots/partials/other_markers")
+        marker_html: render_to_string(partial: "spots/partials/other_markers"),
+        info_window_html: render_to_string(partial: "spots/partials/info_window", locals: { spot: spot })
+
       }
     end
     @markers = @markers + @other_markers
+  end
 
+  def show
+    @spot = Spot.find(params[:id])
+    @divings = Diving.where(spot_id: params[:id])
   end
 end
