@@ -18,7 +18,6 @@ class SpotsController < ApplicationController
         marker_html: render_to_string(partial: "spots/partials/other_markers")
       }
     end
-    @markers = @markers + @other_markers
-
+    @markers += @other_markers
   end
 end
