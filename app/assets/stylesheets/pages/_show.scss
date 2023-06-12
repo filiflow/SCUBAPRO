@@ -1,3 +1,4 @@
+// PARTICIPATION SHOW
 .spot-photo {
   border-radius: 5px;
 }
@@ -11,6 +12,28 @@
   text-align: center;
 }
 
-.list-divings{
+// SPOT SHOW
+.columns {
+  background-color: $launch-blue;
+  color: $white-text;
+  border-radius: 5px;
+  padding: 10px;
+
+  h4 {
+    font-weight: bold;
+  }
+}
+
+.colums {
+  p {
+    font-size: 15px;
+  }
+}
+
+.spot-description {
+  font-size: 16px;
+}
+
+.list-divings {
   list-style: none;
 }
