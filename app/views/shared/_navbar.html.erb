@@ -1,3 +1,6 @@
-<div class="scubapp-ban">
-  <h3 class="title"><%= @title %></h3>
-</div>
+<% unless current_page?(controller: 'pages', action: 'launch')%>
+  <div class="div-banner">
+    <h2 class="titles"><%= page_title %></h2>
+    <%= cl_image_tag current_user.photo.key, id:"avatar", height: 60, width: 60, crop: :fill%>
+  </div>
+<% end %>
