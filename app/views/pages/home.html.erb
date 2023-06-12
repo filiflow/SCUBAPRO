@@ -1,10 +1,9 @@
+<% content_for :page_title, "Your last dives" %>
 <div class="background">
 
   <div class="container">
 
     <h2 class="titles mt-3 mb-5">Hi <%= (current_user.nickname).capitalize %>,</h2>
-
-    <h4 class="titles">Your last dive</h4>
 
     <%= render 'pages/partials/carousel' %>
 

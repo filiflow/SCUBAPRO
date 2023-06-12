@@ -1,3 +1,10 @@
-<div class="scubapp-ban">
-  <h3 class="title"><%= @title %></h3>
-</div>
+<% if current_page?("http://localhost:3000/") || current_page?("http://localhost:3000/")%>
+  <div></div>
+<% else %>
+  <div class="div-banner">
+    <h2 class="titles"><%= page_title %></h2>
+    <% if false %>
+      <%= cl_image_tag current_user.photo.key, id:"avatar", height: 60, width: 60, crop: :fill%>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+<div class="container">
+  <h2 class="titles">
+    <%= @spot.name%>
+  </h2>
+
+  <div class="spot-description">
+    <%= @spot.description %>
+  </div>
+
+  <% @divings.each do |diving| %>
+    <li class="list-divings">
+     <p> <%= diving.date %>  <%= link_to '<i class="fa-solid fa-user-plus"></i>'.html_safe, new_diving_participation_path(diving) %> </p>
+    </li>
+  <% end %>
+</div>
