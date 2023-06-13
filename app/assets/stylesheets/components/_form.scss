@@ -33,6 +33,7 @@
   text-align: center;
 }
 
+// DIVING
 .titi {
   margin-right: 32px;
   margin-top: 10px;
@@ -40,7 +41,7 @@
 }
 
 .titi input[type="radio"]+label {
-  opacity: 0.8;
+  opacity: 0.6;
   color: $icon-blue;
 }
 
@@ -49,6 +50,25 @@
   transition: 0.1s;
   color: $turquoise;
 }
+
+// PARTICIPATION
+.wrapper {
+  margin-right: 32px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.wrapper input[type="checkbox"]+label {
+  opacity: 0.6;
+  color: $icon-blue;
+}
+
+.wrapper input[type="checkbox"]:checked+label {
+  opacity: 1;
+  transition: 0.1s;
+  color: $turquoise;
+}
+
 
 .horizontal-scroll {
   margin-bottom: 5px;

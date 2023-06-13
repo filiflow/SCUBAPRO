@@ -34,7 +34,6 @@ class ParticipationsController < ApplicationController
   end
 
   def create
-    raise
     @participation = Participation.new(participation_params)
     @participation.user_id = current_user.id
     @participation.diving_id = params[:diving_id]

@@ -4,11 +4,11 @@
   <%= simple_form_for([@diving, @participation]) do |f| %>
 
     <div class="input-case">
-      <%= f.input :depth, label: "HOW DEEP DID YOU DIVE?"  %>
+      <%= f.input :depth, label: "HOW DEEP DID YOU DIVE? (meters)"  %>
     </div>
 
     <div class="input-case">
-      <%= f.input :diving_time, html5: true, label: "TIME UNDERWATER?"%>
+      <%= f.input :diving_time, html5: true, label: "TIME UNDERWATER? (minutes)"%>
     </div>
 
     <div class="input-case">
@@ -24,8 +24,9 @@
                   collection: Animal.all.map { |animal| [render('participations/partials/animal_label', animal: animal, class: 'name'), animal.id] },
                   wrapper_class: "d-flex horizontal-scroll",
                   input_html: { class: "sr-only" },
-                  item_wrapper_class: "titi",
-                  item_label_class: "tata" %>
+                  item_wrapper_class: "wrapper",
+                  item_label_class: "tata"
+          %>
       </div>
     </div>
 
