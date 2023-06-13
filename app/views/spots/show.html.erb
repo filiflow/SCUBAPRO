@@ -5,7 +5,10 @@
     <h2 class="titles">
       <%= @spot.name%>
     </h2>
-
+    
+   
+    <%= cl_image_tag @spot.photo.key, height: 250, width: 350, crop: :fill, class: 'spot-photo mb-3' %>
+ 
     <div class="spot-description">
       <%= @spot.description %>
     </div>
@@ -18,4 +21,10 @@
         <% end %>
       </div>
     </div>
-</div>
+<div class="background">
+
+
+<h4 class="mb-2">Dives already registered on this spot :</h4>
+
+         
+<%= render 'shared/tapbar' %>

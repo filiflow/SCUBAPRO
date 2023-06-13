@@ -1,14 +1,13 @@
-<% content_for :page_title, "Add a dive ?" %>
+<%# <% content_for :page_title, "Add a dive ?" %>
+
 <div class="form-container">
 
   <%= simple_form_for(@diving) do |f| %>
 
     <div class="select-your-spot">
         <div class="input-spot">
-          <div class="input-title mb-2">
-          SELECT YOUR SPOT
-          </div>
-          <%= f.association :spot,
+          <div class="input-title mb-2">SELECT YOUR SPOT</div>
+            <%= f.association :spot,
                       as: :radio_buttons,
                       legend_tag: false,
                       collection: Spot.all.map { |spot| [render('divings/partials/spot_label', spot: spot, class: 'name'), spot.id] },
@@ -16,7 +15,7 @@
                       input_html: { class: "sr-only"},
                       item_wrapper_class:  "titi",
                       item_label_class:    "tata"
-          %>
+            %>
         </div>
     </div>
 
