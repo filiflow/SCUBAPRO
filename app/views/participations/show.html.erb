@@ -62,14 +62,19 @@
 
           <div class= "logo-show-stats">
             <i class="fa-solid fa-arrow-down fa-lg dive-icon"></i>
+            <%= @participation.depth %>M
+          </div>
 
           <div class= "logo-show-stats">
             <i class="fa-solid fa-mask-ventilator fa-lg dive-icon"></i>
+            <%= (@participation.gas).capitalize %>
+          </div>
 
-         
 
           <div class= "logo-show-stats">
             <i class="fa-solid fa-stopwatch fa-lg dive-icon"></i>
+            <%= @participation.diving_time %> min
+          </div>
       </div>
 
       <div class="comment-school">
@@ -93,17 +98,15 @@
 
       <div class= "stats-show">
         <i class="fa-solid fa-fish fa-lg"></i>
-                  <p>
-            <i class="fa-solid fa-fish fa-lg"></i>
-            <% if @participation.animals %>
-              <ul class="animals-show">
-                <% @participation.animals.each do |animal| %>
-                  <li><%= cl_image_tag animal.photo.key, class:"spot"%></li>
-                  <li><%= animal.name %></li>
-                <% end %>
-              </ul>
-            <% end %>
-
+          <% if @participation.animals %>
+            <ul class="animals-show">
+              <% @participation.animals.each do |animal| %>
+                <li><%= cl_image_tag animal.photo.key, class:"spot"%></li>
+                <li><%= animal.name %></li>
+              <% end %>
+            </ul>
+          <% end %>
+      </div>
     </div>
 </div>
 
