@@ -1,23 +1,27 @@
 <div class="background">
 
-
     <div class="container">
 
+      <%# NAME %>
       <h2 class="titles">
       <%= @participation.diving.spot.name %>
       </h2>
 
+      <%# DATE %>
       <h4 class="titles">
         <%= (@participation.diving.date).strftime("%d/%m/%Y") %>
       </h4>
 
+      <%# EDIT / DELETE %>
       <div class="action-icons">
         <%= link_to '<i class="fa-regular fa-pen-to-square" style="color: #0C0150;"></i>'.html_safe, edit_diving_participation_path(@participation.diving, @participation) %>
         <%= link_to '<i class="fa-regular fa-trash-can" style="color: #0C0150;"></i>'.html_safe, participation_path(@participation), data: { turbo_method: :delete, turbo_confirm: "Do you really want to delete this participation?" } %>
       </div>
 
+      <%# SPOT PHOTO %>
       <%= cl_image_tag @participation.diving.spot.photo.key, height: 150, width: 150, crop: :fill, class: 'show-photo' %>
 
+      <%# STARS %>
       <div id="rating">
         <% if @participation.rating %>
           <% (@participation.rating).times do %>
@@ -27,51 +31,69 @@
       </div>
 
       <div class="stats-show">
+
+          <%# WEATHER %>
           <p>
             <i class="fa-solid fa-cloud fa-lg"></i>
             <%= @participation.diving.weather %>
           </p>
 
+          <%# TEMP %>
           <p>
             <i class="fa-solid fa-temperature-low fa-lg"></i>
             <%= @participation.diving.temperature %>°C
           </p>
 
+          <%# VISIBILITY %>
           <p>
             <i class="fa-solid fa-binoculars fa-lg"></i>
             <%= @participation.diving.visibility %>M
           </p>
 
+          <%# SCHOOL %>
           <p>
             <i class="fa-solid fa-school fa-lg"></i>
             <%= @participation.diving.school.name %>
           </p>
 
+          <%# DIVE MASTER %>
           <p>
             <i class="fa-solid fa-user fa-lg"></i>
             <%= @participation.diving.school.dive_master %>
           </p>
 
+          <%# ANIMALS %>
           <p>
             <i class="fa-solid fa-fish fa-lg"></i>
-            <%# species %>
+            <% if @participation.animals %>
+              <ul class="animals-show">
+                <% @participation.animals.each do |animal| %>
+                  <li><%= cl_image_tag animal.photo.key, class:"spot"%></li>
+                  <li><%= animal.name %></li>
+                <% end %>
+              </ul>
+            <% end %>
           </p>
 
+          <%# DEPTH %>
           <p>
             <i class="fa-solid fa-arrow-down fa-lg"></i>
             <%= @participation.depth %>M
           </p>
 
+          <%# GAS %>
           <p>
             <i class="fa-solid fa-mask-ventilator fa-lg"></i>
             <%= (@participation.gas).capitalize %>
           </p>
 
+          <%# TIME %>
           <p>
             <i class="fa-solid fa-stopwatch fa-lg"></i>
             <%= @participation.diving_time %> min
           </p>
 
+          <%# COMMENTS %>
           <p>
             <i class="fa-regular fa-message fa-lg"></i>
             <%= @participation.comment %>
@@ -81,13 +103,3 @@
 </div>
 
 <%= render 'shared/tapbar' %>
-
-<%# <div class="carousel-inner">
-  <% @participation.photos.each do |photo| %>
-    <%# <div class="carousel-item <%= 'active' if index.zero? %>
-      <%# <div class="carousel-caption d-md-block"> %>
-        <%# <%= cl_image_tag @participation.photo.key %>
-      <%# </div>
-    </div> %>
-  <%# <% end %>
-<%# </div>  %>
