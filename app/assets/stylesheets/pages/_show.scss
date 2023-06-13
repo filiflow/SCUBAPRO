@@ -30,7 +30,6 @@
   border-radius: 50%;
 }
 
-
 .logo-show-stats{
   padding: 10px;
   text-align: center;
@@ -62,4 +61,7 @@
 .comment-school{
   display: flex;
   margin: 1em 0;
+  
+  .animals-show {
+  list-style-type: none;
 }

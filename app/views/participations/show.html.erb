@@ -1,23 +1,27 @@
 <div class="background">
 
-
     <div class="container">
 
+      <%# NAME %>
       <h2 class="titles">
       <%= @participation.diving.spot.name %>
       </h2>
 
+      <%# DATE %>
       <h4 class="titles">
         <%= (@participation.diving.date).strftime("%d/%m/%Y") %>
       </h4>
 
+      <%# EDIT / DELETE %>
       <div class="action-icons">
         <%= link_to '<i class="fa-regular fa-pen-to-square" style="color: #0C0150;"></i>'.html_safe, edit_diving_participation_path(@participation.diving, @participation) %>
         <%= link_to '<i class="fa-regular fa-trash-can" style="color: #0C0150;"></i>'.html_safe, participation_path(@participation), data: { turbo_method: :delete, turbo_confirm: "Do you really want to delete this participation?" } %>
       </div>
 
+      <%# SPOT PHOTO %>
       <%= cl_image_tag @participation.diving.spot.photo.key, height: 150, width: 150, crop: :fill, class: 'show-photo' %>
 
+      <%# STARS %>
       <div id="rating">
         <% if @participation.rating %>
           <% (@participation.rating).times do %>
@@ -27,6 +31,7 @@
       </div>
 
       <div class="stats-show">
+
           <div class= "logo-show-stats">
             <% if @participation.diving.weather == "Sunny" %>
               <%= '<i class="fa-solid fa-sun fa-lg dive-icon"></i>'.html_safe %>
@@ -48,6 +53,7 @@
             <%= @participation.diving.temperature %>°C
           </div>
 
+
           <div class= "logo-show-stats">
             <i class="fa-solid fa-binoculars fa-lg dive-icon"></i>
             <%= @participation.diving.visibility %>M
@@ -56,19 +62,14 @@
 
           <div class= "logo-show-stats">
             <i class="fa-solid fa-arrow-down fa-lg dive-icon"></i>
-            <%= @participation.depth %>M
-          </div>
 
           <div class= "logo-show-stats">
             <i class="fa-solid fa-mask-ventilator fa-lg dive-icon"></i>
-            <%= (@participation.gas).capitalize %>
-          </div>
+
+         
 
           <div class= "logo-show-stats">
             <i class="fa-solid fa-stopwatch fa-lg dive-icon"></i>
-            <%= @participation.diving_time %> min
-          </div>
-
       </div>
 
       <div class="comment-school">
@@ -84,8 +85,6 @@
           </div>
 
         </div>
-
-
 
         <div class= "stats-show">
           <p><i class="fa-regular fa-message fa-lg"></i><em><%= @participation.comment%></em></p>
@@ -104,8 +103,7 @@
                 <% end %>
               </ul>
             <% end %>
-          </p>
-      </div>
+
     </div>
 </div>
 
