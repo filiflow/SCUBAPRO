@@ -1,143 +1,93 @@
 <div class="background">
 
-  <div class="container">
 
-    <%# TITLE %>
-    <div class="text-container">
-      <h2 class="titles mt-3"><%= @participation.diving.spot.name %></h2>
-    </div>
+    <div class="container">
 
-    <div class="row">
+      <h2 class="titles">
+      <%= @participation.diving.spot.name %>
+      </h2>
 
-    <%# DATE %>
-      <div class="col-6">
-        <div class="text-container">
-          <h4 class="titles"><%= (@participation.diving.date).strftime("%d/%m/%Y") %></h2>
-        </div>
+      <h4 class="titles">
+        <%= (@participation.diving.date).strftime("%d/%m/%Y") %>
+      </h4>
+
+      <div class="action-icons">
+        <%= link_to '<i class="fa-regular fa-pen-to-square" style="color: #0C0150;"></i>'.html_safe, edit_diving_participation_path(@participation.diving, @participation) %>
+        <%= link_to '<i class="fa-regular fa-trash-can" style="color: #0C0150;"></i>'.html_safe, participation_path(@participation), data: { turbo_method: :delete, turbo_confirm: "Do you really want to delete this participation?" } %>
       </div>
 
-      <%# EDIT / DELETE %>
-      <div class="col-6">
-        <div class="action-icons">
-          <%= link_to '<i class="fa-regular fa-pen-to-square" style="color: #0C0150;"></i>'.html_safe, edit_diving_participation_path(@participation.diving, @participation) %>
-          <%= link_to '<i class="fa-regular fa-trash-can" style="color: #0C0150;"></i>'.html_safe, participation_path(@participation), data: { turbo_method: :delete, turbo_confirm: "Do you really want to delete this participation?" } %>
-        </div>
-      </div>
-    </div>
+      <%= cl_image_tag @participation.diving.spot.photo.key, height: 150, width: 150, crop: :fill, class: 'show-photo' %>
 
-    <%# PHOTO %>
-    <div class="row">
-      <div class="col-12">
-        <%= cl_image_tag @participation.diving.spot.photo.key, height: 250, width: 350, crop: :fill, class: 'spot-photo' %>
+      <div id="rating">
+        <% if @participation.rating %>
+          <% (@participation.rating).times do %>
+            <i class="fa-solid fa-star" style="color: #10A59C;"></i>
+          <% end %>
+        <% end %>
       </div>
-    </div>
 
-    <%# STARS %>
-    <div class="row">
-      <div class="col-12">
-        <div class="text-container">
-          <p id="rating">
-            <% if @participation.rating %>
-              <% (@participation.rating).times do %>
-                <i class="fa-solid fa-star" style="color: #10A59C;"></i>
-              <% end %>
-            <% end %>
+      <div class="stats-show">
+          <p>
+            <i class="fa-solid fa-cloud fa-lg"></i>
+            <%= @participation.diving.weather %>
           </p>
-        </div>
+
+          <p>
+            <i class="fa-solid fa-temperature-low fa-lg"></i>
+            <%= @participation.diving.temperature %>°C
+          </p>
+
+          <p>
+            <i class="fa-solid fa-binoculars fa-lg"></i>
+            <%= @participation.diving.visibility %>M
+          </p>
+
+          <p>
+            <i class="fa-solid fa-school fa-lg"></i>
+            <%= @participation.diving.school.name %>
+          </p>
+
+          <p>
+            <i class="fa-solid fa-user fa-lg"></i>
+            <%= @participation.diving.school.dive_master %>
+          </p>
+
+          <p>
+            <i class="fa-solid fa-fish fa-lg"></i>
+            <%# species %>
+          </p>
+
+          <p>
+            <i class="fa-solid fa-arrow-down fa-lg"></i>
+            <%= @participation.depth %>M
+          </p>
+
+          <p>
+            <i class="fa-solid fa-mask-ventilator fa-lg"></i>
+            <%= (@participation.gas).capitalize %>
+          </p>
+
+          <p>
+            <i class="fa-solid fa-stopwatch fa-lg"></i>
+            <%= @participation.diving_time %> min
+          </p>
+
+          <p>
+            <i class="fa-regular fa-message fa-lg"></i>
+            <%= @participation.comment %>
+          </p>
       </div>
     </div>
-
-    <%# 1ST BLOCK %>
-    <div class="row">
-
-      <%# LEFT COLUMN %>
-      <div class="col-6">
-
-      <%# WEATHER %>
-        <div class="box weather-show">
-          <p>Weather : <%= @participation.diving.weather %></p>
-        </div>
-
-        <%# TEMP %>
-        <div class="box temp-show">
-          <p>Water temperature : <%= @participation.diving.temperature %>°C</p>
-        </div>
-
-        <%# VISIBILITY %>
-        <div class="box visi-show">
-          <p>Visibility : <%= @participation.diving.visibility %>m</p>
-        </div>
-
-      </div>
-
-      <%# RIGHT COLUMN %>
-      <div class="col-6">
-
-        <%# SCHOOL %>
-        <div class="box school-show">
-          <p>School : <%= @participation.diving.school.name %></p>
-          <p>Dive master : <%= @participation.diving.school.dive_master %></p>
-        </div>
-
-      </div>
-
-    </div>
-
-    <%# 2ND BLOCK %>
-    <div class="row">
-
-      <%# LEFT COLUMN %>
-      <div class="col-6">
-
-        <%# ANIMALS %>
-        <div class="box animals-show">
-          <p>Wildlife observed : </p>
-        </div>
-
-      </div>
-
-      <%# RIGHT COLUMN %>
-      <div class="col-6">
-
-        <div class="box depth-show">
-          <p>Depth : <%= @participation.depth %>m</p>
-        </div>
-
-        <div class="box gas-show">
-          <p>Gas used : <%= @participation.gas %></p>
-        </div>
-
-        <div class="box time-show">
-          <p>Diving time : <%= @participation.diving_time %>min</p>
-        </div>
-
-      </div>
-    </div>
-
-    <%# 3RD BLOCK %>
-    <div class="row">
-
-      <%# COMMENTS %>
-      <div class="col-12">
-        <div class="box comments-show">
-          <p><%= @participation.comment %></p>
-        </div>
-      </div>
-
-    </div>
-
-    <%# 4TH BLOCK %>
-    <div class="carousel-inner">
-      <% @participation.photos.each do |photo| %>
-        <div class="carousel-item <%= 'active' if index.zero? %>">
-          <div class="carousel-caption d-md-block">
-            <%= cl_image_tag @participation.photo.key %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-
-  </div>
 </div>
 
 <%= render 'shared/tapbar' %>
+
+<%# <div class="carousel-inner">
+  <% @participation.photos.each do |photo| %>
+    <%# <div class="carousel-item <%= 'active' if index.zero? %>
+      <%# <div class="carousel-caption d-md-block"> %>
+        <%# <%= cl_image_tag @participation.photo.key %>
+      <%# </div>
+    </div> %>
+  <%# <% end %>
+<%# </div>  %>
