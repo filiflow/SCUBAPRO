@@ -1,4 +1,4 @@
 class Animal < ApplicationRecord
   has_one_attached :photo
-  belongs_to :presence
+  has_many :presences, dependent: :destroy
 end
