@@ -4,6 +4,20 @@ class ParticipationsController < ApplicationController
   def index
     @participations = Participation.all
     @title = "Your dives"
+
+    if params[:query].present?
+      #@participations = @participations..where("title ILIKE ?", "%#{params[:query]}%")
+      @participations = @participations.joins(:diving)
+                                        .where(diving: {
+                                          spot_id: Spot.where("name ILIKE ?", "%#{params[:query]}%")
+                                                      .map(&:id)
+                                        } )
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "participations/partials/cards_participations", locals: {participations: @participations}, formats: [:html] }
+    end
   end
 
   def show

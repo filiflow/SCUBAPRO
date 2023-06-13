@@ -7,11 +7,11 @@
 
       <%= render 'shared/search_form' %>
 
-      <%= turbo_frame_tag :participations, target: "_top" do %>
+      <%#= turbo_frame_tag :participations, target: "_top" do %>
         <div class="container">
-          <%= render 'participations/partials/cards_participations' %>
+          <%= render 'participations/partials/cards_participations', participations: @participations %>
         </div>
-      <% end %>
+      <%# end %>
 
     </div>
 

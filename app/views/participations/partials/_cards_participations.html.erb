@@ -1,5 +1,5 @@
-  <div class="cards">
-    <% @participations.each do |participation| %>
+  <div class="cards" data-searchbar-target="list">
+    <% participations.each do |participation| %>
       <div class="card-participation mb-3 mt-4">
         <% if participation.photos.count == 0 %>
           <%= cl_image_tag participation.diving.spot.photo.key, height: 300, width: 400, crop: :fill %>
