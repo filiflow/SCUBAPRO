@@ -27,67 +27,86 @@
       </div>
 
       <div class="stats-show">
-          <p>
-            <i class="fa-solid fa-cloud fa-lg"></i>
-            <%= @participation.diving.weather %>
-          </p>
+          <div class= "logo-show-stats">
+            <% if @participation.diving.weather == "Sunny" %>
+              <%= '<i class="fa-solid fa-sun fa-lg dive-icon"></i>'.html_safe %>
+              <%= "Sunny" %>
+            <% elsif @participation.diving.weather == "Windy" %>
+              <%= '<i class="fa-solid fa-wind fa-lg dive-icon"></i>' %>
+              <%= "Windy" %>
+            <% elsif @participation.diving.weather == "Cloudy" %>
+              <%= '<i class="fa-solid fa-cloud fa-lg dive-icon"></i>'.html_safe %>
+              <%= "Cloudy" %>
+            <% elsif @participation.diving.weather == "Storm" %>
+              <%= '<i class="fa-solid fa-cloud-bolt fa-lg dive-icon"></i>'.html_safe %>
+              <%= "Storm" %>
+            <% end %>
+          </div>
 
-          <p>
-            <i class="fa-solid fa-temperature-low fa-lg"></i>
+          <div class= "logo-show-stats">
+            <i class="fa-solid fa-temperature-low fa-lg dive-icon"></i>
             <%= @participation.diving.temperature %>°C
-          </p>
+          </div>
 
-          <p>
-            <i class="fa-solid fa-binoculars fa-lg"></i>
+          <div class= "logo-show-stats">
+            <i class="fa-solid fa-binoculars fa-lg dive-icon"></i>
             <%= @participation.diving.visibility %>M
-          </p>
+          </div>
 
-          <p>
-            <i class="fa-solid fa-school fa-lg"></i>
-            <%= @participation.diving.school.name %>
-          </p>
 
-          <p>
-            <i class="fa-solid fa-user fa-lg"></i>
-            <%= @participation.diving.school.dive_master %>
-          </p>
-
-          <p>
-            <i class="fa-solid fa-fish fa-lg"></i>
-            <%# species %>
-          </p>
-
-          <p>
-            <i class="fa-solid fa-arrow-down fa-lg"></i>
+          <div class= "logo-show-stats">
+            <i class="fa-solid fa-arrow-down fa-lg dive-icon"></i>
             <%= @participation.depth %>M
-          </p>
+          </div>
 
-          <p>
-            <i class="fa-solid fa-mask-ventilator fa-lg"></i>
+          <div class= "logo-show-stats">
+            <i class="fa-solid fa-mask-ventilator fa-lg dive-icon"></i>
             <%= (@participation.gas).capitalize %>
-          </p>
+          </div>
 
-          <p>
-            <i class="fa-solid fa-stopwatch fa-lg"></i>
+          <div class= "logo-show-stats">
+            <i class="fa-solid fa-stopwatch fa-lg dive-icon"></i>
             <%= @participation.diving_time %> min
-          </p>
+          </div>
 
-          <p>
-            <i class="fa-regular fa-message fa-lg"></i>
-            <%= @participation.comment %>
+      </div>
+
+      <div class="comment-school">
+        <div class= "stats-school">
+          <div class= "logo-show-stats">
+            <i class="fa-solid fa-school fa-lg dive-icon"></i>
+            <p><%= @participation.diving.school.name %> </p>
+          </div>
+
+          <div class= "logo-show-stats">
+            <i class="fa-solid fa-user fa-lg dive-icon"></i>
+            <p><%= @participation.diving.school.dive_master %></p>
+          </div>
+
+        </div>
+
+
+
+        <div class= "stats-show">
+          <p><i class="fa-regular fa-message fa-lg"></i><em><%= @participation.comment%></em></p>
+        </div>
+      </div>
+
+      <div class= "stats-show">
+        <i class="fa-solid fa-fish fa-lg"></i>
+                  <p>
+            <i class="fa-solid fa-fish fa-lg"></i>
+            <% if @participation.animals %>
+              <ul class="animals-show">
+                <% @participation.animals.each do |animal| %>
+                  <li><%= cl_image_tag animal.photo.key, class:"spot"%></li>
+                  <li><%= animal.name %></li>
+                <% end %>
+              </ul>
+            <% end %>
           </p>
       </div>
     </div>
 </div>
 
 <%= render 'shared/tapbar' %>
-
-<%# <div class="carousel-inner">
-  <% @participation.photos.each do |photo| %>
-    <%# <div class="carousel-item <%= 'active' if index.zero? %>
-      <%# <div class="carousel-caption d-md-block"> %>
-        <%# <%= cl_image_tag @participation.photo.key %>
-      <%# </div>
-    </div> %>
-  <%# <% end %>
-<%# </div>  %>
