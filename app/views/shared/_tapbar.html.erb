@@ -1,29 +1,27 @@
-
-<%# <div class="container"> %>
 <div class="bar" data-controller="tapbar">
 
-  <%# homepage %>
+  <%# HOMEPAGE %>
   <div class="bar-item <%= 'active' if current_page?(pages_path) %> pre-active" >
     <div class="bar-fluid"></div>
     <div class="drop"></div>
     <%= link_to '<i class="fa-solid fa-house"></i>'.html_safe, pages_path, class: "link" %>
   </div>
 
-  <%# index %>
+  <%# INDEX PARTICIPATION %>
   <div class="bar-item <%= 'active' if current_page?(participations_path) %> pre-active" >
     <div class="bar-fluid"></div>
     <div class="drop"></div>
     <%= link_to '<span class="material-symbols-outlined">scuba_diving</span>'.html_safe, participations_path, class: "link" %>
   </div>
 
-  <%# new diving %>
+  <%# NEW DIVING %>
   <div class="bar-item <%= 'active' if current_page?(new_diving_path) %> pre-active" >
     <div class="bar-fluid"></div>
     <div class="drop"></div>
     <%= link_to '<i class="fa-sharp fa-solid fa-plus"></i>'.html_safe, new_diving_path, class: "link" %>
   </div>
 
-  <%# map %>
+  <%# MAP %>
   <div class="bar-item <%= 'active' if current_page?(spots_path) %> pre-active" >
     <div class="bar-fluid"></div>
     <div class="drop"></div>
