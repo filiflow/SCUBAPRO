@@ -1,7 +1,7 @@
 class SpotsController < ApplicationController
   def index
-    @spots = current_user.spots
-    @markers = @spots.geocoded.map do |spot|
+    @user_spots = current_user.spots
+    @markers = @user_spots.geocoded.map do |spot|
       {
         lat: spot.latitude,
         lng: spot.longitude,
@@ -10,9 +10,9 @@ class SpotsController < ApplicationController
       }
     end
 
-    @other_spots = Spot.where.not(id: @spots.map(&:id))
+    @spots = Spot.where.not(id: @user_spots.map(&:id))
 
-    @other_markers = @other_spots.geocoded.map do |spot|
+    @other_markers = @spots.geocoded.map do |spot|
       {
         lat: spot.latitude,
         lng: spot.longitude,
@@ -21,12 +21,11 @@ class SpotsController < ApplicationController
 
       }
     end
-    @markers = @markers + @other_markers
+    @markers += @other_markers
   end
 
   def show
     @spot = Spot.find(params[:id])
     @divings = Diving.where(spot_id: params[:id])
-
   end
 end
