@@ -8,7 +8,7 @@
         <% end %>
           <div class="card-infos">
 
-            <%# First line %>
+            <%# First part %>
             <div class="row">
 
               <%# Title %>
@@ -16,18 +16,19 @@
                 <h2 class="titles"><%= link_to (participation.diving.spot.name).upcase, participation_path(participation), method: :get %></h2>
               </div>
 
-              <%# Time %>
-              <div class="col-3">
-                <p id="time"><i class="fa-solid fa-stopwatch" style="color: #5B77BE"></i><%= participation.diving_time %>'</p>
-              </div>
-
               <%# Date %>
               <div class="col-3">
                 <p id="date"><%= (participation.diving.date).strftime("%d/%m/%y") %></p>
               </div>
+
+              <%# Temperature %>
+              <div class="col-3">
+                <p id="temp"><i class="fa-solid fa-temperature-three-quarters" style="color: #5B77BE"></i><%= participation.diving.temperature %>°C</p>
+              </div>
+
             </div>
 
-            <%# Second line %>
+            <%# Second part %>
             <div class="row">
 
               <%# Rating %>
@@ -41,15 +42,16 @@
                 </p>
               </div>
 
+              <%# Time %>
+              <div class="col-3">
+                <p id="time"><i class="fa-solid fa-stopwatch" style="color: #5B77BE"></i><%= participation.diving_time %>'</p>
+              </div>
+
               <%# Depth %>
               <div class="col-3">
                 <p><i class="material-symbols-outlined">scuba_diving</i><%= participation.depth %>M</p>
               </div>
 
-              <%# Temperature %>
-              <div class="col-3">
-                <p id="temp"><i class="fa-solid fa-temperature-three-quarters" style="color: #5B77BE"></i><%= participation.diving.temperature %>°C</p>
-              </div>
             </div>
           </div>
       </div>
