@@ -7,23 +7,48 @@
           <%= cl_image_tag participation.photos.first.key, height: 300, width: 400, crop: :fill %>
         <% end %>
           <div class="card-infos">
-            <div>
-              <h2><%= link_to participation.diving.spot.name, participation_path(participation), method: :get %></h2>
-              <p><%= (participation.diving.date).strftime("%d/%m/%Y") %></p>
+
+            <%# First line %>
+            <div class="row">
+
+              <%# Title %>
+              <div class="col-6">
+                <h2 class="titles"><%= link_to (participation.diving.spot.name).upcase, participation_path(participation), method: :get %></h2>
+              </div>
+
+              <%# Time %>
+              <div class="col-3">
+                <p id="time"><i class="fa-solid fa-stopwatch" style="color: #5B77BE"></i><%= participation.diving_time %>'</p>
+              </div>
+
+              <%# Date %>
+              <div class="col-3">
+                <p id="date"><%= (participation.diving.date).strftime("%d/%m/%y") %></p>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <p id="stars">
-                <% (participation.rating).times do %>
-                  <i class="fa-solid fa-star" style="color: #ffd43b;"></i>
-                <% end %>
-              </p>
-            </div>
-            <div class="col-6">
-              <div class="action-icons">
-                <%= link_to '<i class="fa-regular fa-pen-to-square" style="color: #FFFFFF;"></i>'.html_safe, edit_diving_participation_path(participation.diving, participation) %>
-                <%= link_to '<i class="fa-regular fa-trash-can" style="color: #FFFFFF;"></i>'.html_safe, participation_path(participation), data: { turbo_method: :delete, turbo_confirm: "Do you really want to delete this participation?" } %>
+
+            <%# Second line %>
+            <div class="row">
+
+              <%# Rating %>
+              <div class="col-6">
+                <p id="stars">
+                  <% if participation.rating %>
+                    <% (participation.rating).times do %>
+                      <i class="fa-solid fa-star" style="color: #10A59C"></i>
+                    <% end %>
+                  <% end %>
+                </p>
+              </div>
+
+              <%# Depth %>
+              <div class="col-3">
+                <p><i class="material-symbols-outlined">scuba_diving</i><%= participation.depth %>M</p>
+              </div>
+
+              <%# Temperature %>
+              <div class="col-3">
+                <p id="temp"><i class="fa-solid fa-temperature-three-quarters" style="color: #5B77BE"></i><%= participation.diving.temperature %>°C</p>
               </div>
             </div>
           </div>

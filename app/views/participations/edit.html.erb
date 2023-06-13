@@ -1,10 +1,19 @@
-<h2>Edit your participation : <%= @participation.diving.spot.name %></h2>
+<% content_for :page_title, "Edit your diving informations :" %>
+<div class="background">
 
-<%= render 'participations/partials/form', participation: @participation %>
+  <div class="container">
 
-<br>
+    <h3 class="spot_name_edit"><%= @participation.diving.spot.name %></h3>
 
-<div>
-  <%= link_to "Show this participation", @participation %> |
-  <%= link_to "Back to my participations", participations_path %>
+    <%= render 'participations/partials/form_edit_participations', participation: @participation %>
+
+    <br>
+
+    <div>
+      <%= link_to "Show this participation", @participation %> |
+      <%= link_to "Back to my participations", participations_path %>
+    </div>
+
+  </div>
+
 </div>

@@ -1,0 +1,41 @@
+<div class="background">
+
+  <div class="container">
+
+    <h2 class="titles mb-2"><%= @spot.name%></h2>
+
+    <div class="row">
+      <div class="col-12">
+        <%= cl_image_tag @spot.photo.key, height: 250, width: 350, crop: :fill, class: 'spot-photo mb-3' %>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-6">
+        <div class="columns">
+          <div class="spot-description">
+            <%= @spot.description %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="columns">
+          <h4 class="mb-2">Dives already registered on this spot :</h4>
+
+          <% @divings.each do |diving| %>
+            <li class="list-divings">
+              <p class="spot-show"><%= (diving.date).strftime("%d/%m/%Y") %> <%= link_to '<i class="fa-solid fa-user-plus"></i>'.html_safe, new_diving_participation_path(diving) %></p>
+            </li>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<%= render 'shared/tapbar' %>

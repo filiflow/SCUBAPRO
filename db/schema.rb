@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_08_095128) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_12_154604) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,6 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_095128) do
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
   end
 
   create_table "divings", force: :cascade do |t|
@@ -79,12 +80,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_095128) do
   end
 
   create_table "presences", force: :cascade do |t|
-    t.bigint "spot_id", null: false
     t.bigint "animal_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "presentable_id"
+    t.string "presentable_type"
     t.index ["animal_id"], name: "index_presences_on_animal_id"
-    t.index ["spot_id"], name: "index_presences_on_spot_id"
   end
 
   create_table "schools", force: :cascade do |t|
@@ -105,6 +106,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_095128) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.string "description"
   end
 
   create_table "users", force: :cascade do |t|
@@ -128,5 +130,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_095128) do
   add_foreign_key "participations", "divings"
   add_foreign_key "participations", "users"
   add_foreign_key "presences", "animals"
-  add_foreign_key "presences", "spots"
 end

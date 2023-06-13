@@ -1,20 +1,21 @@
+<%# <% content_for :page_title, "Add a dive ?" %>
+
 <div class="form-container">
+
   <%= simple_form_for(@diving) do |f| %>
 
     <div class="select-your-spot">
         <div class="input-spot">
-          <div class="input-title mb-2">
-          SELECT YOUR SPOT
-          </div>
-          <%= f.association :spot,
+          <div class="input-title mb-2">SELECT YOUR SPOT</div>
+            <%= f.association :spot,
                       as: :radio_buttons,
                       legend_tag: false,
-                      collection: Spot.all.map { |spot| [render('divings/partials/spot_label', spot: spot), spot.id] },
+                      collection: Spot.all.map { |spot| [render('divings/partials/spot_label', spot: spot, class: 'name'), spot.id] },
                       wrapper_class:       "d-flex horizontal-scroll",
                       input_html: { class: "sr-only"},
                       item_wrapper_class:  "titi",
                       item_label_class:    "tata"
-          %>
+            %>
         </div>
     </div>
 
@@ -35,13 +36,13 @@
 
     <div class="calendar">
         <div class="input-case calendar-position">
-          <div class="input-title mb-2"> YOU DIVED ON THE :  <span data-graduated-range-target="value" class="mx-2"> </div>
+          <div class="input-title mb-2"> YOU DIVED ON THE  <span data-graduated-range-target="value" class="mx-2"> </div>
           <%= f.input :date, label: false, html5: true %>
         </div>
     </div>
 
     <div class="input-case">
-      <div class="input-title"><%= "THE WEATHER WAS :" %></div>
+      <div class="input-title"><%= "THE WEATHER WAS " %></div>
       <div class="weather-icons">
         <%= f.input :weather,
                     as: :radio_buttons,
@@ -60,14 +61,16 @@
     </div>
 
     <div class="input-case" data-controller="graduated-range">
-      <div class="form-label range optional">THE TEMPERATURE WAS :<span data-graduated-range-target="value" class="mx-2"> 15 </span> DEGREES </div>
+
+      <div class="form-label range optional">THE TEMPERATURE WAS <span data-graduated-range-target="value" class="mx-2"><strong> 15 </strong></span> DEGREES </div>
       <div class="mb-5 range optional participation_visibility">
+
         <input class="numeric range optional w100"
                list="tickmarks"
                type="range"
                step="1"
-               name="participation[visibility]"
-               id="participation_visibility"
+               name="diving[visibility]"
+               id="diving_visibility"
                data-action="graduated-range#changeValue"
                min="0"
                max="30">
@@ -79,6 +82,7 @@
           <option value="20"></option>
           <option value="25"></option>
           <option value="30"></option>
+          <option value="35"></option>
         </datalist>
 
         <div class="range_graduation">
@@ -95,14 +99,16 @@
     </div>
 
     <div class="input-case" data-controller="graduated-range">
-      <div class="form-label range optional">THE VISIBILITY WAS: <span data-graduated-range-target="value" class="mx-2">  24 </span>  METERS </div>
+
+      <div class="form-label range optional">THE VISIBILITY WAS <span data-graduated-range-target="value" class="mx-2"><strong> 24 </strong></span> METERS </div>
        <div class="mb-3 range optional participation_temperature">
+
         <input class="numeric range optional w100"
                list="tickmarks"
                type="range"
                step="1"
-               name="participation[temperature]"
-               id="participation_temperature"
+               name="diving[temperature]"
+               id="diving_temperature"
                data-action="graduated-range#changeValue"
                min="5"
                max="35">
@@ -132,7 +138,8 @@
     </div>
 
     <div class="button-container">
-        <%= f.submit value: "Next", class:"btn btn-outline-light"%>
+        <%= f.submit value: "Next", class:"btn"%>
     </div>
   <% end %>
+
 </div>

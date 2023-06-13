@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :divings, dependent: :destroy
   has_many :participations, dependent: :destroy
-
+  has_many :participated_divings, through: :participations, source: :diving
+  has_many :spots, through: :participated_divings
   has_one_attached :photo
 end

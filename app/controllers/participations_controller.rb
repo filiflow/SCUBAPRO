@@ -3,13 +3,14 @@ class ParticipationsController < ApplicationController
 
   def index
     @participations = Participation.all
-    @title = "MY SCUBA DIVES"
+    @title = "Your dives"
   end
 
   def show
   end
 
   def edit
+    @diving = Diving.find(params[:diving_id])
   end
 
   def update
@@ -27,6 +28,7 @@ class ParticipationsController < ApplicationController
   end
 
   def new
+    @diving = Diving.find(params[:diving_id])
     @participation = Participation.new
     @title = "+ ADD A NEW DIVE"
   end
@@ -34,7 +36,7 @@ class ParticipationsController < ApplicationController
   def create
     @participation = Participation.new(participation_params)
     @participation.user_id = current_user.id
-    @participation.save
+    @participation.diving_id = params[:diving_id]
     if @participation.save
       redirect_to participation_path(@participation)
     else
@@ -58,6 +60,6 @@ class ParticipationsController < ApplicationController
   end
 
   def participation_params
-    params.require(:participation).permit(:user_id, :diving_id, :depth, :gas, :rating, :diving_time)
+    params.require(:participation).permit(:user_id, :diving_id, :depth, :gas, :rating, :diving_time, :comment)
   end
 end

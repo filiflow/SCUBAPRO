@@ -1,7 +1,22 @@
-<div class="background-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1527100673774-cce25eafaf7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80');">
+<% content_for :page_title, "Your dives" %>
+<div class="background">
 
   <div class="container">
-    <%= render 'participations/partials/cards_participations' %>
+
+    <div data-controller="searchbar">
+
+      <%= render 'shared/search_form' %>
+
+      <%= turbo_frame_tag :participations, target: "_top" do %>
+        <div class="container">
+          <%= render 'participations/partials/cards_participations' %>
+        </div>
+      <% end %>
+
+    </div>
+
   </div>
 
 </div>
+
+<%= render "shared/tapbar" %>

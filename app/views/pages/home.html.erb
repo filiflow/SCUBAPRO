@@ -1,8 +1,56 @@
-<div class="background-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1527100673774-cce25eafaf7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80');">
+<% content_for :page_title, "Your last dives" %>
+<div class="background">
 
-  <div class="homepage-container">
+  <div class="container">
+
+    <h2 class="titles mt-3 mb-5">Hi <%= (current_user.nickname).capitalize %>,</h2>
+
     <%= render 'pages/partials/carousel' %>
-    <%= render 'pages/partials/map' %>
+
+    <h4 class="titles mt-4">Your stats</h4>
+
+
+    <div class="stats_home">
+
+      <div class="statistic">
+        <div class="stat-time">
+          <% if @total_diving_time > 60 %>
+            <% hours = @total_diving_time / 60 %>
+            <% minutes = @total_diving_time % 60 %>
+            <p><strong><%= "#{hours}h#{sprintf('%02d', minutes)}" %></strong></p>
+          <% else %>
+            <p><%= @total_diving_time %> minutes</p>
+          <% end %>
+          <h3>Underwater</h3>
+        </div>
+      </div>
+
+      <div class="statistic">
+        <h1 class="number"><%= @max_depth %>M</h1>
+        <h5>Max Depth</h5>
+      </div>
+
+      <div class="statistic">
+        <h1 class="number"><%= @total_dives %></h1>
+        <h5>Dives</h5>
+      </div>
+
+      <%# Attention à modifier %>
+      <div class="statistic">
+        <h1 class="number"><%= @total_dives %></h1>
+        <h5>Species seen</h5>
+      </div>
+
+      <%# Attention à modifier %>
+      <div class="statistic">
+        <h1 class="number"><%= @total_spots %></h1>
+        <h5>Spots visited</h5>
+      </div>
+
+    </div>
+
   </div>
 
 </div>
+
+<%= render "shared/tapbar" %>

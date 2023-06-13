@@ -17,14 +17,18 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 
+    <%= favicon_link_tag "skubapplogo.png", rel: "icon", type: "image/png" %>
+
+
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <%# <%= render "shared/banner" %>
-    <%= render "shared/flashes" %>
-
+    <%# <%= render "shared/navbar" %>
+    <%# <%= render "shared/flashes" %>
+    <%= render '/shared/navbar' %>
     <%= yield %>
-    <%= render "shared/tapbar" %>
+    <%# <%= render "shared/tapbar" %>
   </body>
 </html>

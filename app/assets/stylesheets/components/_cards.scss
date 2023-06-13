@@ -5,12 +5,12 @@
 
 .card-participation {
   overflow: hidden;
-  // background: rgba(197, 194, 194, 0.701);
-  background-color: rgba(2, 2, 2, 0.293);
+  background-color: $white-background;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+  font-weight: bold;
 }
 
 .card-participation {
@@ -23,38 +23,42 @@
 
 .card-participation {
   h2 {
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+    font-size: 16px;
+    margin: 0;
   }
 }
 
 .card-participation {
   p {
-  font-size: 12px;
   opacity: .7;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
+  color: $marine;
   }
 }
 
 .card-participation {
   .card-infos {
-  padding: 16px 16px 10px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   position: relative;
+  padding: 6px 3px;
   }
 }
 
 a {
-  color: white;
+  color: $marine;
   text-decoration: none;
 }
 
 .row {
-  padding: 0 16px 16px;
+  padding: 0 8px 8px;
 }
+
+#date, #temp {
+  text-align: right;
+}
+
+
+// .action-icons {
+//   position: absolute;
+//   right: 16px;
+//   top: 10px;
+// }

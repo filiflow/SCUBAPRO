@@ -1,0 +1,15 @@
+.btn {
+  border-radius: 40px;
+  width: 130px;
+  color: $marine;
+  font-weight: bold;
+  // border-color: black;
+  background-color: $icon-blue;
+  margin-bottom: 5px;
+
+  &:hover {
+    background-color: $turquoise;
+    transition: 0.1;
+    color: $white-text;
+  }
+}
