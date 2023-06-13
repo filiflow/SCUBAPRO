@@ -1,15 +1,21 @@
-<div class="container">
-  <h2 class="titles">
-    <%= @spot.name%>
-  </h2>
+<% content_for :page_title, "Welcome to.." %>
 
-  <div class="spot-description">
-    <%= @spot.description %>
-  </div>
+<div class="background">
+  <div class="container">
+    <h2 class="titles">
+      <%= @spot.name%>
+    </h2>
 
-  <% @divings.each do |diving| %>
-    <li class="list-divings">
-     <p> <%= diving.date %>  <%= link_to '<i class="fa-solid fa-user-plus"></i>'.html_safe, new_diving_participation_path(diving) %> </p>
-    </li>
-  <% end %>
+    <div class="spot-description">
+      <%= @spot.description %>
+    </div>
+
+    <div class="diving-date-list">
+        <% @divings.each do |diving| %>
+          <li class="list-divings">
+          <p> <%= (diving.date).strftime("%d/%m/%Y") %>  <%= link_to '<i class="fa-solid fa-user-plus"></i>'.html_safe, new_diving_participation_path(diving) %> </p>
+          </li>
+        <% end %>
+      </div>
+    </div>
 </div>
