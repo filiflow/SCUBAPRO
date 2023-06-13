@@ -1,15 +1,19 @@
-<div class="container">
-  <h2 class="titles">
-    <%= @spot.name%>
-  </h2>
-
-  <div class="spot-description">
-    <%= @spot.description %>
-  </div>
-
-  <% @divings.each do |diving| %>
-    <li class="list-divings">
-     <p> <%= diving.date %>  <%= link_to '<i class="fa-solid fa-user-plus"></i>'.html_safe, new_diving_participation_path(diving) %> </p>
-    </li>
-  <% end %>
+<div class="background">
+  <% content_for :page_title, "Welcome to,"%>
+    <div class="container">
+      <h3 class="titles"> <%= @spot.name %> <i class="fa-solid fa-umbrella-beach" style="color: #557ec3;"></i> </h3>
+      <div class="spot-description">
+        <%= cl_image_tag @spot.photo.key, class:'spot-photo' %>
+        <%= @spot.description %>
+      </div>
+      <div class="diving-date-list">
+        <h5>Dives registered on this spot :</h5>
+            <% @divings.each do |diving| %>
+              <li class="list-divings">
+                <p> <%= (diving.date).strftime("%d/%m/%Y") %>  <%= link_to '<i class="fa-solid fa-user-plus"></i>'.html_safe, new_diving_participation_path(diving)%> </p>
+              </li>
+            <% end %>
+      </div>
+    </div>
 </div>
+<%= render 'shared/tapbar' %>

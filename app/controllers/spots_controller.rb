@@ -27,7 +27,5 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
     @divings = Diving.where(spot_id: params[:id])
-
-
   end
 end
