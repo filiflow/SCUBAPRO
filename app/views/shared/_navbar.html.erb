@@ -1,11 +1,11 @@
-<% if current_page?("https://localhost:3000/") || current_page?("http://localhost:3000/")%>
+<% if current_page?("http://localhost:3000/") || current_page?("https://www.scubapp.org/") || current_page?("http://127.0.0.1:3000/")%>
   <div></div>
 <% else %>
   <div class="div-banner container">
     <h2 class="titles"><%= page_title %></h2>
     <div>
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
+        <% if user_signed_in?%>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= cl_image_tag current_user.photo.key, id:"avatar", height: 45, width: 45, crop: :fill%>
@@ -25,5 +25,3 @@
     </div>
   </div>
 <% end %>
-
-       <%# <%= cl_image_tag current_user.photo.key, id:"avatar", height: 60, width: 60, crop: :fill%>
