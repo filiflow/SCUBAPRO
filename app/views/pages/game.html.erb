@@ -1,0 +1,30 @@
+<div class="background">
+
+    <div class="container">
+
+      <div class="title">
+        Fish Game <i class="fa-solid fa-dice fa-bounce fa-xl"></i>
+      </div>
+
+      <div class="winner_animal">
+        Guess which one is the <strong> <%= @winning_animal.name %> </strong>
+      </div>
+
+      <div class="game" data-controller="game" data-game-winner-id-value="<%= @winning_animal.id %>">
+
+          <% @animals_game.each do |animal| %>
+            <%= cl_image_tag animal.photo.key, class: "species_game #{'winner' if animal == @winning_animal}", data: { value_animal_id: animal.id, action: "click->game#checkWinner" } %>
+          <% end %>
+
+          <div class="congrats d-none" data-game-target="winner-master">
+            You've won, master of the oceans!
+          </div>
+
+          <a href="/pages/game" type="button" data-game-target="button" class="btn btn-light mt-4 d-none">Play again!</a>
+      </div>
+
+    </div>
+
+</div>
+
+<%= render 'shared/tapbar' %>

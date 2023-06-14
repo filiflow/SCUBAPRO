@@ -1,0 +1,24 @@
+.species_game{
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin-top: 40px;
+}
+
+.btn{
+  align-items: center;
+}
+
+.winner_animal{
+  background-color: $white-background;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+// .game{
+//   display: flex;
+//   justify-content: center;
+// }
