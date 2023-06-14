@@ -24,3 +24,6 @@ application.register("stars", StarsController)
 
 import TapbarController from "./tapbar_controller"
 application.register("tapbar", TapbarController)
+
+import WeatherController from "./weather_controller"
+application.register("weather", WeatherController)

@@ -1,0 +1,24 @@
+.weather{
+    font-weight: bold;
+    color: $marine;
+    font-size: 20px;
+    margin: 10px auto;
+    margin-bottom: 0px;
+    text-align: center;
+    width: 80%;
+    // border-radius: 7px;
+    // border: solid 1px gray;
+    // box-shadow: 7px 7px 5px rgba(12, 1, 80, 0.2);
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+.temperature{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.city{
+  margin-bottom: 0;
+}

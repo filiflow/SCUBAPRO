@@ -1,3 +1,6 @@
+require "json"
+require "open-uri"
+
 class SpotsController < ApplicationController
   def index
     @user_spots = current_user.spots
@@ -22,6 +25,16 @@ class SpotsController < ApplicationController
       }
     end
     @markers += @other_markers
+
+    # api_key = "ae4bc35f1ebe8d4a3bfe20e7e204b496"
+    # lat = "44.86077411915072"
+    # lon = "-0.5564293964810352"
+
+    # url = "https://api.openweathermap.org/data/2.5/weather?lat=#{lat}&lon=#{lon}&appid=#{api_key}"
+    # weather_data = URI.open(url).read
+    # @weather = JSON.parse(weather_data)
+
+    # puts @weather
   end
 
   def show
