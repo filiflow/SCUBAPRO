@@ -17,6 +17,36 @@
   flex-wrap: nowrap;
 }
 
+.show-comments {
+  @extend .stats-show;
+  height: 100%;
+  padding: 15px;
+}
+
+.album-show {
+  text-align: center;
+  color: $dark-blue;
+  font-family: 'Nunito';
+  font-weight: bold;
+  justify-content: center;
+  overflow-x: scroll;
+}
+
+.photo-souvenir {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  padding: 15px;
+  scroll-margin-right: 15px;
+}
+
+.photos-container {
+  border-radius: 7px;
+  margin-bottom: 10px;
+  margin-right: 15px;
+}
+
+
 .species-specific{
   width: 234px;
   justify-content: center;
