@@ -7,28 +7,22 @@ export default class extends Controller {
     this.apiKey = "ae4bc35f1ebe8d4a3bfe20e7e204b496"
     // const userGeoloc = this.findGeoloc()
     // this.fetchWeather(userGeoloc)
-    this.fetchWeather()
+    this.getGeolocAndfetchWeather()
   }
 
-  fetchWeather() {
-    const userGeoloc = this.findGeoloc()
-    if (userGeoloc) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${userGeoloc[0]}&lon=${userGeoloc[1]}&appid=${this.apiKey}&units=metric`)
+  fetchWeather(lat, long) {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${this.apiKey}&units=metric`)
       .then(response => response.json())
       .then(data => this.#insertWeatherData(data))
-    }
   }
 
-  findGeoloc(){
-      let coordonates = []
-      navigator.geolocation.getCurrentPosition(function(position){
+  getGeolocAndfetchWeather(){
+      navigator.geolocation.getCurrentPosition((position) => {
           var latitude = position.coords.latitude;
           var longitude = position.coords.longitude;
           var altitude = position.coords.altitude;
-          coordonates.push(latitude)
-          coordonates.push(longitude)
+          this.fetchWeather(latitude, longitude)
         });
-        return coordonates
   }
 
   #insertWeatherData(data){
