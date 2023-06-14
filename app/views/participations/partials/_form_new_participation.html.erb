@@ -15,7 +15,7 @@
 
     <%# GAS %>
     <div class="input-case">
-      <%= f.input :gas, label: "SELECT YOUR AIR", collection: ["air", "nitrox", "trimix", "helios", "oxygen", "argon"], include_blank: "Select the gas used" %>
+      <%= f.input :gas, label: "DIVING GAS USED?", collection: ["Air", "Nitrox", "Trimix", "Helios", "Oxygen", "Argon"], include_blank: "Choose your diving gas" %>
     </div>
 
     <%# ANIMALS %>
@@ -41,7 +41,7 @@
 
     <%# PHOTOS %>
     <div class="input-case mb-4">
-      <%= f.input :photo, as: :file, label: false %>
+      <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
     </div>
 
     <%# STARS %>
