@@ -28,10 +28,12 @@ class ParticipationsController < ApplicationController
   end
 
   def update
-    @participation.update(participation_params)
+    params.dig(:participation, :photos).each do |photo|
+      @participation.photos.attach(photo)
+    end
 
     respond_to do |format|
-      if @participation.update(participation_params)
+      if @participation.update(participation_update_params)
         format.html { redirect_to participation_path, notice: "Your participation was successfully updated." }
         format.json { render :show, status: ok, location: @participation }
       else
@@ -74,6 +76,10 @@ class ParticipationsController < ApplicationController
   end
 
   def participation_params
+    params.require(:participation).permit(:user_id, :diving_id, :depth, :gas, :rating, :diving_time, :comment, animal_ids: [], photos: [])
+  end
+
+  def participation_update_params
     params.require(:participation).permit(:user_id, :diving_id, :depth, :gas, :rating, :diving_time, :comment, animal_ids: [])
   end
 end

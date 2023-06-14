@@ -1,4 +1,6 @@
   <div class="cards" data-searchbar-target="list">
+
+    <%# PHOTO %>
     <% participations.each do |participation| %>
       <div class="card-participation mb-3 mt-4">
         <% if participation.photos.count == 0 %>
@@ -8,30 +10,30 @@
         <% end %>
           <div class="card-infos">
 
-            <%# First part %>
+            <%# FIRST LINE %>
             <div class="row">
 
-              <%# Title %>
+              <%# TITLE %>
               <div class="col-6">
                 <h2 class="titles"><%= link_to (participation.diving.spot.name).upcase, participation_path(participation), method: :get %></h2>
               </div>
 
-              <%# Date %>
+              <%# DATE %>
               <div class="col-3">
                 <p id="date"><%= (participation.diving.date).strftime("%d/%m/%y") %></p>
               </div>
 
-              <%# Temperature %>
+              <%# TEMP %>
               <div class="col-3">
                 <p id="temp"><i class="fa-solid fa-temperature-three-quarters" style="color: #5B77BE"></i><%= participation.diving.temperature %>°C</p>
               </div>
 
             </div>
 
-            <%# Second part %>
+            <%# 2ND LINE %>
             <div class="row">
 
-              <%# Rating %>
+              <%# RATING %>
               <div class="col-6">
                 <p id="stars">
                   <% if participation.rating %>
@@ -42,14 +44,14 @@
                 </p>
               </div>
 
-              <%# Time %>
+              <%# TIME %>
               <div class="col-3">
                 <p id="time"><i class="fa-solid fa-stopwatch" style="color: #5B77BE"></i><%= participation.diving_time %>'</p>
               </div>
 
-              <%# Depth %>
+              <%# DEPTH %>
               <div class="col-3">
-                <p><i class="material-symbols-outlined">scuba_diving</i><%= participation.depth %>M</p>
+                <p id="depth"><%= participation.depth %>M</p>
               </div>
 
             </div>

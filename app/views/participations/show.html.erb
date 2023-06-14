@@ -1,113 +1,142 @@
 <div class="background">
 
-    <div class="container">
+  <div class="container pb-3">
 
-      <%# NAME %>
-      <h2 class="titles">
+    <%# NAME %>
+    <div class="particpations-spot-name-title">
+    <h2 class="titles">
       <%= @participation.diving.spot.name %>
-      </h2>
+    </h2>
+    </div>
 
-      <%# DATE %>
-      <h4 class="titles">
+    <%# STARS %>
+    <div id="rating">
+      <% if @participation.rating %>
+        <% (@participation.rating).times do %>
+          <i class="fa-solid fa-star" style="color: #10A59C;"></i>
+        <% end %>
+      <% end %>
+    </div>
+
+    <%# SPOT PHOTO %>
+    <%= cl_image_tag @participation.diving.spot.photo.key, class: 'show-photo' %>
+
+
+
+
+    <div class="edit-show">
+      <div class="titles-show-participations">
+        <h6 class="titles">
         <%= (@participation.diving.date).strftime("%d/%m/%Y") %>
-      </h4>
-
-      <%# EDIT / DELETE %>
+      </h6>
+      </div>
       <div class="action-icons">
         <%= link_to '<i class="fa-regular fa-pen-to-square" style="color: #0C0150;"></i>'.html_safe, edit_diving_participation_path(@participation.diving, @participation) %>
         <%= link_to '<i class="fa-regular fa-trash-can" style="color: #0C0150;"></i>'.html_safe, participation_path(@participation), data: { turbo_method: :delete, turbo_confirm: "Do you really want to delete this participation?" } %>
       </div>
+    </div>
 
-      <%# SPOT PHOTO %>
-      <%= cl_image_tag @participation.diving.spot.photo.key, height: 150, width: 150, crop: :fill, class: 'show-photo' %>
 
-      <%# STARS %>
-      <div id="rating">
-        <% if @participation.rating %>
-          <% (@participation.rating).times do %>
-            <i class="fa-solid fa-star" style="color: #10A59C;"></i>
+
+    <div class="stats-show">
+        <div class= "logo-show-stats">
+          <% if @participation.diving.weather == "Sunny" %>
+            <%= '<i class="fa-solid fa-sun fa-lg dive-icon"></i>'.html_safe %>
+            <%= "Sunny" %>
+          <% elsif @participation.diving.weather == "Windy" %>
+            <%= '<i class="fa-solid fa-wind fa-lg dive-icon"></i>'.html_safe %>
+            <%= "Windy" %>
+          <% elsif @participation.diving.weather == "Cloudy" %>
+            <%= '<i class="fa-solid fa-cloud fa-lg dive-icon"></i>'.html_safe %>
+            <%= "Cloudy" %>
+          <% elsif @participation.diving.weather == "Storm" %>
+            <%= '<i class="fa-solid fa-cloud-bolt fa-lg dive-icon"></i>'.html_safe %>
+            <%= "Storm" %>
           <% end %>
-        <% end %>
+        </div>
+
+        <div class= "logo-show-stats">
+          <i class="fa-solid fa-temperature-low fa-lg dive-icon"></i>
+          <%= @participation.diving.temperature %>°C
+        </div>
+
+
+        <div class= "logo-show-stats">
+          <i class="fa-solid fa-binoculars fa-lg dive-icon"></i>
+          <%= @participation.diving.visibility %>M
+        </div>
+
+
+        <div class= "logo-show-stats">
+          <i class="fa-solid fa-arrow-down fa-lg dive-icon"></i>
+          <%= @participation.depth %>M
+        </div>
+
+        <div class= "logo-show-stats">
+          <i class="fa-solid fa-mask-ventilator fa-lg dive-icon"></i>
+          <%= (@participation.gas).capitalize %>
+        </div>
+
+        <div class= "logo-show-stats">
+          <i class="fa-solid fa-stopwatch fa-lg dive-icon"></i>
+          <%= @participation.diving_time %> min
+        </div>
+    </div>
+
+    <div class="comment-species">
+      <div class= "stats-school">
+        <div class= "logo-show-stats">
+          <i class="fa-solid fa-school fa-lg dive-icon"></i>
+          <p><%= @participation.diving.school.name %> </p>
+        </div>
+
+        <div class= "logo-show-stats">
+          <i class="fa-solid fa-user fa-lg dive-icon"></i>
+          <p><%= @participation.diving.school.dive_master %></p>
+        </div>
       </div>
 
+
+      <div class= "stats-show species-specific">
+        <div class="animals-crossing">
+          <p class= "titles"> <%= "Species observed" %> </p>
+          <% if @participation.animals %>
+            <% @participation.animals.each do |animal| %>
+              <%= cl_image_tag animal.photo.key, class: "species-show"%> <%= animal.name %>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class= "show-comments mb-3">
+      <p><i class="fa-regular fa-message fa-lg"></i><em><%= @participation.comment%></em></p>
+    </div>
+
+
+
+    <%# AFFICHAGE PHOTOS SOUVENIRS USER %>
+    <% if @participation.photos.attached?  %>
       <div class="stats-show">
 
-          <div class= "logo-show-stats">
-            <% if @participation.diving.weather == "Sunny" %>
-              <%= '<i class="fa-solid fa-sun fa-lg dive-icon"></i>'.html_safe %>
-              <%= "Sunny" %>
-            <% elsif @participation.diving.weather == "Windy" %>
-              <%= '<i class="fa-solid fa-wind fa-lg dive-icon"></i>' %>
-              <%= "Windy" %>
-            <% elsif @participation.diving.weather == "Cloudy" %>
-              <%= '<i class="fa-solid fa-cloud fa-lg dive-icon"></i>'.html_safe %>
-              <%= "Cloudy" %>
-            <% elsif @participation.diving.weather == "Storm" %>
-              <%= '<i class="fa-solid fa-cloud-bolt fa-lg dive-icon"></i>'.html_safe %>
-              <%= "Storm" %>
+        <div class="album-show">
+          <div class="titles">
+            My photos
+          </div>
+
+          <div class="photo-souvenir">
+            <% @participation.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, class: "photos-container", height: 200, width: 300, crop: :fill %>
             <% end %>
           </div>
 
-          <div class= "logo-show-stats">
-            <i class="fa-solid fa-temperature-low fa-lg dive-icon"></i>
-            <%= @participation.diving.temperature %>°C
-          </div>
-
-
-          <div class= "logo-show-stats">
-            <i class="fa-solid fa-binoculars fa-lg dive-icon"></i>
-            <%= @participation.diving.visibility %>M
-          </div>
-
-
-          <div class= "logo-show-stats">
-            <i class="fa-solid fa-arrow-down fa-lg dive-icon"></i>
-            <%= @participation.depth %>M
-          </div>
-
-          <div class= "logo-show-stats">
-            <i class="fa-solid fa-mask-ventilator fa-lg dive-icon"></i>
-            <%= (@participation.gas).capitalize %>
-          </div>
-
-
-          <div class= "logo-show-stats">
-            <i class="fa-solid fa-stopwatch fa-lg dive-icon"></i>
-            <%= @participation.diving_time %> min
-          </div>
-      </div>
-
-      <div class="comment-school">
-        <div class= "stats-school">
-          <div class= "logo-show-stats">
-            <i class="fa-solid fa-school fa-lg dive-icon"></i>
-            <p><%= @participation.diving.school.name %> </p>
-          </div>
-
-          <div class= "logo-show-stats">
-            <i class="fa-solid fa-user fa-lg dive-icon"></i>
-            <p><%= @participation.diving.school.dive_master %></p>
-          </div>
-
         </div>
 
-        <div class= "stats-show">
-          <p><i class="fa-regular fa-message fa-lg"></i><em><%= @participation.comment%></em></p>
-        </div>
       </div>
+    <% end %>
 
-      <div class= "stats-show">
-        <i class="fa-solid fa-fish fa-lg"></i>
-          <% if @participation.animals %>
-            <ul class="animals-show">
-              <% @participation.animals.each do |animal| %>
-                <li><%= cl_image_tag animal.photo.key, class:"spot"%></li>
-                <li><%= animal.name %></li>
-              <% end %>
-            </ul>
-          <% end %>
-      </div>
-    </div>
+
+  </div>
 </div>
 
 <%= render 'shared/tapbar' %>

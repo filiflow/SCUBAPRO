@@ -11,7 +11,9 @@
   <div class="bar-item <%= 'active' if current_page?(participations_path) %> pre-active" >
     <div class="bar-fluid"></div>
     <div class="drop"></div>
-    <%= link_to '<span class="material-symbols-outlined">scuba_diving</span>'.html_safe, participations_path, class: "link" %>
+    <a class="link" href="/participations">
+      <span class="material-symbols-outlined" style="font-size: 40px;">scuba_diving</span>
+    </a>
   </div>
 
   <%# NEW DIVING %>
@@ -28,7 +30,7 @@
     <%= link_to '<i class="fa-solid fa-map"></i>'.html_safe, spots_path, class: "link" %>
   </div>
 
-  <%# animals %>
+  <%# GAME %>
   <div class="bar-item <%= 'active' if current_page?(pages_path) %> pre-active" >
     <div class="bar-fluid"></div>
     <div class="drop"></div>
