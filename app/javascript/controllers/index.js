@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import GameController from "./game_controller"
+application.register("game", GameController)
+
 import GraduatedRangeController from "./graduated_range_controller"
 application.register("graduated-range", GraduatedRangeController)
 

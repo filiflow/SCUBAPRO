@@ -21,8 +21,6 @@
       <%# SPOT PHOTO %>
       <%= cl_image_tag @participation.diving.spot.photo.key, class: 'show-photo' %>
 
-
-
       <div class="edit-show">
         <div class="titles-show-participations">
           <h6 class="titles">
@@ -34,9 +32,6 @@
           <%= link_to '<i class="fa-regular fa-trash-can" style="color: #0C0150;"></i>'.html_safe, participation_path(@participation), data: { turbo_method: :delete, turbo_confirm: "Do you really want to delete this participation?" } %>
         </div>
       </div>
-
-
-
 
 
       <div class="stats-show">
