@@ -2,7 +2,7 @@ class ParticipationsController < ApplicationController
   before_action :set_participation, only: %i[show edit update destroy]
 
   def index
-    @participations = Participation.all.reverse
+    @participations = Participation.all
     @title = "Your dives"
 
     if params[:query].present?
