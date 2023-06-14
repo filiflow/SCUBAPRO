@@ -3,23 +3,11 @@
     <div class="container">
 
       <%# NAME %>
+     <div class="particpations-spot-name-title">
       <h2 class="titles">
-      <%= @participation.diving.spot.name %>
+        <%= @participation.diving.spot.name %>
       </h2>
-
-      <%# DATE %>
-      <h4 class="titles">
-        <%= (@participation.diving.date).strftime("%d/%m/%Y") %>
-      </h4>
-
-      <%# EDIT / DELETE %>
-      <div class="action-icons">
-        <%= link_to '<i class="fa-regular fa-pen-to-square" style="color: #0C0150;"></i>'.html_safe, edit_diving_participation_path(@participation.diving, @participation) %>
-        <%= link_to '<i class="fa-regular fa-trash-can" style="color: #0C0150;"></i>'.html_safe, participation_path(@participation), data: { turbo_method: :delete, turbo_confirm: "Do you really want to delete this participation?" } %>
-      </div>
-
-      <%# SPOT PHOTO %>
-      <%= cl_image_tag @participation.diving.spot.photo.key, height: 150, width: 150, crop: :fill, class: 'show-photo' %>
+     </div>
 
       <%# STARS %>
       <div id="rating">
@@ -30,8 +18,28 @@
         <% end %>
       </div>
 
-      <div class="stats-show">
+      <%# SPOT PHOTO %>
+      <%= cl_image_tag @participation.diving.spot.photo.key, class: 'show-photo' %>
 
+
+
+      <div class="edit-show">
+        <div class="titles-show-participations">
+          <h6 class="titles">
+          <%= (@participation.diving.date).strftime("%d/%m/%Y") %>
+        </h6>
+        </div>
+        <div class="action-icons">
+          <%= link_to '<i class="fa-regular fa-pen-to-square" style="color: #0C0150;"></i>'.html_safe, edit_diving_participation_path(@participation.diving, @participation) %>
+          <%= link_to '<i class="fa-regular fa-trash-can" style="color: #0C0150;"></i>'.html_safe, participation_path(@participation), data: { turbo_method: :delete, turbo_confirm: "Do you really want to delete this participation?" } %>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="stats-show">
           <div class= "logo-show-stats">
             <% if @participation.diving.weather == "Sunny" %>
               <%= '<i class="fa-solid fa-sun fa-lg dive-icon"></i>'.html_safe %>
@@ -70,14 +78,13 @@
             <%= (@participation.gas).capitalize %>
           </div>
 
-
           <div class= "logo-show-stats">
             <i class="fa-solid fa-stopwatch fa-lg dive-icon"></i>
             <%= @participation.diving_time %> min
           </div>
       </div>
 
-      <div class="comment-school">
+      <div class="comment-species">
         <div class= "stats-school">
           <div class= "logo-show-stats">
             <i class="fa-solid fa-school fa-lg dive-icon"></i>
@@ -88,25 +95,24 @@
             <i class="fa-solid fa-user fa-lg dive-icon"></i>
             <p><%= @participation.diving.school.dive_master %></p>
           </div>
-
         </div>
 
-        <div class= "stats-show">
-          <p><i class="fa-regular fa-message fa-lg"></i><em><%= @participation.comment%></em></p>
+
+        <div class= "stats-show species-specific">
+          <div class="animals-crossing">
+            <% if @participation.animals %>
+              <% @participation.animals.each do |animal| %>
+                <%= cl_image_tag animal.photo.key, class: "species-show"%> <%= animal.name %>
+                <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
 
       <div class= "stats-show">
-        <i class="fa-solid fa-fish fa-lg"></i>
-          <% if @participation.animals %>
-            <ul class="animals-show">
-              <% @participation.animals.each do |animal| %>
-                <li><%= cl_image_tag animal.photo.key, class:"spot"%></li>
-                <li><%= animal.name %></li>
-              <% end %>
-            </ul>
-          <% end %>
+        <p><i class="fa-regular fa-message fa-lg"></i><em><%= @participation.comment%></em></p>
       </div>
+
     </div>
 </div>
 

@@ -32,7 +32,7 @@ class ParticipationsController < ApplicationController
 
     respond_to do |format|
       if @participation.update(participation_params)
-        format.html { redirect_to participation_path, notice: "Your participation was successfully updated." }
+        format.html { redirect_to participation_path(@participation), notice: "Your participation was successfully updated." }
         format.json { render :show, status: ok, location: @participation }
       else
         format.html { render :edit, status: :unprocessable_entity }

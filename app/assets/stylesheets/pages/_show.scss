@@ -8,26 +8,40 @@
 }
 
 .stats-show {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.271);
   color: #09339E;
   border-radius: 30px;
-  padding: 15px;
+  padding: 15px 0px 10px 9px;
   overflow-x: scroll;
   display: flex;
   flex-wrap: nowrap;
 }
 
+.species-specific{
+  width: 234px;
+  justify-content: center;
+}
+
 .stats-school {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.271);
   color: #09339E;
   border-radius: 30px;
-  padding: 15px;
+  padding: 3px;
   width: 30%;
   margin-right: 5%;
+  height: 250px;
+  margin-top: 2px;
+  overflow-y: scroll;
 }
 
 .show-photo{
-  border-radius: 50%;
+  width: 94vw;
+  height: 50vw;
+  size: 30px;
+  object-fit: cover;
+  position: relative;
+  border-radius: 50px;
+  margin-bottom: 5px;
 }
 
 .logo-show-stats{
@@ -63,6 +77,50 @@
   margin: 1em 0;
 }
 
-.animals-show {
-  list-style-type: none;
+.comment-species{
+  display: flex;
+  margin: 1em 0;
+  height: 250px;
+  // overflow-y: scroll;
+}
+
+.p{
+  margin-bottom: 0;
+}
+
+.species-show{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.animals-crossing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 10px;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+.animals-crossing p {
+  margin-top: 5px;
+}
+
+.edit-show{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.particpations-spot-name-title{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+
+#rating{
+  margin-bottom: 15px;
 }
