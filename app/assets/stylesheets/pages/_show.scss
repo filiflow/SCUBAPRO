@@ -10,8 +10,8 @@
 .stats-show {
   background-color: rgba(255, 255, 255, 0.271);
   color: #09339E;
-  border-radius: 30px;
-  padding: 15px 0px 10px 9px;
+  border-radius: 7px;
+  padding: 15px 0px 10px 1px;
   overflow-x: scroll;
   display: flex;
   flex-wrap: nowrap;
@@ -25,7 +25,7 @@
 .stats-school {
   background-color: rgba(255, 255, 255, 0.271);
   color: #09339E;
-  border-radius: 30px;
+  border-radius: 7px;
   padding: 3px;
   width: 30%;
   margin-right: 5%;
@@ -40,7 +40,7 @@
   size: 30px;
   object-fit: cover;
   position: relative;
-  border-radius: 50px;
+  border-radius: 7px;
   margin-bottom: 5px;
 }
 
@@ -60,6 +60,7 @@
 
 .comment-show{
   font-style: italic;
+  padding: 10px;
 }
 
 .dive-icon {
