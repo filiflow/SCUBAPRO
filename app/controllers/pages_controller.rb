@@ -12,4 +12,9 @@ class PagesController < ApplicationController
     @total_dives = Diving.count
     @total_spots = Spot.count
   end
+
+  def game
+    @animals_game = Animal.all.sample(3)
+    @winning_animal = @animals_game.sample
+  end
 end
