@@ -2,7 +2,7 @@ class ParticipationsController < ApplicationController
   before_action :set_participation, only: %i[show edit update destroy]
 
   def index
-    @participations = Participation.all
+    @participations = Participation.where(user: current_user)
     @title = "Your dives"
   end
 
@@ -34,7 +34,6 @@ class ParticipationsController < ApplicationController
   end
 
   def create
-    raise
     @participation = Participation.new(participation_params)
     @participation.user_id = current_user.id
     @participation.diving_id = params[:diving_id]
