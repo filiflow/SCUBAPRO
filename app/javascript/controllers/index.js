@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import GameController from "./game_controller"
+application.register("game", GameController)
+
 import GraduatedRangeController from "./graduated_range_controller"
 application.register("graduated-range", GraduatedRangeController)
 
@@ -21,3 +24,6 @@ application.register("stars", StarsController)
 
 import TapbarController from "./tapbar_controller"
 application.register("tapbar", TapbarController)
+
+import WeatherController from "./weather_controller"
+application.register("weather", WeatherController)

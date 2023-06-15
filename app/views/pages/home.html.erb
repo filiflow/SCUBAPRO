@@ -1,4 +1,5 @@
 <% content_for :page_title, "Hi #{(current_user.nickname).capitalize}" %>
+
 <div class="background">
 
   <div class="container">
@@ -9,39 +10,42 @@
 
     <div class="stats_home">
 
+      <%# UNDERWATER %>
       <div class="statistic">
         <div class="stat-time">
           <% if @total_diving_time > 60 %>
             <% hours = @total_diving_time / 60 %>
             <% minutes = @total_diving_time % 60 %>
-            <p><strong><%= "#{hours}h#{sprintf('%02d', minutes)}" %></strong></p>
+            <h1 class="number"><%= "#{hours}h#{sprintf('%02d', minutes)}" %></h1>
           <% else %>
-            <p><%= @total_diving_time %> minutes</p>
+            <h1 class="number"><%= @total_diving_time %> minutes</h1>
           <% end %>
-          <h3>Underwater</h3>
+          <h5 class="stat">Underwater</h5>
         </div>
       </div>
 
+      <%# DEPTH %>
       <div class="statistic">
         <h1 class="number"><%= @max_depth %>M</h1>
-        <h5>Max Depth</h5>
+        <h5 class="stat">Max Depth</h5>
       </div>
 
+      <%# DIVES %>
       <div class="statistic">
         <h1 class="number"><%= @total_dives %></h1>
-        <h5>Dives</h5>
+        <h5 class="stat">Dives</h5>
       </div>
 
       <%# Attention à modifier %>
       <div class="statistic">
         <h1 class="number"><%= @total_dives %></h1>
-        <h5>Species seen</h5>
+        <h5 class="stat">Species seen</h5>
       </div>
 
       <%# Attention à modifier %>
       <div class="statistic">
         <h1 class="number"><%= @total_spots %></h1>
-        <h5>Spots visited</h5>
+        <h5 class="stat">Spots visited</h5>
       </div>
 
     </div>

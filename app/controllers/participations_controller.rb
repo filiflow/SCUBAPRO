@@ -4,6 +4,20 @@ class ParticipationsController < ApplicationController
   def index
     @participations = Participation.where(user: current_user)
     @title = "Your dives"
+
+    if params[:query].present?
+      #@participations = @participations..where("title ILIKE ?", "%#{params[:query]}%")
+      @participations = @participations.joins(:diving)
+                                        .where(diving: {
+                                          spot_id: Spot.where("name ILIKE ?", "%#{params[:query]}%")
+                                                      .map(&:id)
+                                        } )
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "participations/partials/cards_participations", locals: {participations: @participations}, formats: [:html] }
+    end
   end
 
   def show
@@ -14,11 +28,13 @@ class ParticipationsController < ApplicationController
   end
 
   def update
-    @participation.update(participation_params)
+    params.dig(:participation, :photos).each do |photo|
+      @participation.photos.attach(photo)
+    end
 
     respond_to do |format|
-      if @participation.update(participation_params)
-        format.html { redirect_to participation_path(@participation), notice: "Your participation was successfully updated." }
+      if @participation.update(participation_update_params)
+        format.html { redirect_to participation_path, notice: "Your participation was successfully updated." }
         format.json { render :show, status: ok, location: @participation }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -60,6 +76,10 @@ class ParticipationsController < ApplicationController
   end
 
   def participation_params
+    params.require(:participation).permit(:user_id, :diving_id, :depth, :gas, :rating, :diving_time, :comment, animal_ids: [], photos: [])
+  end
+
+  def participation_update_params
     params.require(:participation).permit(:user_id, :diving_id, :depth, :gas, :rating, :diving_time, :comment, animal_ids: [])
   end
 end

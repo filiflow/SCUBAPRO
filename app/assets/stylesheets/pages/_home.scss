@@ -9,15 +9,17 @@
   width: 160px;
   margin: 10px;
   padding: 20px;
-  background-color: $marine;
-  // border: 1px solid #ccc;
+  background-color: $launch-blue;
+  background: linear-gradient(
+    to top,
+    rgba(5, 48, 159, 1),
+    rgba(91, 119, 190, 1)
+    );
   text-align: center;
-  border-radius: 12px;
+  border-radius: 7px;
   color: $white-text;
-  // font-size: 30px;
-  // line-height: 41px;
 }
 
-.stat-time {
-  height: 50%;
+.number {
+  font-weight: bold;
 }

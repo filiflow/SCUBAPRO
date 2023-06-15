@@ -1,0 +1,56 @@
+<% content_for :page_title, "Let's play" %>
+
+<div class="background">
+
+    <div class="container">
+
+      <div class="title">
+        Fish Game <i class="fa-solid fa-dice fa-bounce fa-xl"></i>
+      </div>
+
+      <div class="winner_animal">
+        Guess which one is the <strong> <%= @winning_animal.name %> </strong>
+      </div>
+
+      <div class="game" data-controller="game" data-game-winner-id-value="<%= @winning_animal.id %>">
+
+        <div class="animal-photo-center">
+          <% @animals_game.each do |animal| %>
+            <%= cl_image_tag animal.photo.key, class: "species_game #{'winner' if animal == @winning_animal}", data: { value_animal_id: animal.id, action: "click->game#checkWinner", game_target: "image"} %>
+          <% end %>
+        </div>
+
+        <div class="congrats d-none" data-game-target="congratulation">
+            <div class="confetti">
+              <div class="confetti-piece"></div>
+              <div class="confetti-piece"></div>
+              <div class="confetti-piece"></div>
+              <div class="confetti-piece"></div>
+              <div class="confetti-piece"></div>
+              <div class="confetti-piece"></div>
+              <div class="confetti-piece"></div>
+              <div class="confetti-piece"></div>
+              <div class="confetti-piece"></div>
+              <div class="confetti-piece"></div>
+              <div class="confetti-piece"></div>
+              <div class="confetti-piece"></div>
+              <div class="confetti-piece"></div>
+              <div class="icon">You've won, master of the oceans!</div>
+            </div>
+        </div>
+
+        <div class="loose d-none" data-game-target="loose">
+          You loose. Try again!
+        </div>
+
+        <div class="button">
+          <a href="/pages/game" type="button" data-game-target="button" class="btn btn-light mt-4 d-none">Play again!</a>
+        </div>
+
+      </div>
+
+    </div>
+
+</div>
+
+<%= render 'shared/tapbar' %>

@@ -1,8 +1,3 @@
-// PARTICIPATION SHOW
-.spot-photo {
-  border-radius: 5px;
-}
-
 .text-container {
   margin: auto;
   margin-bottom: 15px;
@@ -12,28 +7,151 @@
   text-align: center;
 }
 
-// SPOT SHOW
-.columns {
-  background-color: $launch-blue;
-  color: $white-text;
-  border-radius: 5px;
+.stats-show {
+  background-color: rgba(255, 255, 255, 0.271);
+  color: #09339E;
+  border-radius: 7px;
+  padding: 15px 0px 10px 1px;
+  overflow-x: scroll;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.show-comments {
+  @extend .stats-show;
+  height: 100%;
+  padding: 15px;
+}
+
+.album-show {
+  text-align: center;
+  color: $dark-blue;
+  font-family: 'Nunito';
+  font-weight: bold;
+  justify-content: center;
+  overflow-x: scroll;
+}
+
+.photo-souvenir {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  padding: 15px;
+  scroll-margin-right: 15px;
+}
+
+.photos-container {
+  border-radius: 7px;
+  margin-bottom: 10px;
+  margin-right: 15px;
+}
+
+
+.species-specific{
+  width: 234px;
+  justify-content: center;
+}
+
+.stats-school {
+  background-color: rgba(255, 255, 255, 0.271);
+  color: #09339E;
+  border-radius: 7px;
+  padding: 3px;
+  width: 30%;
+  margin-right: 5%;
+  height: 250px;
+  margin-top: 2px;
+  overflow-y: scroll;
+}
+
+.show-photo{
+  width: 94vw;
+  height: 50vw;
+  size: 30px;
+  object-fit: cover;
+  position: relative;
+  border-radius: 7px;
+  margin-bottom: 5px;
+}
+
+.logo-show-stats{
   padding: 10px;
-
-  h4 {
-    font-weight: bold;
-  }
+  text-align: center;
 }
 
-.colums {
-  p {
-    font-size: 15px;
-  }
+.fa-regular{
+  margin-right: 3px;
+  padding-right: 3px;
 }
 
-.spot-description {
-  font-size: 16px;
+.fa-school {
+  padding-right: 3px;
 }
 
-.list-divings {
-  list-style: none;
+.comment-show{
+  font-style: italic;
+  padding: 10px;
+}
+
+.dive-icon {
+  display:inline-block;
+  font-size: 40px;
+  line-height: 50px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.comment-school{
+  display: flex;
+  margin: 1em 0;
+}
+
+.comment-species{
+  display: flex;
+  margin: 1em 0;
+  height: 250px;
+  // overflow-y: scroll;
+}
+
+.p{
+  margin-bottom: 0;
+}
+
+.species-show{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.animals-crossing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 10px;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+.animals-crossing p {
+  margin-top: 5px;
+}
+
+.edit-show{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.particpations-spot-name-title{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+
+#rating{
+  margin-bottom: 15px;
 }

@@ -1,8 +1,31 @@
-<% content_for :page_title, "Next Spot ?" %>
+<% content_for :page_title, "Scubapp" %>
+
 <div class="background">
+
   <div class="container">
-    <h4 class="titles">Featured destinations</h4>
+
+    <div data-controller="weather", class="weather">
+
+      <p>Today in</p><p data-weather-target="city", class="city"></p>
+      <p data-weather-target="today"></p>
+      <p data-weather-target="city", class="city"></p>
+
+      <div class="temperature">
+        <p data-weather-target="temperature"></p>
+
+          <div class="weather-icon">
+            <img src="" alt="" data-weather-target="icon">
+            <p data-weather-target="description"></p>
+          </div>
+
+      </div>
+
+    </div>
+
     <%= render 'spots/partials/map' %>
+
   </div>
+
 </div>
+
 <%= render 'shared/tapbar' %>

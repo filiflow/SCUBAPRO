@@ -1,3 +1,6 @@
+require "json"
+require "open-uri"
+
 class SpotsController < ApplicationController
   def index
     @user_spots = current_user.spots
@@ -22,6 +25,7 @@ class SpotsController < ApplicationController
       }
     end
     @markers += @other_markers
+
   end
 
   def show

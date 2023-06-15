@@ -3,18 +3,22 @@
 
   <%= simple_form_for([@diving, @participation]) do |f| %>
 
+    <%# DEPTH %>
     <div class="input-case">
-      <%= f.input :depth, label: "HOW DEEP DID YOU DIVE?"  %>
+      <%= f.input :depth, label: "HOW DEEP DID YOU DIVE? (meters)"  %>
     </div>
 
+    <%# TIME %>
     <div class="input-case">
-      <%= f.input :diving_time, html5: true, label: "TIME UNDERWATER?"%>
+      <%= f.input :diving_time, html5: true, label: "TIME UNDERWATER? (minutes)"%>
     </div>
 
+    <%# GAS %>
     <div class="input-case">
-      <%= f.input :gas, label: "SELECT YOUR AIR", collection: ["air", "nitrox", "trimix", "helios", "oxygen", "argon"], include_blank: "Select the gas used" %>
+      <%= f.input :gas, label: "DIVING GAS USED?", collection: ["Air", "Nitrox", "Trimix", "Helios", "Oxygen", "Argon"], include_blank: "Choose your diving gas" %>
     </div>
 
+    <%# ANIMALS %>
     <div class="select-animals">
       <div class="input-spot">
         <div class="input-title mb-2"><%= "SPECIES SPOTTED" %></div>
@@ -24,22 +28,26 @@
                   collection: Animal.all.map { |animal| [render('participations/partials/animal_label', animal: animal, class: 'name'), animal.id] },
                   wrapper_class: "d-flex horizontal-scroll",
                   input_html: { class: "sr-only" },
-                  item_wrapper_class: "titi",
-                  item_label_class: "tata" %>
+                  item_wrapper_class: "wrapper",
+                  item_label_class: "tata"
+          %>
       </div>
     </div>
 
+    <%# COMMENTS %>
     <div class="input-case">
       <%= f.input :comment, label: "WHAT ABOUT YOUR FEELINGS?"%>
     </div>
 
+    <%# PHOTOS %>
     <div class="input-case mb-4">
-      <%= f.input :photo, as: :file, label: false %>
+      <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
     </div>
 
+    <%# STARS %>
     <div class="stars-rating mb-4">
       <% 5.times do |i| %>
-        <i class="fa-regular fa-star" style="color: #10A59C;" data-stars-target="rating"  data-action="click->stars#fill" data-value=<%= i + 1 %>></i>
+        <i class="fa-regular fa-star" style="color: #ff4500;" data-stars-target="rating"  data-action="click->stars#fill" data-value=<%= i + 1 %>></i>
       <% end %>
       <%= f.input :rating, as: :hidden, input_html: { data: {stars_target: "ratingInput"} }%>
     </div>

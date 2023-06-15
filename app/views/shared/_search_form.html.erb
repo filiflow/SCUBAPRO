@@ -1,17 +1,28 @@
-<div class="container mb-5">
-  <div class="search">
+<%# <div class="container mb-5">
+  <div class="searchbar">
     <%= simple_form_for :search, url: participations_path, method: :get, data: { turbo_frame: @participations, searchbar_target: 'form' } do |f| %>
-      <div class="search-form-control form-group">
+      <%# <div class="search-form-control form-group">
         <%= text_field_tag :query,
             params[:query],
             class: "form-control",
             placeholder: "Type a keyword",
             data: {action: "keyup->searchbar#submit", searchbar_target: 'searchInput'}
         %>
-        <%= button_tag "Search", name: "", class:'btn btn-primary' do %>
-          <i class="fas fa-search"></i> Search
+        <%# <%= button_tag "Search", name: "", class:'btn btn-primary' do %>
+          <%# <i class="fas fa-search"></i> Search
         <% end %>
-      </div>
+    <%#   </div>
     <% end %>
-  </div>
+<%#   </div>
+</div> %>
+
+
+<div class="search-container">
+   <%= simple_form_for :search, url: participations_path, method: :get, data: { searchbar_target: 'form' } do |f| %>
+
+      <div class="search-box">
+        <button class="btn-search"><i class="fas fa-search"></i></button>
+        <input type="text" name="query" class="input-search" placeholder="Type to Search..." data-searchbar-target="input" data-action="keyup->searchbar#submit">
+      </div>
+  <% end %>
 </div>
