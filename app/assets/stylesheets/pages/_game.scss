@@ -46,7 +46,10 @@
   color: $marine;
 }
 
-
 .border-success{
-  border-image: rgba(24, 178, 1, 0.6);
+  border: rgba(24, 178, 1, 0.6) solid 6px;
+}
+
+.looser-opacity{
+  opacity: 0.6;
 }
