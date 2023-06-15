@@ -11,6 +11,7 @@ class PagesController < ApplicationController
     @max_depth = Participation.maximum(:depth)
     @total_dives = Diving.count
     @total_spots = Spot.count
+    @user_participations = current_user.participations
   end
 
   def game
