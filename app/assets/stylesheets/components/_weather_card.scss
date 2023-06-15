@@ -22,3 +22,13 @@
 .city{
   margin-bottom: 0;
 }
+
+.align{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.space{
+  padding-right: 5px;
+}
