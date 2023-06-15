@@ -9,9 +9,10 @@ class PagesController < ApplicationController
     @title = helpers.raw("#{helpers.image_tag('notrelogo.png', width: 30)} SCUBAPP")
     @total_diving_time = Participation.sum(:diving_time)
     @max_depth = Participation.maximum(:depth)
-    @total_dives = Diving.count
-    @total_spots = Spot.count
+    @total_dives = Participation.where(user: current_user).count
+    @total_spots = Participation.where(user: current_user).count { |p| p.diving.spot }
     @user_participations = current_user.participations
+    @total_animals = Participation.where(user: current_user).map { |p| p.presences }.flatten.count
   end
 
   def game
