@@ -16,7 +16,7 @@
 
         <div class="animal-photo-center">
           <% @animals_game.each do |animal| %>
-            <%= cl_image_tag animal.photo.key, class: "species_game #{'winner' if animal == @winning_animal}", data: { value_animal_id: animal.id, action: "click->game#checkWinner" } %>
+            <%= cl_image_tag animal.photo.key, class: "species_game #{'winner' if animal == @winning_animal}", data: { value_animal_id: animal.id, action: "click->game#checkWinner", game_target: "image"} %>
           <% end %>
         </div>
 
