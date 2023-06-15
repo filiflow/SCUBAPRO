@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import FlatpickrController from "./flatpickr_controller"
+application.register("flatpickr", FlatpickrController)
+
 import GameController from "./game_controller"
 application.register("game", GameController)
 
