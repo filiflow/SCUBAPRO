@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static values = { winnerId: Number }
-  static targets = [ "button", "congratulation", "loose"]
+  static targets = [ "button", "congratulation", "loose", "image"]
 
   connect() {
     this.element.querySelectorAll(".species_game").forEach((element) => {
@@ -11,9 +11,10 @@ export default class extends Controller {
   }
 
   checkWinner(event) {
+    console.log("coucou");
     const clickedAnimalId = event.target.dataset.valueAnimalId
     if (this.winnerIdValue === parseInt(clickedAnimalId)) {
-      this.winner()
+      this.winner(event)
     } else {
       this.loser()
     }
@@ -27,7 +28,12 @@ export default class extends Controller {
     this.buttonTarget.classList.remove("d-none")
     this.congratulationTarget.classList.remove("d-none")
     event.target.classList.add("border-success")
-    console.log(event);
+    this.imageTargets.forEach((element) => {
+      const clickedAnimalId = element.dataset.valueAnimalId
+      if (this.winnerIdValue !== parseInt(clickedAnimalId)) {
+        element.classList.add("looser-opacity")
+      }
+    })
   }
 
   loser() {
@@ -37,5 +43,4 @@ export default class extends Controller {
     this.buttonTarget.classList.remove("d-none")
     this.looseTarget.classList.remove("d-none")
   }
-
 }
