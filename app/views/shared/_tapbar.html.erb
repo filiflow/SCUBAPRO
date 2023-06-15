@@ -31,10 +31,10 @@
   </div>
 
   <%# GAME %>
-  <div class="bar-item <%= 'active' if current_page?(pages_path) %> pre-active" >
+  <div class="bar-item <%= 'active' if current_page?(game_path) %> pre-active" >
     <div class="bar-fluid"></div>
     <div class="drop"></div>
-    <%= link_to '<i class="fa-solid fa-fish"></i>'.html_safe, pages_path, class: "link" %>
+    <%= link_to '<i class="fa-solid fa-fish"></i>'.html_safe, game_path, class: "link" %>
   </div>
 
 </div>
