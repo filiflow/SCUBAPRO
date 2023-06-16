@@ -71,6 +71,11 @@ file = URI.open("https://images.unsplash.com/photo-1682687981630-cefe9cd73072?ix
 spot.photo.attach(io: file, filename: "spot photo", content_type: "image/png")
 spot.save!
 
+spot = Spot.new(name: "Bonifacio", latitude: 41.386250, longitude: 9.153520, description: "The Cliffs of Bonifacio, located in front of the fortified city, offer a unique diving experience.")
+file = URI.open("https://images.unsplash.com/photo-1545129228-7a804588bf8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80")
+spot.photo.attach(io: file, filename: "spot photo", content_type: "image/png")
+spot.save!
+
 puts "Spots have been created!"
 
 School.destroy_all
