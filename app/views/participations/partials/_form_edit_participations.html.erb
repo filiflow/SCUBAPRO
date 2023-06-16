@@ -47,7 +47,7 @@
     <%# STARS %>
     <div class="stars-rating mb-4">
       <% 5.times do |i| %>
-        <i class="fa-regular fa-star" style="color: #ff4500;" data-stars-target="rating"  data-action="click->stars#fill" data-value=<%= i + 1 %>></i>
+        <i class="fa-regular fa-star" style="color: #d5700e;" data-stars-target="rating"  data-action="click->stars#fill" data-value=<%= i + 1 %>></i>
       <% end %>
       <%= f.input :rating, as: :hidden, input_html: { data: {stars_target: "ratingInput"} }%>
     </div>
